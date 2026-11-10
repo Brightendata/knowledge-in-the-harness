@@ -1,0 +1,53 @@
+{
+  "time": "2026-11-03T04:11:13",
+  "seed": 2200000,
+  "user": {
+    "model": "deepseek/deepseek-flash",
+    "args": {
+      "temperature": 0.0,
+      "extra_body": {
+        "thinking": {
+          "type": "disabled"
+        }
+      }
+    }
+  },
+  "current": {
+    "plugin": "artifacts/logs/r1/plugins/retail_final2_accepted",
+    "model": "artifacts/checkpoints/r1/retail/epoch3.5"
+  },
+  "candidate": {
+    "plugin": "artifacts/logs/r2/harness_rsi/retail/plugins/v06",
+    "model": "artifacts/checkpoints/r1/retail/epoch3.5"
+  },
+  "other_plugin": "artifacts/logs/r1/plugins/airline_final1_accepted",
+  "pass^1": {
+    "current": 0.809375,
+    "candidate": 0.819375,
+    "diff": 0.01,
+    "ci95": [
+      -0.01875,
+      0.03625
+    ]
+  },
+  "pass^4": {
+    "current": 0.6087142857142857,
+    "candidate": 0.6330714285714286,
+    "diff": 0.02435714285714286,
+    "ci95": [
+      -0.02215,
+      0.06943035714285714
+    ]
+  },
+  "score": {
+    "current": 0.7692428571428571,
+    "candidate": 0.7821142857142857,
+    "diff": 0.012871428571428568,
+    "ci95": [
+      -0.01819607142857143,
+      0.04085785714285714
+    ]
+  },
+  "accepted": true,
+  "saved": "artifacts/logs/r2/plugins/retail_final1_accepted"
+}

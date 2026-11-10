@@ -1,0 +1,153 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a09",
+    "a10",
+    "a11",
+    "a12",
+    "a13",
+    "a14"
+  ],
+  "start": "2026-10-29T10:35:40",
+  "end": "2026-10-29T10:43:22",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When calculating the price difference or refund for a modification, search for and determine the price of every flight in the new reservation, sum these prices, subtract the sum of the prices of all flights in the original reservation, and multiply the result by the number of passengers.",
+        "support": [
+          "a01",
+          "a03",
+          "a05"
+        ],
+        "reason": "Combines three proposals into a single rule to correctly calculate modification costs by searching all flight prices, summing them, and multiplying the difference by the number of passengers."
+      },
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "When the user wants to modify baggage, load both the `airline:modify` and `airline:book` skills.",
+        "support": [
+          "a06"
+        ],
+        "reason": "Fills a gap by ensuring the baggage allowance rules from the 'Book flight' section are available for baggage modifications."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Before calling `cancel_reservation`, if any of the flights the user wants to cancel has already been flown, do not call `cancel_reservation` for any of them and transfer the user to a human agent.",
+        "support": [
+          "a10"
+        ],
+        "reason": "Clarifies the scope of the transfer rule, ensuring that if any part of a request involves a flown flight, the entire request is transferred without any database changes."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "Before calling update_reservation_flights, check if the new flight(s) change the reservation's origin, destination, or trip type. If any of these attributes change, refuse the request and inform the user that modifications cannot change these details.",
+        "support": [
+          "a07"
+        ],
+        "reason": "Provides a concrete check to enforce the policy that modifications cannot change the origin, destination, or trip type."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a02",
+        "reason": "This rule only repeats a general policy requirement that must be followed and does not provide a new concrete step."
+      },
+      {
+        "proposal": "a04",
+        "reason": "While important, this edit was lower priority than the more systemic modification and cancellation rules."
+      },
+      {
+        "proposal": "a09",
+        "reason": "The policy already specifies the order of obtaining the cancellation reason before checking if the flight has been flown."
+      },
+      {
+        "proposal": "a11",
+        "reason": "This was lower priority than the other cancellation and modification rules."
+      },
+      {
+        "proposal": "a12",
+        "reason": "This was lower priority than the other cancellation and modification rules."
+      },
+      {
+        "proposal": "a13",
+        "reason": "This was lower priority than the more systemic modification and cancellation rules."
+      },
+      {
+        "proposal": "a14",
+        "reason": "This was lower priority than the more systemic modification and cancellation rules."
+      }
+    ],
+    "summary": "Improved modification pricing calculations, baggage skill loading, modification restrictions, and cancellation scope."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "When calculating the price difference or refund for a modification, search for and determine the price of every flight in the new reservation, sum these prices, subtract the sum of the prices of all flights in the original reservation, and multiply the result by the number of passengers.",
+      "support": [
+        "generated_change_budget_05XIX4_v1",
+        "generated_change_upgrade_budget_V7NYQ3_v1",
+        "generated_pair_change_cabin+insurance_evelyn_li_6867"
+      ],
+      "reason": "Combines three proposals into a single rule to correctly calculate modification costs by searching all flight prices, summing them, and multiplying the difference by the number of passengers.",
+      "written": "airline:modify-1"
+    },
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "When the user wants to modify baggage, load both the `airline:modify` and `airline:book` skills.",
+      "support": [
+        "generated_pair_fewer_downgrade+bags_yara_davis_6741_1"
+      ],
+      "reason": "Fills a gap by ensuring the baggage allowance rules from the 'Book flight' section are available for baggage modifications.",
+      "written": "airline-1"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "Before calling update_reservation_flights, check if the new flight(s) change the reservation's origin, destination, or trip type. If any of these attributes change, refuse the request and inform the user that modifications cannot change these details.",
+      "support": [
+        "generated_triple_passengers+balances+reroute_juan_patel_6197_1"
+      ],
+      "reason": "Provides a concrete check to enforce the policy that modifications cannot change the origin, destination, or trip type.",
+      "written": "airline:modify-2"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Before calling `cancel_reservation`, if any of the flights the user wants to cancel has already been flown, do not call `cancel_reservation` for any of them and transfer the user to a human agent.",
+        "support": [
+          "generated_scope_cancel_all_omar_anderson_1185"
+        ],
+        "reason": "Clarifies the scope of the transfer rule, ensuring that if any part of a request involves a flown flight, the entire request is transferred without any database changes."
+      },
+      "reason": "check D: A user asks to cancel two reservations: RXBE5Q (booked 1 hour ago, no flights flown) and CSX7CX (one flight already flown). According to the policy, the agent is allowed to cancel RXBE5Q because it was made within 24 hours, while the flown portion of CSX7CX requires a transfer. However, the proposed rule would cause the agent to refuse to call `cancel_reservation` for RXBE5Q because CSX7CX has already been flown, thereby forbidding an action that the policy allows. | D: A user asks to cancel two separate reservations: RX1 (where no flights have been flown) and RX2 (where a flight has already been flown). According to the policy, the agent should be able to cancel RX1 (assuming it meets other criteria) and transfer the user for RX2. However, the new rule would cause the agent to refuse to cancel RX1 and transfer the user for both because RX2 has already been flown.",
+      "problems": [
+        "D",
+        "D"
+      ]
+    }
+  ],
+  "summary": "Improved modification pricing calculations, baggage skill loading, modification restrictions, and cancellation scope."
+}

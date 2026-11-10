@@ -1,0 +1,502 @@
+{
+ "candidate": {
+  "generated_balances_noah_garcia_4365": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_basic_change_6E2AQ3_v0": [
+   0,
+   1,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_basic_change_I0XQR3_v0": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_cancel_fallback_QC9UX1_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_fallback_ZQVILE_v1": [
+   1,
+   0,
+   0,
+   1,
+   0,
+   1
+  ],
+  "generated_cancel_flown_VAUEEM": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_insured_other_QFIIFC": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_none_RVSBD8": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_none_XTL8SU": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_recent_TR4EDM": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_total_134NGA": [
+   0,
+   1,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_cancel_total_T47GQ8": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_chain_8N7KNQ": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_chain_YH238W": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_basic_42J4Y4": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_basic_MZLGZ8": [
+   1,
+   1,
+   1,
+   0,
+   0,
+   1
+  ],
+  "generated_change_or_cancel_9EUD4C": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_upgrade_budget_RF9ICL_v1": [
+   1,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_pair_cancel_recent+bags_anya_brown_2655_1": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_pair_passengers+fewer_cancel_raj_khan_9352": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_pair_passengers+insurance_yusuf_kovacs_9564_1": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_cancel_all_emma_martin_8571": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_cancel_all_liam_garcia_8705": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_scope_cancel_alone_raj_gonzalez_7490": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_downgrade_anya_khan_1074": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_downgrade_daiki_johnson_1294": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_downgrade_mei_lee_8701": [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_several_NASS9T": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_cancel_recent+change+fewer_cancel_anya_brown_2655_1": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   0
+  ],
+  "generated_triple_reroute+bags_remove+change_cabin_daiki_jackson_9549": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_triple_write_cabin_bags_any+cancel_business+upgrade_cancel_aarav_martin_4744": [
+   0,
+   0,
+   0,
+   1,
+   1,
+   0
+  ]
+ },
+ "current": {
+  "generated_balances_noah_garcia_4365": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_basic_change_6E2AQ3_v0": [
+   0,
+   1,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_basic_change_I0XQR3_v0": [
+   1,
+   0,
+   0,
+   0,
+   1,
+   1
+  ],
+  "generated_cancel_fallback_QC9UX1_v1": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_cancel_fallback_ZQVILE_v1": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_cancel_flown_VAUEEM": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_insured_other_QFIIFC": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_none_RVSBD8": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_none_XTL8SU": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_recent_TR4EDM": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_total_134NGA": [
+   0,
+   1,
+   0,
+   0,
+   1,
+   1
+  ],
+  "generated_cancel_total_T47GQ8": [
+   1,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_chain_8N7KNQ": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_chain_YH238W": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_basic_42J4Y4": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_change_basic_MZLGZ8": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_or_cancel_9EUD4C": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_upgrade_budget_RF9ICL_v1": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_pair_cancel_recent+bags_anya_brown_2655_1": [
+   0,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_passengers+fewer_cancel_raj_khan_9352": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_pair_passengers+insurance_yusuf_kovacs_9564_1": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1
+  ],
+  "generated_scope_cancel_all_emma_martin_8571": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_cancel_all_liam_garcia_8705": [
+   0,
+   1,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_scope_cancel_alone_raj_gonzalez_7490": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_downgrade_anya_khan_1074": [
+   1,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_scope_downgrade_daiki_johnson_1294": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_scope_downgrade_mei_lee_8701": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_several_NASS9T": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_cancel_recent+change+fewer_cancel_anya_brown_2655_1": [
+   1,
+   0,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_triple_reroute+bags_remove+change_cabin_daiki_jackson_9549": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_triple_write_cabin_bags_any+cancel_business+upgrade_cancel_aarav_martin_4744": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ }
+}

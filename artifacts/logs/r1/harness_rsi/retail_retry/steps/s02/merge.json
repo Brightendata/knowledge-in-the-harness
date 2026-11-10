@@ -1,0 +1,109 @@
+{
+  "analyses": [
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a07",
+    "a09",
+    "a11",
+    "a12",
+    "a13"
+  ],
+  "start": "2026-10-30T08:56:11",
+  "end": "2026-10-30T08:59:29",
+  "output": {
+    "edits": [
+      {
+        "op": "DELETE",
+        "file": "retail:modify",
+        "rule_id": "retail:modify-1",
+        "text": "",
+        "support": [
+          "a02",
+          "a03"
+        ],
+        "reason": "The rule incorrectly restricted the agent to changing only one product option at a time, which contradicts the policy allowing any available variant."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When a user request involves multiple categories or potential actions, load the skills for all applicable categories before making any database changes.",
+        "support": [
+          "a11",
+          "a13"
+        ],
+        "reason": "Ensures the agent loads all necessary skills to access relevant policy details for multi-part or fallback requests."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When a user's request involves multiple database changes, you must list every distinct database change to be performed in the confirmation message.",
+        "support": [
+          "a04"
+        ],
+        "reason": "Ensures the agent complies with the policy to list all action details before obtaining explicit user confirmation."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a05",
+        "reason": "The rule was not adopted as it is less systemic than the chosen edits regarding multi-part requests and policy compliance."
+      },
+      {
+        "proposal": "a07",
+        "reason": "The rule was not adopted as it is a specific refinement of existing rules and less systemic than the confirmation listing rule."
+      },
+      {
+        "proposal": "a09",
+        "reason": "The rule was not adopted as it is a specific instruction for identifying the original payment method, whereas the confirmation rule covers a broader policy requirement."
+      },
+      {
+        "proposal": "a12",
+        "reason": "The rule was not adopted as it is a specific data retrieval instruction, which is less systemic than the rules regarding multi-part requests."
+      }
+    ],
+    "summary": "Deleted the restrictive modification rule, added requirements to load all relevant skills for multi-part requests, and ensured all changes are listed in confirmations."
+  },
+  "edits": [
+    {
+      "op": "DELETE",
+      "file": "retail:modify",
+      "rule_id": "retail:modify-1",
+      "text": "",
+      "support": [
+        "generated_address_items_mind_W1129578",
+        "generated_budget_group_W6599568_v0"
+      ],
+      "reason": "The rule incorrectly restricted the agent to changing only one product option at a time, which contradicts the policy allowing any available variant.",
+      "written": "retail:modify-1"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When a user request involves multiple categories or potential actions, load the skills for all applicable categories before making any database changes.",
+      "support": [
+        "generated_one_action_group_W4352605_v1",
+        "generated_other_type_return_W6519831"
+      ],
+      "reason": "Ensures the agent loads all necessary skills to access relevant policy details for multi-part or fallback requests.",
+      "written": "retail-3"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When a user's request involves multiple database changes, you must list every distinct database change to be performed in the confirmation message.",
+      "support": [
+        "generated_address_items_home_order_W1514731"
+      ],
+      "reason": "Ensures the agent complies with the policy to list all action details before obtaining explicit user confirmation.",
+      "written": "retail-4"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Deleted the restrictive modification rule, added requirements to load all relevant skills for multi-part requests, and ensured all changes are listed in confirmations."
+}

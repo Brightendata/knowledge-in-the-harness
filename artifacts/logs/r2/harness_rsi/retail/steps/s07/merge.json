@@ -1,0 +1,130 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a05",
+    "a06",
+    "a08",
+    "a10",
+    "a11",
+    "a12"
+  ],
+  "start": "2026-11-02T23:31:50",
+  "end": "2026-11-02T23:36:07",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "Before identifying which orders or items a user wants to modify, return, or cancel, you must call `get_order_details` for every order ID in the list provided by `get_user_details`.",
+        "support": [
+          "a12"
+        ],
+        "reason": "This ensures the agent identifies all relevant orders for modification, return, or cancellation by checking every order returned by the user profile."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "Load all applicable skills as soon as the categories of the user's requests are identified, even if no database change is imminent.",
+        "support": [
+          "a10"
+        ],
+        "reason": "This ensures the agent has the necessary information and rules available to handle all parts of a multi-part request as soon as it's identified."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "You must only inform the user that a database change was successful after you have obtained explicit user confirmation and successfully called the relevant tool.",
+        "support": [
+          "a01"
+        ],
+        "reason": "This prevents the agent from claiming a database change was successful before actually executing the tool call or receiving confirmation."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When a user's request includes multiple actions, some of which cannot be performed, you must still perform all actions that can be performed before calling `transfer_to_human_agents`.",
+        "support": [
+          "a03"
+        ],
+        "reason": "This ensures the agent fulfills every possible part of a request before transferring the user to a human agent."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a02",
+        "reason": "Rule a12 and a10 are higher priority systemic fixes; a02 is a specific selection error."
+      },
+      {
+        "proposal": "a05",
+        "reason": "Rule a12 and a10 are higher priority systemic fixes; a05 is a specific logic gap for conditional fallbacks."
+      },
+      {
+        "proposal": "a06",
+        "reason": "Rule a12 and a01 are higher priority systemic fixes; a06 is a specific confirmation check for one tool."
+      },
+      {
+        "proposal": "a08",
+        "reason": "Rule a12 is a more general and systemic fix for identifying all relevant orders."
+      },
+      {
+        "proposal": "a11",
+        "reason": "Rule a01 covers the same point of preventing premature success messages more generally."
+      }
+    ],
+    "summary": "Added systemic rules to ensure all orders are checked, skills are loaded immediately, success messages follow tool calls, and all possible actions are completed before transfer."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "Before identifying which orders or items a user wants to modify, return, or cancel, you must call `get_order_details` for every order ID in the list provided by `get_user_details`.",
+      "support": [
+        "generated_three_writes_cancel_partial_whole+exchange_1+return_pending_harper_kim_2998_1"
+      ],
+      "reason": "This ensures the agent identifies all relevant orders for modification, return, or cancellation by checking every order returned by the user profile.",
+      "written": "retail-16"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "Load all applicable skills as soon as the categories of the user's requests are identified, even if no database change is imminent.",
+      "support": [
+        "generated_count_group_W3135192_v0"
+      ],
+      "reason": "This ensures the agent has the necessary information and rules available to handle all parts of a multi-part request as soon as it's identified.",
+      "written": "retail-17"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "You must only inform the user that a database change was successful after you have obtained explicit user confirmation and successfully called the relevant tool.",
+      "support": [
+        "generated_payment_W1430028"
+      ],
+      "reason": "This prevents the agent from claiming a database change was successful before actually executing the tool call or receiving confirmation.",
+      "written": "retail-18"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When a user's request includes multiple actions, some of which cannot be performed, you must still perform all actions that can be performed before calling `transfer_to_human_agents`.",
+      "support": [
+        "generated_address_items_status_order_W6711349"
+      ],
+      "reason": "This ensures the agent fulfills every possible part of a request before transferring the user to a human agent.",
+      "written": "retail-19"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Added systemic rules to ensure all orders are checked, skills are loaded immediately, success messages follow tool calls, and all possible actions are completed before transfer."
+}

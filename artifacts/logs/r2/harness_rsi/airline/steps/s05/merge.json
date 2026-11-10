@@ -1,0 +1,153 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a11",
+    "a12",
+    "a13"
+  ],
+  "start": "2026-11-02T01:10:13",
+  "end": "2026-11-02T01:13:21",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "When the user asks for \"upcoming\" reservations, only include those where the flight dates are in the future relative to the current date.",
+        "support": [
+          "a08",
+          "a09",
+          "a10"
+        ],
+        "reason": "These proposals address a recurring failure to correctly filter reservations by date when the user asks for \"upcoming\" trips."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Before calling `cancel_reservation`, the agent must check the dates of all flight segments in the reservation. If any flight date is earlier than the current date, the agent must transfer the user to a human agent.",
+        "support": [
+          "a12"
+        ],
+        "reason": "The agent failed to verify if a flight had already been flown before attempting cancellation, which requires a transfer to a human agent according to policy."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Do not call `cancel_reservation` if the reservation does not meet the eligibility criteria, even if the user provides explicit confirmation to cancel it.",
+        "support": [
+          "a13"
+        ],
+        "reason": "The agent must not perform a database change that violates the cancellation policy even if the user provides explicit confirmation."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "To verify if a booking was made within the last 24 hours, calculate the difference between the current time and the reservation's created_at timestamp; the difference must be 24 hours or less.",
+        "support": [
+          "a11"
+        ],
+        "reason": "The agent failed to correctly calculate the 24-hour window for cancellation eligibility."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a01",
+        "reason": "Ranked lower than high-impact policy and logic fixes."
+      },
+      {
+        "proposal": "a02",
+        "reason": "Ranked lower than high-impact policy and logic fixes."
+      },
+      {
+        "proposal": "a03",
+        "reason": "Ranked lower than high-impact policy and logic fixes."
+      },
+      {
+        "proposal": "a04",
+        "reason": "Ranked lower than high-impact policy and logic fixes."
+      },
+      {
+        "proposal": "a05",
+        "reason": "Ranked lower than high-impact policy and logic fixes."
+      },
+      {
+        "proposal": "a06",
+        "reason": "Ranked lower than high-impact policy and logic fixes."
+      },
+      {
+        "proposal": "a07",
+        "reason": "Ranked lower than high-impact policy and logic fixes."
+      }
+    ],
+    "summary": "Added rules to correctly filter upcoming reservations, verify 24-hour cancellation windows, check if flights have already been flown, and enforce eligibility criteria for cancellations."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "When the user asks for \"upcoming\" reservations, only include those where the flight dates are in the future relative to the current date.",
+      "support": [
+        "generated_cancel_total_134NGA",
+        "generated_cancel_total_JNYLNK",
+        "generated_cancel_total_QETCEK"
+      ],
+      "reason": "These proposals address a recurring failure to correctly filter reservations by date when the user asks for \"upcoming\" trips.",
+      "written": "airline-11"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "Do not call `cancel_reservation` if the reservation does not meet the eligibility criteria, even if the user provides explicit confirmation to cancel it.",
+      "support": [
+        "generated_scope_cancel_alone_daiki_johnson_1294"
+      ],
+      "reason": "The agent must not perform a database change that violates the cancellation policy even if the user provides explicit confirmation.",
+      "written": "airline:cancel-9"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "To verify if a booking was made within the last 24 hours, calculate the difference between the current time and the reservation's created_at timestamp; the difference must be 24 hours or less.",
+      "support": [
+        "generated_scope_cancel_all_emma_martin_8571"
+      ],
+      "reason": "The agent failed to correctly calculate the 24-hour window for cancellation eligibility.",
+      "written": "airline:cancel-10"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Before calling `cancel_reservation`, the agent must check the dates of all flight segments in the reservation. If any flight date is earlier than the current date, the agent must transfer the user to a human agent.",
+        "support": [
+          "generated_scope_cancel_alone_james_thomas_5421"
+        ],
+        "reason": "The agent failed to verify if a flight had already been flown before attempting cancellation, which requires a transfer to a human agent according to policy."
+      },
+      "reason": "check D: The current date is 2024-05-15. A user has a reservation for a flight on 2024-05-14. The flight was delayed and its status is 'delayed', meaning it 'has not taken off' according to the policy. The user wants to cancel the reservation. The policy states that the agent should transfer the user to a human agent only if a portion of the flight has already been flown. Since the flight hasn't taken off, the agent is permitted to handle the cancellation request. However, the new rule would force the agent to transfer the user to a human agent because the flight date (2024-05-14) is earlier than the current date (2024-05-15). | F: The current time is 2024-05-15 15:00:00. A user has a reservation for a flight on 2024-05-15 that took off at 10:00:00. The user asks to cancel the reservation. The rule checks if the flight date (2024-05-15) is earlier than the current date (2024-05-15). Since it is not, the rule does not trigger a transfer, and the agent proceeds with the cancellation. However, the policy states that if any portion of the flight has already been flown, the agent must transfer to a human agent. Because the flight has already been flown, the agent should have transferred the user.",
+      "problems": [
+        "D",
+        "F"
+      ]
+    }
+  ],
+  "summary": "Added rules to correctly filter upcoming reservations, verify 24-hour cancellation windows, check if flights have already been flown, and enforce eligibility criteria for cancellations."
+}

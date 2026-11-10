@@ -1,0 +1,108 @@
+# Human-set parameters of harness RSI: collection, plugin evolution and the plugin gate.
+# Each evolution attempt copies the values it used into its own config.json. Paths are relative to the repository root.
+
+[system]
+# S(0), the system round 1 starts from: each domain's plugin and the served model. Later rounds start from what the
+# earlier rounds' gates accepted (rsi.benchmarks.run.start_system).
+retail_plugin = "plugins/retail"
+airline_plugin = "plugins/airline"
+model = "gemma-4-12b"
+
+[server]
+api_base = "http://localhost:8001/v1"
+# where the model server logs when the pipeline starts scripts/serve_gemma.sh itself (GRPO and the model gate)
+log = "serve_gemma.log"
+
+[agent]
+# Gemma 4 model card: one sampling setting for all uses; thinking is on by the server's default.
+temperature = 1.0
+top_p = 0.95
+top_k = 64
+# Stops a rare runaway generation before litellm's 600 s timeout even under full load: tau2 gives every call of a
+# trial the same seed, so a timed-out call retried with it runs away again. The longest of 43k normal calls was 6,915.
+max_tokens = 8192
+# load_skill calls the agent may make before one reply; one more ends the conversation like an empty message.
+max_skill_loads = 4
+
+[editor]
+# M(0), the base model, with the model card's sampling like the agent
+model = "gemma-4-12b"
+temperature = 1.0
+top_p = 0.95
+top_k = 64
+max_tokens = 32768
+# extra tries, with a new seed, when a reply is empty, not valid JSON or without thinking
+retries = 4
+# analyses of a failed task run again, with new seeds, when its proposal quotes text that is not in the evidence
+quote_retries = 2
+# tokens of one analysis call's input before the evidence is trimmed
+input_tokens = 30000
+# analysis calls in flight at once
+workers = 16
+
+# The user simulator of each use: DeepSeek in all three, so that training, the gates on V and the official tasks meet
+# the same users. The leaderboard's own is gpt-5.2 (reasoning_effort low).
+[user.train]
+# collection, plugin evolution, the difficulty profile and GRPO's rollouts
+model = "deepseek/deepseek-flash"
+args = { temperature = 0.0, extra_body = { thinking = { type = "disabled" } } }
+
+[user.gate]
+# the plugin gate and the model gate on V
+model = "deepseek/deepseek-flash"
+args = { temperature = 0.0, extra_body = { thinking = { type = "disabled" } } }
+
+[user.test]
+# the official tasks, for reporting only
+model = "deepseek/deepseek-flash"
+args = { temperature = 0.0, extra_body = { thinking = { type = "disabled" } } }
+
+[collect]
+# also the difficulty profile's, so that the two compare
+trials = 4
+
+[evolve]
+failing_per_step = 16
+# failing tasks of one category in one step
+category_cap = 8
+controls_per_step = 16
+# reruns of a step, current plugin and candidate alike; the collection runs [collect] trials, the gates [gate] trials
+trials = 6
+# the candidate's successes must exceed the current plugin's by at least this many: with 6 trials, a step without an
+# effect is kept about a third of the time
+keep_margin = 4
+# a rule of the step comes out and is blocked for later steps when a task's successes fall by at least this many from
+# the current plugin to the candidate and the agent names the rule in at least two of that task's failed candidate
+# runs; by chance alone a task falls this far under 1% of the time (at most 2%, at a success rate of one half)
+harm_drop = 4
+# a REPLACE that keeps under this share of its rule's words is reviewed three times against the old text after the
+# checks (rsi.harness_rsi.editor.REVIEW) and dropped when two reviews find a case only the old text gets right: such
+# rewrites tended to drop a part of the rule that was still right
+review_below = 0.8
+# the two values are for the first attempt and for the retry after a failed gate
+max_edits = [4, 3]
+min_support = [1, 1]
+shuffle_seed = [20261016, 20261017]
+# task ids to leave out of the analysis (still run and scored); none
+excluded = []
+
+[gate]
+# runs of each V task in the plugin gate and the model gate
+trials = 8
+# the plugin gate accepts when the plugin's score on V, (1 - pass4_weight) mean pass^1 + pass4_weight mean pass^4, rises
+# (rsi.pipeline.plugin_gate): the same score as the model gate's ([model_gate] pass4_weight of config/grpo_config.toml)
+pass4_weight = 0.2
+bootstrap = 2000
+
+[run]
+# the GPUs of the model server for the collection, plugin evolution, its gates and the difficulty profile, a replica on
+# each (GRPO and the model gate set their own, config/grpo_config.toml)
+gpus = "0,1,2,3"
+# conversations in flight in one process, shared by the DB snapshots of a run. One domain runs at a time: 64 on each
+# GPU. At 96 the KV cache runs near full, the cached prompts of conversations waiting on the user simulator are evicted
+# and computed again, and a GPU finishes about 15% fewer conversations an hour
+concurrency = 256
+# turns (messages and tool calls) after which tau2 ends a conversation of the pipeline's runs, scored 0; the official
+# tasks (rsi.benchmarks.evaluate) keep tau2's 200. Only a user simulator caught in a loop gets this far: no conversation
+# of round 1's collection went past 114, none that succeeded past 84
+max_steps = 100

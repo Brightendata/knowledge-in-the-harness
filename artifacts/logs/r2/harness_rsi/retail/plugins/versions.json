@@ -1,0 +1,155 @@
+{
+ "v00": {
+  "start": "artifacts/logs/r1/plugins/retail_final2_accepted",
+  "holds": []
+ },
+ "v01": {
+  "step": 1,
+  "from": "v00",
+  "holds": [
+   "s01"
+  ],
+  "summary": "Added rules to prevent incorrect database changes by clarifying order/item contradictions and excluding lost items from returns, and improved logic for handling 'keep everything the same' constraints.",
+  "kept": true,
+  "successes": {
+   "current": 127,
+   "candidate": 138
+  }
+ },
+ "v02": {
+  "step": 2,
+  "from": "v01",
+  "holds": [
+   "s01",
+   "s02"
+  ],
+  "summary": "Added rules to ensure correct confirmation of updated details, fulfill policy-mandated reminders, call necessary tools for cheapest options, and correctly explain return logistics to prevent unnecessary transfers.",
+  "kept": true,
+  "successes": {
+   "current": 137,
+   "candidate": 143
+  }
+ },
+ "v03": {
+  "step": 3,
+  "from": "v02",
+  "holds": [
+   "s01",
+   "s02",
+   "s03"
+  ],
+  "summary": "Improved tool-calling flow for product lookups, corrected cheapest-option logic to include availability checks, and added stricter requirement filtering and multi-order exchange logic.",
+  "kept": true,
+  "successes": {
+   "current": 145,
+   "candidate": 154
+  }
+ },
+ "v04": {
+  "step": 4,
+  "from": "v03",
+  "holds": [
+   "s01",
+   "s02",
+   "s03",
+   "s04"
+  ],
+  "summary": "Improved order identification for category/description requests, clarified the order of operations for concurrent return/exchange requests, and refined variant selection and availability counting.",
+  "kept": false,
+  "successes": {
+   "current": 137,
+   "candidate": 142
+  }
+ },
+ "v05": {
+  "step": 4,
+  "from": "v03",
+  "holds": [
+   "s01",
+   "s02",
+   "s03",
+   "s04"
+  ],
+  "summary": "Improved order identification for category/description requests, clarified the order of operations for concurrent return/exchange requests, and refined variant selection and availability counting.",
+  "without": [
+   "retail:exchange-4"
+  ],
+  "kept": true,
+  "successes": {
+   "current": 137,
+   "candidate": 142
+  },
+  "rerun": false
+ },
+ "v06": {
+  "step": 5,
+  "from": "v05",
+  "holds": [
+   "s01",
+   "s02",
+   "s03",
+   "s04",
+   "s05"
+  ],
+  "summary": "Added rules to ensure skills are loaded before proposals, all tool calls are completed before multi-request responses, specific sequences for return/exchange are followed, and users are warned about status changes from partial modifications.",
+  "kept": true,
+  "successes": {
+   "current": 133,
+   "candidate": 142
+  }
+ },
+ "v07": {
+  "step": 6,
+  "from": "v06",
+  "holds": [
+   "s01",
+   "s02",
+   "s03",
+   "s04",
+   "s05",
+   "s06"
+  ],
+  "summary": "Improved order modification logic by requiring explicit confirmation for multiple changes, checking if modifications are already completed, clarifying ambiguous items, and restricting variant proposals to the original matching attribute.",
+  "kept": false,
+  "successes": {
+   "current": 136,
+   "candidate": 133
+  }
+ },
+ "v08": {
+  "step": 7,
+  "from": "v06",
+  "holds": [
+   "s01",
+   "s02",
+   "s03",
+   "s04",
+   "s05",
+   "s07"
+  ],
+  "summary": "Added systemic rules to ensure all orders are checked, skills are loaded immediately, success messages follow tool calls, and all possible actions are completed before transfer.",
+  "kept": false,
+  "successes": {
+   "current": 151,
+   "candidate": 150
+  }
+ },
+ "v09": {
+  "step": 8,
+  "from": "v06",
+  "holds": [
+   "s01",
+   "s02",
+   "s03",
+   "s04",
+   "s05",
+   "s08"
+  ],
+  "summary": "Add rules to improve skill loading, ensure explicit 'yes' confirmation, and improve order identification.",
+  "kept": false,
+  "successes": {
+   "current": 162,
+   "candidate": 162
+  }
+ }
+}

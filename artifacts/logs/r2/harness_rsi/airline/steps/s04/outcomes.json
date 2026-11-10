@@ -1,0 +1,486 @@
+{
+ "candidate": {
+  "generated_bags_remove_FPJKQM": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_bags_remove_M6N5DM": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_basic_change_ABB0M7_v1": [
+   1,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_book_cards_yara_wilson_1123": [
+   0,
+   0,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_book_pay_by_total_amelia_hernandez_8403_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_book_sums_certificate_gift_noah_garcia_4365": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_book_sums_gift_only_olivia_garcia_3026": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_book_sums_gift_only_sophia_nguyen_1995": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_airline_IPG6ZS": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_cancel_fallback_ZQVILE_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_none_XTL8SU": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_yesterday_V3YKVM": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_basic_MEL7ER": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_basic_T1UBHM": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_upgrade_budget_G6YKB9_v0": [
+   0,
+   0,
+   1,
+   1,
+   0,
+   0
+  ],
+  "generated_compensation_false_1KSG9Y": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_compensation_false_KZD31Z": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_fewer_cancel_EXWE3J": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_book_same_cap_any+compensation_false_lucas_lee_1916_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_cabin_budget+compensation_false_ivan_wilson_7416": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_change_cabin+insurance_lei_kim_3687_1": [
+   0,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_fewer_cancel+book_certificate_gift_sofia_sanchez_4758": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_passengers_MZLGZ8": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_cancel_alone_mei_wilson_9061": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_cancel_alone_yusuf_taylor_6100": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_downgrade_sofia_li_6597": [
+   1,
+   1,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_several_NASS9T": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_basic_upgrade_budget_any+book_gift_only+cabin_bags_any_lucas_hernandez_9581": [
+   1,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_triple_passengers+change_same_day+bags_remove_isabella_khan_4151_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_reroute+bags_remove+change_cabin_daiki_jackson_9549": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ },
+ "current": {
+  "generated_bags_remove_FPJKQM": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_bags_remove_M6N5DM": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_basic_change_ABB0M7_v1": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_book_cards_yara_wilson_1123": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_book_pay_by_total_amelia_hernandez_8403_v1": [
+   1,
+   1,
+   0,
+   1,
+   0,
+   1
+  ],
+  "generated_book_sums_certificate_gift_noah_garcia_4365": [
+   1,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_book_sums_gift_only_olivia_garcia_3026": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_book_sums_gift_only_sophia_nguyen_1995": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_airline_IPG6ZS": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_fallback_ZQVILE_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_none_XTL8SU": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_yesterday_V3YKVM": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_basic_MEL7ER": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_basic_T1UBHM": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_change_upgrade_budget_G6YKB9_v0": [
+   0,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_compensation_false_1KSG9Y": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_compensation_false_KZD31Z": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_fewer_cancel_EXWE3J": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_book_same_cap_any+compensation_false_lucas_lee_1916_1": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_pair_cabin_budget+compensation_false_ivan_wilson_7416": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_change_cabin+insurance_lei_kim_3687_1": [
+   1,
+   0,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_fewer_cancel+book_certificate_gift_sofia_sanchez_4758": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_passengers_MZLGZ8": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_cancel_alone_mei_wilson_9061": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_cancel_alone_yusuf_taylor_6100": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_downgrade_sofia_li_6597": [
+   0,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_several_NASS9T": [
+   1,
+   1,
+   1,
+   0,
+   0,
+   1
+  ],
+  "generated_triple_basic_upgrade_budget_any+book_gift_only+cabin_bags_any_lucas_hernandez_9581": [
+   0,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_triple_passengers+change_same_day+bags_remove_isabella_khan_4151_1": [
+   0,
+   1,
+   0,
+   0,
+   1,
+   1
+  ],
+  "generated_triple_reroute+bags_remove+change_cabin_daiki_jackson_9549": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ }
+}

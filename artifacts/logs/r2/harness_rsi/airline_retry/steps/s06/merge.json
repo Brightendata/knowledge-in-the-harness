@@ -1,0 +1,154 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a11",
+    "a12"
+  ],
+  "start": "2026-11-02T12:34:15",
+  "end": "2026-11-02T12:39:27",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When the user asks to both change the cabin and the flights, the agent must first call `update_reservation_flights` to perform the cabin change and handle its price difference, then call `update_reservation_flights` again to update the flights to the new ones.",
+        "support": [
+          "a02",
+          "a04"
+        ],
+        "reason": "Prevents combining cabin and flight changes into a single tool call, which leads to incorrect price difference calculations for the cabin change."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Before calling cancel_reservation, call get_flight_status for all flights in the reservation. If any flight has a status of 'flying' or 'landed', transfer the user to a human agent.",
+        "support": [
+          "a08"
+        ],
+        "reason": "Ensures the agent follows the policy to transfer the user if any part of the flight has already been flown."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "When the user wants to cancel flights based on their duration, use `search_direct_flight` for each flight segment to find the scheduled departure and arrival times to determine which flights meet the criteria.",
+        "support": [
+          "a12"
+        ],
+        "reason": "Fills a gap by instructing the agent to use the correct tool to retrieve the times needed to calculate flight durations."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a01",
+        "reason": "Not adopted because the maximum number of edits was reached and this was lower priority than other proposed fixes."
+      },
+      {
+        "proposal": "a03",
+        "reason": "Not adopted because the maximum number of edits was reached and this was lower priority than other proposed fixes."
+      },
+      {
+        "proposal": "a05",
+        "reason": "Not adopted because the maximum number of edits was reached and this was lower priority than other proposed fixes."
+      },
+      {
+        "proposal": "a06",
+        "reason": "Not adopted because the existing rule [airline:modify-3] already specifies multiplying the allowance by the number of passengers."
+      },
+      {
+        "proposal": "a07",
+        "reason": "Not adopted because the maximum number of edits was reached and this was lower priority than other proposed fixes."
+      },
+      {
+        "proposal": "a09",
+        "reason": "Not adopted because the maximum number of edits was reached and this was lower priority than other proposed fixes."
+      },
+      {
+        "proposal": "a10",
+        "reason": "Not adopted because the maximum number of edits was reached and this was lower priority than other proposed fixes."
+      },
+      {
+        "proposal": "a11",
+        "reason": "Not adopted because the maximum number of edits was reached and this was lower priority than other proposed fixes."
+      }
+    ],
+    "summary": "Added rules to handle multi-step cabin/flight modifications, status checks for flown flights during cancellation, and duration-based flight filtering."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "When the user asks to both change the cabin and the flights, the agent must first call `update_reservation_flights` to perform the cabin change and handle its price difference, then call `update_reservation_flights` again to update the flights to the new ones.",
+      "support": [
+        "generated_basic_change_1FY3L4_v1",
+        "generated_basic_change_6E2AQ3_v1"
+      ],
+      "reason": "Prevents combining cabin and flight changes into a single tool call, which leads to incorrect price difference calculations for the cabin change.",
+      "written": "airline:modify-15"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "Before calling cancel_reservation, call get_flight_status for all flights in the reservation. If any flight has a status of 'flying' or 'landed', transfer the user to a human agent.",
+      "support": [
+        "generated_cancel_flown_8RE2IO"
+      ],
+      "reason": "Ensures the agent follows the policy to transfer the user if any part of the flight has already been flown.",
+      "written": "airline:cancel-7"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "When the user wants to cancel flights based on their duration, use `search_direct_flight` for each flight segment to find the scheduled departure and arrival times to determine which flights meet the criteria.",
+      "support": [
+        "generated_scope_cancel_long_evelyn_thomas_5530"
+      ],
+      "reason": "Fills a gap by instructing the agent to use the correct tool to retrieve the times needed to calculate flight durations.",
+      "written": "airline:cancel-8"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Added rules to handle multi-step cabin/flight modifications, status checks for flown flights during cancellation, and duration-based flight filtering.",
+  "removed_after_retest": [
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When the user asks to both change the cabin and the flights, the agent must first call `update_reservation_flights` to perform the cabin change and handle its price difference, then call `update_reservation_flights` again to update the flights to the new ones.",
+        "support": [
+          "generated_basic_change_1FY3L4_v1",
+          "generated_basic_change_6E2AQ3_v1"
+        ],
+        "reason": "Prevents combining cabin and flight changes into a single tool call, which leads to incorrect price difference calculations for the cabin change.",
+        "written": "airline:modify-15"
+      },
+      "problems": [
+        "H"
+      ],
+      "tasks": [
+        {
+          "task": "generated_change_upgrade_budget_G6YKB9_v0",
+          "current": 4,
+          "candidate": 0,
+          "failed": 6,
+          "naming": 6
+        }
+      ]
+    }
+  ]
+}

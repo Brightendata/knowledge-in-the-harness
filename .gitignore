@@ -1,0 +1,52 @@
+# API keys of the user simulator and the judge
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+.pytest_cache/
+
+# Clone of tau2-bench at the pinned commit (see README)
+/tau2-bench
+
+# Model weights and adapters
+models/
+artifacts/checkpoints/
+serve_gemma.log
+
+# Full-size outputs of the pipeline and the evaluation. The repository keeps compact records of the paper's runs:
+# results/*/*.json.gz and, under artifacts/logs/, decisions, outcomes, events, editor records and accepted plugins.
+results/*/*.json
+results/*/*.log
+results/*/*/
+artifacts/logs/eval/
+artifacts/logs/*/pipeline.log
+artifacts/logs/*/server/
+artifacts/logs/*/collect/*.json
+artifacts/logs/*/collect/*.log
+artifacts/logs/*/profile/*.json
+artifacts/logs/*/profile/*.log
+!artifacts/logs/*/collect/*.outcomes.json
+!artifacts/logs/*/profile/*.outcomes.json
+artifacts/logs/*/gate/*.log
+artifacts/logs/*/gate/*/*.json
+artifacts/logs/*/gate/*/*.log
+!artifacts/logs/*/gate/*/decision.json
+!artifacts/logs/*/gate/*/outcomes.json
+artifacts/logs/*/harness_rsi/*/plugins/v*/
+artifacts/logs/*/harness_rsi/*/steps/*/current.json
+artifacts/logs/*/harness_rsi/*/steps/*/candidate.json
+artifacts/logs/*/harness_rsi/*/steps/*/pruned.json
+artifacts/logs/*/harness_rsi/*/steps/*/evidence.jsonl
+artifacts/logs/*/harness_rsi/*/steps/*/editor_raw.jsonl
+artifacts/logs/*/harness_rsi/*/*.log
+artifacts/logs/*/grpo/*/steps/
+artifacts/logs/*/grpo/*/run.log
+artifacts/logs/*/plugins/*_rejected/
+
+# Output of scripts/smoke_harness.py
+runs/

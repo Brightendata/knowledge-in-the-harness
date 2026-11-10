@@ -1,0 +1,153 @@
+{
+  "analyses": [
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a10",
+    "a11",
+    "a12",
+    "a13",
+    "a14"
+  ],
+  "start": "2026-10-29T11:15:38",
+  "end": "2026-10-29T11:21:38",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Before calling `cancel_reservation`, verify that the reservation meets one of the cancellation criteria (made within the last 24 hours, the flight is cancelled by the airline, the reservation is for a business flight, or the user has travel insurance with a reason covered by health or weather). If the user has travel insurance, confirm that the reason for cancellation is a covered event; if the reason is not clearly covered, ask for more specifics. If the conditions are not met, do not call `cancel_reservation` even if the user requests it; instead, inform the user and transfer to a human agent.",
+        "support": [
+          "a10",
+          "a11",
+          "a13",
+          "a14"
+        ],
+        "reason": "Combines several proposals to ensure cancellation criteria are verified, insurance coverage is confirmed, and the agent refuses to call the tool if criteria are not met."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "After calculating the price difference and obtaining the user's confirmation, call the `update_reservation_flights`, `update_reservation_baggages`, and `update_reservation_passengers` tools to perform the requested changes before confirming to the user that the reservation has been successfully updated.",
+        "support": [
+          "a03"
+        ],
+        "reason": "Ensures the agent actually calls the necessary update tools instead of hallucinating that the request has been processed."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "Before calling update_reservation_baggages, calculate the value for nonfree_baggages by subtracting the number of free bags from the total_baggages, where the number of free bags is the number of passengers multiplied by the allowance for their cabin class (regular: basic economy 0, economy 1, business 2; silver: basic economy 1, economy 2, business 3; gold: basic economy 2, economy 3, business 4).",
+        "support": [
+          "a05"
+        ],
+        "reason": "Corrects the calculation for non-free baggage by accounting for the per-passenger allowance."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "Before calling update_reservation_flights, check if any flight in the reservation has a scheduled departure time earlier than the current date. If any flight has already been flown, refuse to change the cabin for that reservation.",
+        "support": [
+          "a02"
+        ],
+        "reason": "Prevents the agent from attempting to change the cabin of a reservation where a flight has already been flown."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a04",
+        "reason": "The existing rule airline:modify-1 already requires searching for and determining the price of every flight in the new reservation."
+      },
+      {
+        "proposal": "a06",
+        "reason": "This is a single-task calculation rule that is less impactful than the selected systematic fixes."
+      },
+      {
+        "proposal": "a07",
+        "reason": "The flown check (a02) is a more general policy requirement for cabin changes than the specific basic economy sequence."
+      },
+      {
+        "proposal": "a12",
+        "reason": "The cancellation logic rule now explicitly includes 'health or weather' conditions, removing the need to load the book skill for insurance definitions."
+      }
+    ],
+    "summary": "Improved cancellation logic verification, corrected baggage calculations, added tool call execution requirements, and implemented a check for flown flights during modifications."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "Before calling update_reservation_baggages, calculate the value for nonfree_baggages by subtracting the number of free bags from the total_baggages, where the number of free bags is the number of passengers multiplied by the allowance for their cabin class (regular: basic economy 0, economy 1, business 2; silver: basic economy 1, economy 2, business 3; gold: basic economy 2, economy 3, business 4).",
+      "support": [
+        "generated_pair_bags+fewer_cancel_lei_anderson_2319_1"
+      ],
+      "reason": "Corrects the calculation for non-free baggage by accounting for the per-passenger allowance.",
+      "written": "airline:modify-3"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Before calling `cancel_reservation`, verify that the reservation meets one of the cancellation criteria (made within the last 24 hours, the flight is cancelled by the airline, the reservation is for a business flight, or the user has travel insurance with a reason covered by health or weather). If the user has travel insurance, confirm that the reason for cancellation is a covered event; if the reason is not clearly covered, ask for more specifics. If the conditions are not met, do not call `cancel_reservation` even if the user requests it; instead, inform the user and transfer to a human agent.",
+        "support": [
+          "generated_cancel_upgrade_8CIXIM_v1",
+          "generated_pair_cancel_negotiate+bags_remove_anya_lee_9572",
+          "generated_pair_fewer_cancel+passengers_yara_lee_3166",
+          "generated_scope_cancel_alone_yusuf_gonzalez_6436"
+        ],
+        "reason": "Combines several proposals to ensure cancellation criteria are verified, insurance coverage is confirmed, and the agent refuses to call the tool if criteria are not met."
+      },
+      "reason": "check F: User: \"I'd like to cancel my business flight reservation 123. I already flew the first leg of the trip.\"\n\nAgent: \"I can certainly help you with that. Since your reservation is for a business flight, it meets the criteria for cancellation. I will list the details for your confirmation.\"\n\nUser: \"Yes, please proceed.\"\n\nAgent: [calls cancel_reservation]\n\nPolicy requires: Because a portion of the flight has already been flown, the agent must state that it cannot help and transfer the user to a human agent, regardless of the flight class. | F: A user has a reservation for an economy flight that was booked 48 hours ago (not within 24 hours). The flight has not been flown, and the user does not have travel insurance. The user asks to cancel the flight. According to the policy, the request is against the policy (it doesn't meet the criteria), and the agent should deny the request. However, the new rule requires the agent to transfer the user to a human agent because the cancellation criteria are not met. The policy only requires a transfer if the flight has already been flown or if the request cannot be handled within the scope of the agent's actions (and denying a request against policy is a way to handle it within the scope).",
+      "problems": [
+        "F",
+        "F"
+      ]
+    },
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "After calculating the price difference and obtaining the user's confirmation, call the `update_reservation_flights`, `update_reservation_baggages`, and `update_reservation_passengers` tools to perform the requested changes before confirming to the user that the reservation has been successfully updated.",
+        "support": [
+          "generated_several_JX6LB3"
+        ],
+        "reason": "Ensures the agent actually calls the necessary update tools instead of hallucinating that the request has been processed."
+      },
+      "reason": "check D: The user wants to change the last name of a passenger in their reservation. The policy allows the user to modify passengers. However, the new rule only instructs the agent to call the update tools after calculating a price difference. Because changing a passenger's name does not involve a price difference, the rule's condition is not met, and the agent would fail to call the `update_reservation_passengers` tool, thereby refusing a request that the policy allows. | A: User: \"I'd like to add one extra bag to my existing reservation JX6LB3, please.\"\nAgent: (Calculates the price difference for the extra bag and asks the user to confirm the addition of one bag for $50.)\nUser: \"Yes, please do that.\"\nAgent: (Following the new rule, the agent calls the `update_reservation_flights`, `update_reservation_baggages`, and `update_reservation_passengers` tools.)\n\nPolicy Requirement: The policy states: \"Before taking any actions that update the booking database (booking, modifying flights, editing baggage, changing cabin class, or updating passenger information), you must list the action details and obtain explicit user confirmation (yes) to proceed.\" Because the user only confirmed the baggage change, the agent should not have called the flight or passenger update tools, as those actions were not requested or confirmed by the user.",
+      "problems": [
+        "D",
+        "A"
+      ]
+    },
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "Before calling update_reservation_flights, check if any flight in the reservation has a scheduled departure time earlier than the current date. If any flight has already been flown, refuse to change the cabin for that reservation.",
+        "support": [
+          "generated_scope_downgrade_raj_sanchez_7079"
+        ],
+        "reason": "Prevents the agent from attempting to change the cabin of a reservation where a flight has already been flown."
+      },
+      "reason": "check D: User: \"I have a reservation for flight HAT001. The status is 'delayed' and the scheduled departure was yesterday. Can I change my cabin from economy to business?\"\n\nThe agent follows the rule: \n1. It checks if the flight's scheduled departure time (yesterday) is earlier than the current date (today). It is.\n2. Because the rule uses this check as the condition for 'already been flown', the agent refuses the request, stating it cannot change the cabin because the flight has already been flown.\n\nHowever, the policy states: \"If the status is delayed or on time, the flight has not taken off.\" and \"Cabin cannot be changed if any flight in the reservation has already been flown.\" Since the flight status is 'delayed', it has not taken off and has not been flown, so the policy allows the cabin change. The rule forbids what the policy allows. | G: Current time is 2024-05-15 15:00:00 EST. A user wants to change the cabin class for a reservation containing a flight that was scheduled to depart at 14:00 on 2024-05-15. The agent checks if the flight's departure date (2024-05-15) is earlier than the current date (2024-05-15), which is false. Because the rule's check fails to identify the flight as 'already flown' (since it flew today, not on a previous date), the agent does not refuse the request and proceeds to call update_reservation_flights. However, the policy states that cabin cannot be changed if any flight in the reservation has already been flown. The agent acted wrongly by allowing the change.",
+      "problems": [
+        "D",
+        "G"
+      ]
+    }
+  ],
+  "summary": "Improved cancellation logic verification, corrected baggage calculations, added tool call execution requirements, and implemented a check for flown flights during modifications."
+}

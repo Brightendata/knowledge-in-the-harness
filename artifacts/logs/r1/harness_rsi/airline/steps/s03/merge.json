@@ -1,0 +1,142 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a11",
+    "a12",
+    "a13"
+  ],
+  "start": "2026-10-29T11:55:31",
+  "end": "2026-10-29T12:01:30",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Before calling `cancel_reservation`, verify the cancellation criteria: calculate the difference between the current time and the `created_at` date to ensure it is within 24 hours, check the flight status via `get_flight_status` if the user claims the airline cancelled, and confirm the cabin class or trip type is business. If the user has travel insurance, verify the reason for cancellation is a covered event (health or weather).",
+        "support": [
+          "a02",
+          "a08",
+          "a11",
+          "a13"
+        ],
+        "reason": "Combines multiple proposals to ensure the agent verifies all policy-mandated cancellation conditions using tool results before calling the cancellation tool."
+      },
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "When the user wants to cancel a flight, load both the `airline:cancel` and `airline:book` skills.",
+        "support": [
+          "a09",
+          "a10"
+        ],
+        "reason": "Ensures the agent has access to the 'Book flight' policy section, which contains the insurance coverage details necessary for cancellation requests."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When the user asks to add checked bags, first determine if the total number of bags requested (current bags plus the number of bags being added) exceeds their free allowance for their cabin class. If it does not, inform the user that the bags are free and set nonfree_baggages to 0.",
+        "support": [
+          "a01",
+          "a03"
+        ],
+        "reason": "Corrects baggage calculation by checking the allowance first and ensuring nonfree_baggages is set to 0 if the allowance is not exceeded."
+      },
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "If a user's request contains multiple parts where some can be handled and others cannot, perform the parts that can be handled first and then transfer for the parts that cannot be handled.",
+        "support": [
+          "a05"
+        ],
+        "reason": "Prevents the agent from skipping valid parts of a request just because one part (like baggage removal) is outside of its capabilities."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a04",
+        "reason": "This edit is superseded by the higher-priority systemic fixes; it addresses a specific flight segment logic that is less critical than the multi-task failures."
+      },
+      {
+        "proposal": "a07",
+        "reason": "While useful, the reservation ID verification was ranked lower than the partial request handling and skill loading logic."
+      },
+      {
+        "proposal": "a12",
+        "reason": "This is a single-case calculation error that is less impactful than the systemic cancellation and baggage issues."
+      }
+    ],
+    "summary": "Improved cancellation verification by checking multiple criteria via tools, ensured correct skill loading for insurance checks, corrected baggage allowance logic, and added a rule to process partial requests."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "When the user wants to cancel a flight, load both the `airline:cancel` and `airline:book` skills.",
+      "support": [
+        "generated_fewer_cancel_G8VP52",
+        "generated_scope_cancel_all_harper_martin_8348"
+      ],
+      "reason": "Ensures the agent has access to the 'Book flight' policy section, which contains the insurance coverage details necessary for cancellation requests.",
+      "written": "airline-2"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "When the user asks to add checked bags, first determine if the total number of bags requested (current bags plus the number of bags being added) exceeds their free allowance for their cabin class. If it does not, inform the user that the bags are free and set nonfree_baggages to 0.",
+      "support": [
+        "generated_several_BW2PEH",
+        "generated_several_FEQPKI"
+      ],
+      "reason": "Corrects baggage calculation by checking the allowance first and ensuring nonfree_baggages is set to 0 if the allowance is not exceeded.",
+      "written": "airline:modify-4"
+    },
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "If a user's request contains multiple parts where some can be handled and others cannot, perform the parts that can be handled first and then transfer for the parts that cannot be handled.",
+      "support": [
+        "generated_pair_book_friend+bags_remove_fatima_rossi_1941"
+      ],
+      "reason": "Prevents the agent from skipping valid parts of a request just because one part (like baggage removal) is outside of its capabilities.",
+      "written": "airline-3"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Before calling `cancel_reservation`, verify the cancellation criteria: calculate the difference between the current time and the `created_at` date to ensure it is within 24 hours, check the flight status via `get_flight_status` if the user claims the airline cancelled, and confirm the cabin class or trip type is business. If the user has travel insurance, verify the reason for cancellation is a covered event (health or weather).",
+        "support": [
+          "generated_cancel_fallback_HVGOCW_v0",
+          "generated_cancel_insured_other_M6N5DM",
+          "generated_cancel_yesterday_V5DSYK",
+          "generated_pair_basic_upgrade_budget_any+chain_isabella_lopez_2185_1"
+        ],
+        "reason": "Combines multiple proposals to ensure the agent verifies all policy-mandated cancellation conditions using tool results before calling the cancellation tool."
+      },
+      "reason": "check D: User: \"I would like to cancel my reservation. I booked a business class flight two days ago, but I no longer need to travel.\" \nPolicy: The policy states that a flight can be cancelled if 'any of the following is true', including 'It is a business flight'. Since the user has a business flight, the agent should allow the cancellation.\nAgent following the new rule: The agent is instructed to 'verify the cancellation criteria' before calling the tool, which includes 'ensure it is within 24 hours' and 'confirm the cabin class... is business'. Because the booking was made two days ago (not within 24 hours), the agent would fail the 'ensure' check and refuse the cancellation, even though the policy allows it because it is a business flight. | D: A user wants to cancel a reservation for a business class flight that was booked 48 hours ago. The airline did not cancel the flight. According to the policy, the flight can be cancelled because it is a business flight. However, the new rule requires the agent to verify that the booking is within 24 hours, that the airline cancelled it, AND that it is a business flight. Since the first two conditions are not met, the agent would incorrectly refuse the cancellation.",
+      "problems": [
+        "D",
+        "D"
+      ]
+    }
+  ],
+  "summary": "Improved cancellation verification by checking multiple criteria via tools, ensured correct skill loading for insurance checks, corrected baggage allowance logic, and added a rule to process partial requests."
+}

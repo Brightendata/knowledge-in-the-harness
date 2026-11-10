@@ -1,0 +1,120 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a04",
+    "a05",
+    "a07",
+    "a08",
+    "a09"
+  ],
+  "start": "2026-10-29T22:03:11",
+  "end": "2026-10-29T22:06:13",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "After obtaining explicit user confirmation to proceed with a return, cancellation, modification, or exchange, call the corresponding tool(s) before informing the user that the action is complete.",
+        "support": [
+          "a07"
+        ],
+        "reason": "Ensures database updates are performed before confirming success to the user."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When a user makes multiple requests, load the skills for all identified request categories as soon as you identify them.",
+        "support": [
+          "a09"
+        ],
+        "reason": "Ensures all necessary skills are loaded when multiple request types are identified in a single conversation."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "After calling `get_user_details`, call `get_order_details` for every order ID returned by that tool to ensure you have the details for all of the user's orders.",
+        "support": [
+          "a05"
+        ],
+        "reason": "Ensures all order details are retrieved to provide accurate information and complete summaries."
+      },
+      {
+        "op": "ADD",
+        "file": "retail:modify",
+        "rule_id": "",
+        "text": "When the user asks to modify order items and specifies that other product options should stay the same, only offer options that keep all product options except those the user wants to change constant.",
+        "support": [
+          "a02"
+        ],
+        "reason": "Ensures that modification options respect the user's constraints on which product attributes to keep constant."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a01",
+        "reason": "The logic in a02 is a more comprehensive instruction for filtering valid modification options based on user constraints."
+      },
+      {
+        "proposal": "a04",
+        "reason": "The instruction in a05 to fetch all order details already provides the information necessary to find an order by description."
+      },
+      {
+        "proposal": "a08",
+        "reason": "The edit for a02 addresses a more systemic failure in the modification logic than the specific case of lost items in a08."
+      }
+    ],
+    "summary": "Added rules to ensure correct skill loading for multiple requests, thorough data retrieval for all user orders, correct tool call sequencing for database updates, and stricter adherence to user constraints during item modifications."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "After obtaining explicit user confirmation to proceed with a return, cancellation, modification, or exchange, call the corresponding tool(s) before informing the user that the action is complete.",
+      "support": [
+        "generated_info_triple_other_type_return+cancel_across+cheapest_sofia_rossi_8776"
+      ],
+      "reason": "Ensures database updates are performed before confirming success to the user.",
+      "written": "retail-3"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When a user makes multiple requests, load the skills for all identified request categories as soon as you identify them.",
+      "support": [
+        "generated_triple_write_cancel_processed+return_across+user_address_given_ethan_moore_3587_2"
+      ],
+      "reason": "Ensures all necessary skills are loaded when multiple request types are identified in a single conversation.",
+      "written": "retail-4"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "After calling `get_user_details`, call `get_order_details` for every order ID returned by that tool to ensure you have the details for all of the user's orders.",
+      "support": [
+        "generated_lookup_pair_address_items_status_default+attribute_noah_sanchez_2690_1"
+      ],
+      "reason": "Ensures all order details are retrieved to provide accurate information and complete summaries.",
+      "written": "retail-5"
+    },
+    {
+      "op": "ADD",
+      "file": "retail:modify",
+      "rule_id": "",
+      "text": "When the user asks to modify order items and specifies that other product options should stay the same, only offer options that keep all product options except those the user wants to change constant.",
+      "support": [
+        "generated_addr_pair_new_order+address_items_status_order_mia_moore_8366"
+      ],
+      "reason": "Ensures that modification options respect the user's constraints on which product attributes to keep constant.",
+      "written": "retail:modify-2"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Added rules to ensure correct skill loading for multiple requests, thorough data retrieval for all user orders, correct tool call sequencing for database updates, and stricter adherence to user constraints during item modifications."
+}

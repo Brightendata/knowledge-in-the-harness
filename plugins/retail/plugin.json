@@ -1,0 +1,6 @@
+{
+  "name": "retail",
+  "version": "0",
+  "description": "Retail customer service. Load it first for any retail request; it says which retail skill to load next.",
+  "author": "knora"
+}

@@ -1,0 +1,147 @@
+{
+  "analyses": [
+    "a01",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a11",
+    "a12",
+    "a13",
+    "a14"
+  ],
+  "start": "2026-11-02T01:48:37",
+  "end": "2026-11-02T01:52:34",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "Before calling update_reservation_flights, if the reservation's cabin class is basic_economy, refuse the request and inform the user that basic economy flights cannot be modified.",
+        "support": [
+          "a05",
+          "a07",
+          "a10"
+        ],
+        "reason": "Fixes failures where the agent attempted to modify basic_economy reservations despite the policy restriction."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "When canceling multiple reservations, the agent must call get_reservation_details for every reservation ID to check eligibility, include all eligible ones in its summary, and obtain confirmation for all of them before calling cancel_reservation.",
+        "support": [
+          "a11",
+          "a12",
+          "a13"
+        ],
+        "reason": "Ensures all eligible reservations in a multi-reservation request are verified, summarized, and confirmed individually."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "Before asking for confirmation of a modification, determine the prices for all flights in the reservation to calculate the correct price difference (including those not being explicitly changed but affected by a cabin change), multiply the per-passenger difference by the number of passengers, and ensure the total difference meets any budget limit provided by the user.",
+        "support": [
+          "a01",
+          "a06"
+        ],
+        "reason": "Ensures the price difference calculation accounts for all segments, the total number of passengers, and user-provided budget limits."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Before calling cancel_reservation, the agent must call get_flight_status for every flight segment in the reservation; if any segment has already been flown, the agent must transfer the user to a human agent.",
+        "support": [
+          "a08"
+        ],
+        "reason": "Ensures the agent checks if any part of the flight has been flown before allowing cancellation, as required by policy."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a03",
+        "reason": "This point is handled by the instruction in airline:modify-14 to perform updates in specified order; it is less high-impact than the selected edits."
+      },
+      {
+        "proposal": "a04",
+        "reason": "The rule for identifying flight numbers from previous reservations is less high-impact than the chosen edits."
+      },
+      {
+        "proposal": "a09",
+        "reason": "The requested replacement for airline:modify-8 was not selected as it covers fewer tasks than the other high-impact edits."
+      },
+      {
+        "proposal": "a14",
+        "reason": "The rule for summing gift card balances is less high-impact than the chosen edits."
+      }
+    ],
+    "summary": "Added rules to enforce basic economy modification restrictions, ensure multi-reservation cancellation procedures are thorough, correct price difference calculations, and verify flight statuses before cancellation."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "When canceling multiple reservations, the agent must call get_reservation_details for every reservation ID to check eligibility, include all eligible ones in its summary, and obtain confirmation for all of them before calling cancel_reservation.",
+      "support": [
+        "generated_scope_cancel_all_liam_garcia_8705",
+        "generated_scope_cancel_all_olivia_jackson_7257",
+        "generated_scope_cancel_long_evelyn_thomas_5530"
+      ],
+      "reason": "Ensures all eligible reservations in a multi-reservation request are verified, summarized, and confirmed individually.",
+      "written": "airline:cancel-11"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "Before asking for confirmation of a modification, determine the prices for all flights in the reservation to calculate the correct price difference (including those not being explicitly changed but affected by a cabin change), multiply the per-passenger difference by the number of passengers, and ensure the total difference meets any budget limit provided by the user.",
+      "support": [
+        "generated_change_upgrade_budget_0MR5MT_v1",
+        "generated_change_upgrade_budget_PVUB64_v1"
+      ],
+      "reason": "Ensures the price difference calculation accounts for all segments, the total number of passengers, and user-provided budget limits.",
+      "written": "airline:modify-17"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "Before calling cancel_reservation, the agent must call get_flight_status for every flight segment in the reservation; if any segment has already been flown, the agent must transfer the user to a human agent.",
+      "support": [
+        "generated_cancel_flown_8RE2IO"
+      ],
+      "reason": "Ensures the agent checks if any part of the flight has been flown before allowing cancellation, as required by policy.",
+      "written": "airline:cancel-12"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "Before calling update_reservation_flights, if the reservation's cabin class is basic_economy, refuse the request and inform the user that basic economy flights cannot be modified.",
+        "support": [
+          "generated_basic_change_ABB0M7_v0",
+          "generated_basic_change_I0XQR3_v0",
+          "generated_change_or_cancel_YX38CU"
+        ],
+        "reason": "Fixes failures where the agent attempted to modify basic_economy reservations despite the policy restriction."
+      },
+      "reason": "check D: User: \"I have reservation ABC123, which is currently in basic economy. I would like to upgrade my cabin to economy for this reservation.\" \n\nPolicy: Under 'Change cabin', the policy states that 'all reservations, including basic economy, can change cabin without changing the flights' (assuming no flights have been flown). \n\nAgent Behavior: The agent identifies that the reservation is in basic economy. To change the cabin, the agent must call `update_reservation_flights`. However, the new rule instructs the agent to refuse the request and state that basic economy flights cannot be modified because the cabin class is basic_economy, even though the policy explicitly allows cabin changes for basic economy reservations. | D: User: \"I have a reservation (ABC123) in basic economy. I would like to upgrade my cabin to economy. Please change it for me.\"\n\nThe policy states: \"In other cases, all reservations, including basic economy, can change cabin without changing the flights.\" The tool `update_reservation_flights` is the only tool available to change the cabin class. However, because the reservation is in basic_economy, the rule would cause the agent to refuse the request, even though the policy allows changing the cabin for basic_economy reservations.",
+      "problems": [
+        "D",
+        "D"
+      ]
+    }
+  ],
+  "summary": "Added rules to enforce basic economy modification restrictions, ensure multi-reservation cancellation procedures are thorough, correct price difference calculations, and verify flight statuses before cancellation."
+}

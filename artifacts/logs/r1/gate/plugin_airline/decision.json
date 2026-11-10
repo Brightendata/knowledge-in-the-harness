@@ -1,0 +1,53 @@
+{
+  "time": "2026-10-29T21:10:15",
+  "seed": 1200000,
+  "user": {
+    "model": "deepseek/deepseek-flash",
+    "args": {
+      "temperature": 0.0,
+      "extra_body": {
+        "thinking": {
+          "type": "disabled"
+        }
+      }
+    }
+  },
+  "current": {
+    "plugin": "plugins/airline",
+    "model": "gemma-4-12b"
+  },
+  "candidate": {
+    "plugin": "artifacts/logs/r1/harness_rsi/airline/plugins/v11",
+    "model": "gemma-4-12b"
+  },
+  "other_plugin": "plugins/retail",
+  "pass^1": {
+    "current": 0.603125,
+    "candidate": 0.73375,
+    "diff": 0.130625,
+    "ci95": [
+      0.09125,
+      0.17375
+    ]
+  },
+  "pass^4": {
+    "current": 0.41114285714285714,
+    "candidate": 0.5529999999999999,
+    "diff": 0.14185714285714285,
+    "ci95": [
+      0.09171249999999999,
+      0.1972964285714285
+    ]
+  },
+  "score": {
+    "current": 0.5647285714285715,
+    "candidate": 0.6975999999999999,
+    "diff": 0.13287142857142858,
+    "ci95": [
+      0.09248428571428574,
+      0.1758496428571428
+    ]
+  },
+  "accepted": true,
+  "saved": "artifacts/logs/r1/plugins/airline_final1_accepted"
+}

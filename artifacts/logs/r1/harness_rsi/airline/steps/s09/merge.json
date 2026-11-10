@@ -1,0 +1,154 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a11",
+    "a12",
+    "a13",
+    "a15",
+    "a16",
+    "a17"
+  ],
+  "start": "2026-10-29T16:28:02",
+  "end": "2026-10-29T16:32:56",
+  "output": {
+    "edits": [
+      {
+        "op": "REPLACE",
+        "file": "airline:compensation",
+        "rule_id": "airline:compensation-1",
+        "text": "Before offering a compensation certificate, call `get_flight_status` and verify that the status confirms the flight was actually cancelled (for a cancellation complaint) or delayed (for a delay complaint).",
+        "support": [
+          "a12",
+          "a13",
+          "a16",
+          "a17"
+        ],
+        "reason": "Consolidates multiple proposals to ensure the agent verifies that a flight's status actually confirms the reason for a compensation request."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Before calling `cancel_reservation`, list the action details and obtain explicit user confirmation (yes) to proceed.",
+        "support": [
+          "a07"
+        ],
+        "reason": "Ensures the agent follows the general policy requiring explicit confirmation before any database update."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "When identifying reservations that meet a user's specified criteria (such as the number of passengers), the agent must call `get_reservation_details` for every reservation ID returned by `get_user_details` to verify the criteria for each one.",
+        "support": [
+          "a09"
+        ],
+        "reason": "Prevents the agent from stopping prematurely when checking a list of reservations against user criteria."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "Before calling update_reservation_baggages, always use the reservation's current cabin class and the user's membership level to calculate the baggage allowance.",
+        "support": [
+          "a02"
+        ],
+        "reason": "Ensures the correct baggage allowance is used for calculations by referencing the current state of the reservation."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a01",
+        "reason": "Rule airline:modify-6 already instructs the agent not to change flight numbers unless requested; the agent failed to follow it, but a more specific rule regarding searching is already implied or handled by better instructions."
+      },
+      {
+        "proposal": "a03",
+        "reason": "Rule airline:modify-7 already specifies calculating total_baggages; the agent's failure was a logical error in applying the rule rather than a need for a new rule."
+      },
+      {
+        "proposal": "a04",
+        "reason": "The agent should clarify discrepancies in its own logic before listing actions; this is a general reasoning step rather than a specific rule addition."
+      },
+      {
+        "proposal": "a05",
+        "reason": "This is a specific search strategy for one task and does not address a systematic failure in the provided rules."
+      },
+      {
+        "proposal": "a08",
+        "reason": "Rule airline:cancel-2 already requires verifying the airline cancelled the flight; the agent failed to follow it, so a separate ADD is not needed."
+      },
+      {
+        "proposal": "a10",
+        "reason": "Rule airline:cancel-2 already requires verifying insurance coverage; the agent failed to follow it, so a separate ADD is not needed."
+      },
+      {
+        "proposal": "a11",
+        "reason": "Rule airline:modify-8 already instructs the agent to perform confirmed updates before other actions; the agent failed to follow it."
+      },
+      {
+        "proposal": "a15",
+        "reason": "The agent's failure was in a specific complex calculation; a12, a07, a09, and a02 are higher priority systemic fixes."
+      }
+    ],
+    "summary": "Improved cancellation confirmation, systematic reservation checking, compensation status verification, and baggage calculation logic."
+  },
+  "edits": [
+    {
+      "op": "REPLACE",
+      "file": "airline:compensation",
+      "rule_id": "airline:compensation-1",
+      "text": "Before offering a compensation certificate, call `get_flight_status` and verify that the status confirms the flight was actually cancelled (for a cancellation complaint) or delayed (for a delay complaint).",
+      "support": [
+        "generated_compensation_false_H7G3XO",
+        "generated_compensation_false_I0XQR3",
+        "generated_pair_bags_remove+compensation_false_raj_garcia_4690",
+        "generated_pair_compensation_false+passengers_sofia_li_6597_1"
+      ],
+      "reason": "Consolidates multiple proposals to ensure the agent verifies that a flight's status actually confirms the reason for a compensation request.",
+      "written": "airline:compensation-1"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "Before calling `cancel_reservation`, list the action details and obtain explicit user confirmation (yes) to proceed.",
+      "support": [
+        "generated_cancel_negotiate_9ETV1S"
+      ],
+      "reason": "Ensures the agent follows the general policy requiring explicit confirmation before any database update.",
+      "written": "airline:cancel-3"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "When identifying reservations that meet a user's specified criteria (such as the number of passengers), the agent must call `get_reservation_details` for every reservation ID returned by `get_user_details` to verify the criteria for each one.",
+      "support": [
+        "generated_scope_cancel_alone_lei_rossi_3206"
+      ],
+      "reason": "Prevents the agent from stopping prematurely when checking a list of reservations against user criteria.",
+      "written": "airline:cancel-4"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "Before calling update_reservation_baggages, always use the reservation's current cabin class and the user's membership level to calculate the baggage allowance.",
+      "support": [
+        "generated_triple_write_cabin_bags_any+book_pay_by_total_any+upgrade_cancel_isabella_smith_2582_1"
+      ],
+      "reason": "Ensures the correct baggage allowance is used for calculations by referencing the current state of the reservation.",
+      "written": "airline:modify-9"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Improved cancellation confirmation, systematic reservation checking, compensation status verification, and baggage calculation logic."
+}

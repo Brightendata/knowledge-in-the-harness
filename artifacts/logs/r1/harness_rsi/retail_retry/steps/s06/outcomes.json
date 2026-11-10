@@ -1,0 +1,502 @@
+{
+ "candidate": {
+  "generated_addr_write_address_items_given+exchange_pending_fatima_martin_9326_1": [
+   1,
+   0,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_addr_write_cancel_partial_whole+address_items_order_ethan_smith_9087": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_addr_write_cancel_partial_whole+address_items_status_given_mia_nguyen_6399_1": [
+   1,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_addr_write_change_delivered+address_items_status_given_chen_anderson_8078": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_address_items_held_W3955289": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_address_items_mind_W3883329": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_all_delivered_but_aarav_moore_6923": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_count_group_W3977493_v1": [
+   1,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_exchange_mind_return_W1578930": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_linked_same_W8496475": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_address_default+attribute_evelyn_patel_8882": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_count_enough+card_yara_lee_7701_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_exchange_mind_return+attribute_mei_li_2872_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_exchange_pending+shipped_to_aarav_wilson_9535_1": [
+   1,
+   0,
+   0,
+   0,
+   1,
+   1
+  ],
+  "generated_lookup_pair_return_twin+attribute_harper_nguyen_9170": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lost_pair_lost_item+modify_2_anya_lee_8315": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_modify_gift_covers_W5861600": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_mind_keep_pay_W9121070": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_other_type_return_W2112666": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_paid_group_W4806309_v0": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_address_items_given+exchange_mind_return_mason_wilson_4597": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_pair_exchange_mind+user_address_given_james_wilson_1842_1": [
+   1,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_pair_same_item_variant+undo_sophia_garcia_5025": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_payment_W3761872": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_payment_W7162915": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_payment_W8557584": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_across_james_li_5688": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_except_card_human_W5697187": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_except_card_human_W8033354": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_except_card_original_W7190291": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_same_item_variant_W8838515": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "current": {
+  "generated_addr_write_address_items_given+exchange_pending_fatima_martin_9326_1": [
+   0,
+   0,
+   1,
+   1,
+   0,
+   0
+  ],
+  "generated_addr_write_cancel_partial_whole+address_items_order_ethan_smith_9087": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_addr_write_cancel_partial_whole+address_items_status_given_mia_nguyen_6399_1": [
+   1,
+   0,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_addr_write_change_delivered+address_items_status_given_chen_anderson_8078": [
+   0,
+   0,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_address_items_held_W3955289": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_address_items_mind_W3883329": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_all_delivered_but_aarav_moore_6923": [
+   1,
+   0,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_count_group_W3977493_v1": [
+   0,
+   0,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_exchange_mind_return_W1578930": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_linked_same_W8496475": [
+   1,
+   1,
+   0,
+   0,
+   1,
+   1
+  ],
+  "generated_lookup_pair_address_default+attribute_evelyn_patel_8882": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_count_enough+card_yara_lee_7701_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_lookup_pair_exchange_mind_return+attribute_mei_li_2872_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_exchange_pending+shipped_to_aarav_wilson_9535_1": [
+   1,
+   0,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_lookup_pair_return_twin+attribute_harper_nguyen_9170": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lost_pair_lost_item+modify_2_anya_lee_8315": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_modify_gift_covers_W5861600": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_mind_keep_pay_W9121070": [
+   0,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_other_type_return_W2112666": [
+   1,
+   1,
+   1,
+   0,
+   0,
+   1
+  ],
+  "generated_paid_group_W4806309_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_address_items_given+exchange_mind_return_mason_wilson_4597": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_pair_exchange_mind+user_address_given_james_wilson_1842_1": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_pair_same_item_variant+undo_sophia_garcia_5025": [
+   1,
+   0,
+   1,
+   1,
+   0,
+   0
+  ],
+  "generated_payment_W3761872": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_payment_W7162915": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_payment_W8557584": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_across_james_li_5688": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_except_card_human_W5697187": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_except_card_human_W8033354": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_except_card_original_W7190291": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_same_item_variant_W8838515": [
+   0,
+   0,
+   0,
+   1,
+   1,
+   0
+  ]
+ }
+}

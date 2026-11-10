@@ -1,0 +1,123 @@
+{
+  "analyses": [
+    "a01",
+    "a04",
+    "a06",
+    "a07",
+    "a08",
+    "a09",
+    "a11",
+    "a12",
+    "a13",
+    "a14"
+  ],
+  "start": "2026-11-02T10:17:29",
+  "end": "2026-11-02T10:20:05",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "When the user asks to cancel a reservation, you must load the airline:cancel skill before making any tool calls or providing any information about the cancellation.",
+        "support": [
+          "a13"
+        ],
+        "reason": "Fixes a failure where the agent failed to load the correct skill for cancellation requests."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "Before calling update_reservation_flights, if the reservation's cabin class is basic_economy, refuse the request and inform the user that basic economy flights cannot be modified.",
+        "support": [
+          "a04",
+          "a09"
+        ],
+        "reason": "Fixes a recurring failure where the agent ignored the policy restriction on modifying basic economy flights."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:compensation",
+        "rule_id": "",
+        "text": "Before calling send_certificate for a delayed flight, verify that the user wants to change or cancel their reservation and that the change or cancellation has been performed.",
+        "support": [
+          "a08"
+        ],
+        "reason": "Ensures the agent follows the policy requiring a change or cancellation before offering a compensation certificate for delayed flights."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a01",
+        "reason": "Single-task fix with lower impact than selected edits."
+      },
+      {
+        "proposal": "a06",
+        "reason": "Single-task fix with lower impact than selected edits."
+      },
+      {
+        "proposal": "a07",
+        "reason": "Single-task fix with lower impact than selected edits."
+      },
+      {
+        "proposal": "a11",
+        "reason": "Single-task calculation fix with lower impact than selected edits."
+      },
+      {
+        "proposal": "a12",
+        "reason": "Single-task calculation fix with lower impact than selected edits."
+      },
+      {
+        "proposal": "a14",
+        "reason": "Single-task calculation fix with lower impact than selected edits."
+      }
+    ],
+    "summary": "Added rules to ensure correct skill loading for cancellations, enforce basic economy modification restrictions, and verify prerequisites for delayed flight compensation certificates."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "When the user asks to cancel a reservation, you must load the airline:cancel skill before making any tool calls or providing any information about the cancellation.",
+      "support": [
+        "generated_pair_fewer_cancel+book_certificate_gift_sofia_sanchez_4758"
+      ],
+      "reason": "Fixes a failure where the agent failed to load the correct skill for cancellation requests.",
+      "written": "airline-11"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:compensation",
+      "rule_id": "",
+      "text": "Before calling send_certificate for a delayed flight, verify that the user wants to change or cancel their reservation and that the change or cancellation has been performed.",
+      "support": [
+        "generated_triple_book_again+compensation_delayed+change_basic_ivan_kim_3844_1"
+      ],
+      "reason": "Ensures the agent follows the policy requiring a change or cancellation before offering a compensation certificate for delayed flights.",
+      "written": "airline:compensation-3"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "Before calling update_reservation_flights, if the reservation's cabin class is basic_economy, refuse the request and inform the user that basic economy flights cannot be modified.",
+        "support": [
+          "generated_basic_change_N2KIKA_v0",
+          "generated_change_basic_XZGIBD"
+        ],
+        "reason": "Fixes a recurring failure where the agent ignored the policy restriction on modifying basic economy flights."
+      },
+      "reason": "check D: User: \"I have a basic economy reservation (ID: 123) and I would like to change the cabin class to economy.\"\n\nThe policy states: \"In other cases, all reservations, including basic economy, can change cabin without changing the flights.\" However, the agent would follow the new rule, see that the reservation is basic_economy, and refuse to call update_reservation_flights, stating that basic economy flights cannot be modified. This forbids an action that the policy explicitly allows. | D: User: \"I have a basic economy reservation (reservation_id: 123). Can I change my cabin class to economy?\"\nAgent: (Checks reservation 123, sees cabin is basic_economy. To change the cabin, it prepares to call `update_reservation_flights` with `cabin='economy'`).\nAgent (following new rule): \"I'm sorry, basic economy flights cannot be modified.\"\nPolicy Requirement: The policy states, \"In other cases, all reservations, including basic economy, can change cabin without changing the flights.\" Since the user is only asking to change the cabin and not the flight segments, the agent should allow the request.",
+      "problems": [
+        "D",
+        "D"
+      ]
+    }
+  ],
+  "summary": "Added rules to ensure correct skill loading for cancellations, enforce basic economy modification restrictions, and verify prerequisites for delayed flight compensation certificates."
+}

@@ -1,0 +1,53 @@
+{
+  "time": "2026-11-02T18:59:22",
+  "seed": 2201000,
+  "user": {
+    "model": "deepseek/deepseek-flash",
+    "args": {
+      "temperature": 0.0,
+      "extra_body": {
+        "thinking": {
+          "type": "disabled"
+        }
+      }
+    }
+  },
+  "current": {
+    "plugin": "artifacts/logs/r1/plugins/airline_final1_accepted",
+    "model": "artifacts/checkpoints/r1/airline/epoch4"
+  },
+  "candidate": {
+    "plugin": "artifacts/logs/r2/harness_rsi/airline_retry/plugins/v11",
+    "model": "artifacts/checkpoints/r1/airline/epoch4"
+  },
+  "other_plugin": "artifacts/logs/r1/plugins/retail_final2_accepted",
+  "pass^1": {
+    "current": 0.769375,
+    "candidate": 0.789375,
+    "diff": 0.02,
+    "ci95": [
+      -0.00125,
+      0.04125
+    ]
+  },
+  "pass^4": {
+    "current": 0.5759285714285715,
+    "candidate": 0.6145714285714285,
+    "diff": 0.038642857142857145,
+    "ci95": [
+      0.0018535714285714266,
+      0.07514642857142854
+    ]
+  },
+  "score": {
+    "current": 0.7306857142857143,
+    "candidate": 0.7544142857142856,
+    "diff": 0.02372857142857143,
+    "ci95": [
+      0.0014285714285714268,
+      0.045729285714285715
+    ]
+  },
+  "accepted": true,
+  "saved": "artifacts/logs/r2/plugins/airline_final2_accepted"
+}

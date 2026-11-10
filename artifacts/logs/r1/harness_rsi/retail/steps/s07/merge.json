@@ -1,0 +1,138 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a08",
+    "a09",
+    "a10",
+    "a11",
+    "a12"
+  ],
+  "start": "2026-10-30T01:34:39",
+  "end": "2026-10-30T01:37:43",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When a user's request maps to or could be interpreted as multiple categories in the routing table, load the skills for all of those categories.",
+        "support": [
+          "a02",
+          "a05"
+        ],
+        "reason": "Fixes failures where the agent only loaded one skill for a multi-part request, leading to missing tools."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When the user's request involves multiple database updates, the summary provided for confirmation must include the details for every requested action.",
+        "support": [
+          "a12"
+        ],
+        "reason": "Ensures that all requested actions are explicitly listed in the confirmation summary to prevent skipping updates."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When the user confirms multiple actions that update the database, perform all confirmed actions before asking if there is anything else.",
+        "support": [
+          "a01"
+        ],
+        "reason": "Prevents the agent from stopping after completing only the first of several confirmed database actions."
+      },
+      {
+        "op": "ADD",
+        "file": "retail:exchange",
+        "rule_id": "",
+        "text": "When exchanging a delivered order, ensure the replacement item has different product options (e.g., different color, size, or material) than the original item.",
+        "support": [
+          "a09"
+        ],
+        "reason": "Enforces the policy requirement that exchanged items must have different product options."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a03",
+        "reason": "The agent failed a specific check, but a more systemic procedural improvement for confirmation summaries was prioritized."
+      },
+      {
+        "proposal": "a04",
+        "reason": "Redundant with the summary requirement for including all requested actions."
+      },
+      {
+        "proposal": "a06",
+        "reason": "The rule repeats the existing policy requirement for listing details and obtaining confirmation."
+      },
+      {
+        "proposal": "a08",
+        "reason": "Less impact than enforcing the 'different product options' policy requirement."
+      },
+      {
+        "proposal": "a10",
+        "reason": "Clarification on contradictions is a general conversational skill not specific to a policy gap."
+      },
+      {
+        "proposal": "a11",
+        "reason": "The summary content rule (a12) addresses the core of the confirmation failure."
+      }
+    ],
+    "summary": "Improved routing for ambiguous requests, ensured all requested actions are included in confirmation summaries and performed sequentially, and enforced product option differences for exchanges."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When a user's request maps to or could be interpreted as multiple categories in the routing table, load the skills for all of those categories.",
+      "support": [
+        "generated_addr_pair_new_order+address_items_home_given_raj_li_9474_1",
+        "generated_user_address_order_emma_kim_1076"
+      ],
+      "reason": "Fixes failures where the agent only loaded one skill for a multi-part request, leading to missing tools.",
+      "written": "retail-10"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When the user's request involves multiple database updates, the summary provided for confirmation must include the details for every requested action.",
+      "support": [
+        "generated_addr_write_change_delivered+address_items_status_given_chen_anderson_8078"
+      ],
+      "reason": "Ensures that all requested actions are explicitly listed in the confirmation summary to prevent skipping updates.",
+      "written": "retail-11"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When the user confirms multiple actions that update the database, perform all confirmed actions before asking if there is anything else.",
+      "support": [
+        "generated_address_items_status_default_W3386832"
+      ],
+      "reason": "Prevents the agent from stopping after completing only the first of several confirmed database actions.",
+      "written": "retail-12"
+    },
+    {
+      "op": "ADD",
+      "file": "retail:exchange",
+      "rule_id": "",
+      "text": "When exchanging a delivered order, ensure the replacement item has different product options (e.g., different color, size, or material) than the original item.",
+      "support": [
+        "generated_same_item_variant_W8838515"
+      ],
+      "reason": "Enforces the policy requirement that exchanged items must have different product options.",
+      "written": "retail:exchange-4"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Improved routing for ambiguous requests, ensured all requested actions are included in confirmation summaries and performed sequentially, and enforced product option differences for exchanges."
+}

@@ -1,0 +1,104 @@
+{
+  "analyses": [
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a09",
+    "a11",
+    "a12",
+    "a13"
+  ],
+  "start": "2026-10-30T10:56:42",
+  "end": "2026-10-30T10:59:47",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "retail:exchange",
+        "rule_id": "",
+        "text": "Before calling `exchange_delivered_order_items`, you must ensure that the new item has different product options than the original item. If the new item has the same product options, inform the user that an exchange is not possible.",
+        "support": [
+          "a06",
+          "a09",
+          "a12"
+        ],
+        "reason": "Consolidates three proposals to ensure the agent enforces the policy that an exchange must be for a different product option, even if the user requests the same model."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When a user asks for information about an order based on its contents, you must call `get_order_details` for every order ID in the list provided by `get_user_details` to identify the correct order.",
+        "support": [
+          "a07"
+        ],
+        "reason": "Fixes a logic gap where the agent failed to correctly identify an order by content, leading to incorrect information being provided."
+      },
+      {
+        "op": "ADD",
+        "file": "retail:modify",
+        "rule_id": "",
+        "text": "Before asking for confirmation for a modification that results in a price increase, check if the payment method the user intends to use has enough balance. If the balance is insufficient, do not propose that modification.",
+        "support": [
+          "a04"
+        ],
+        "reason": "Prevents the agent from proposing a modification that would fail the tool call due to insufficient gift card balance, adhering to the policy's balance requirement."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a05",
+        "reason": "Lower priority than the chosen edits which fix policy violations and fundamental lookup logic."
+      },
+      {
+        "proposal": "a11",
+        "reason": "Lower priority than the chosen edits; this is a helpful suggestion rather than a correction of a policy violation."
+      },
+      {
+        "proposal": "a13",
+        "reason": "Lower priority than the chosen edits; this handles a very specific ordering of preferences for a single task."
+      }
+    ],
+    "summary": "Added rules to enforce different product options for exchanges, correctly identify orders by content, and verify payment balances before proposing modifications."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "retail:exchange",
+      "rule_id": "",
+      "text": "Before calling `exchange_delivered_order_items`, you must ensure that the new item has different product options than the original item. If the new item has the same product options, inform the user that an exchange is not possible.",
+      "support": [
+        "generated_linked_same_W8496475",
+        "generated_pair_same_item_variant+undo_sophia_garcia_5025",
+        "generated_same_item_variant_W8838515"
+      ],
+      "reason": "Consolidates three proposals to ensure the agent enforces the policy that an exchange must be for a different product option, even if the user requests the same model.",
+      "written": "retail:exchange-1"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When a user asks for information about an order based on its contents, you must call `get_order_details` for every order ID in the list provided by `get_user_details` to identify the correct order.",
+      "support": [
+        "generated_lookup_pair_count_enough+card_yara_lee_7701_1"
+      ],
+      "reason": "Fixes a logic gap where the agent failed to correctly identify an order by content, leading to incorrect information being provided.",
+      "written": "retail-8"
+    },
+    {
+      "op": "ADD",
+      "file": "retail:modify",
+      "rule_id": "",
+      "text": "Before asking for confirmation for a modification that results in a price increase, check if the payment method the user intends to use has enough balance. If the balance is insufficient, do not propose that modification.",
+      "support": [
+        "generated_pair_address_items_given+exchange_mind_return_mason_wilson_4597"
+      ],
+      "reason": "Prevents the agent from proposing a modification that would fail the tool call due to insufficient gift card balance, adhering to the policy's balance requirement.",
+      "written": "retail:modify-6"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Added rules to enforce different product options for exchanges, correctly identify orders by content, and verify payment balances before proposing modifications."
+}

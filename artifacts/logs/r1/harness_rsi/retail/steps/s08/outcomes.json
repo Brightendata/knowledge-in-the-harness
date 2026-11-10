@@ -1,0 +1,486 @@
+{
+ "candidate": {
+  "generated_addr_write_address_items_given+exchange_pending_fatima_martin_9326_1": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_address_items_status_default_W8645374": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_address_items_status_order_W6731310": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_bound_group_W3417600_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_budget_group_W2087737_v1": [
+   1,
+   1,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_cancel_refund_keep_W4423731": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_refund_keep_W6030855": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_gift_covers_W7366745": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_exchange_mind_pay_W1544028": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_mind_pay_W2922433": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_info_triple_same_item_variant+user_address_given+cheapest_omar_taylor_1594_1": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1
+  ],
+  "generated_linked_same_W8496475": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_address_items_status_order+attribute_ethan_muller_6097": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_exchange_mind_return+attribute_mei_li_2872_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lost_pair_lost_item+address_items_given_noah_kovacs_1216": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_lost_pair_lost_item+modify_2_anya_lee_8315": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_modify_gift_covers_W5861600": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_gift_covers_W6958840": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_mind_keep_pay_W8073920": [
+   0,
+   0,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_modify_mind_keep_pay_W9121070": [
+   1,
+   0,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_other_type_return_W1335809": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_payment_W6629830": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_payment_W8328493": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_across_sophia_nguyen_2370": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_except_card_original_W7190291": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_same_item_variant_W5220869": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_same_item_variant_W7366745": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_items_pending_yara_santos_1202": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_three_writes_return_pending+exchange_1+status_exchange_mohamed_lee_5442_2": [
+   1,
+   0,
+   0,
+   1,
+   0,
+   1
+  ],
+  "generated_three_writes_return_pending+status_exchange+exchange_1_chen_anderson_8078": [
+   1,
+   0,
+   1,
+   0,
+   1,
+   0
+  ]
+ },
+ "current": {
+  "generated_addr_write_address_items_given+exchange_pending_fatima_martin_9326_1": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_address_items_status_default_W8645374": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_address_items_status_order_W6731310": [
+   1,
+   1,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_bound_group_W3417600_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_budget_group_W2087737_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_refund_keep_W4423731": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_refund_keep_W6030855": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_gift_covers_W7366745": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_mind_pay_W1544028": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_mind_pay_W2922433": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_info_triple_same_item_variant+user_address_given+cheapest_omar_taylor_1594_1": [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_linked_same_W8496475": [
+   0,
+   0,
+   0,
+   1,
+   0,
+   1
+  ],
+  "generated_lookup_pair_address_items_status_order+attribute_ethan_muller_6097": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_exchange_mind_return+attribute_mei_li_2872_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lost_pair_lost_item+address_items_given_noah_kovacs_1216": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_lost_pair_lost_item+modify_2_anya_lee_8315": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_modify_gift_covers_W5861600": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_gift_covers_W6958840": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_mind_keep_pay_W8073920": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_modify_mind_keep_pay_W9121070": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_other_type_return_W1335809": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   1
+  ],
+  "generated_payment_W6629830": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_payment_W8328493": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_across_sophia_nguyen_2370": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_except_card_original_W7190291": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_same_item_variant_W5220869": [
+   0,
+   1,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_same_item_variant_W7366745": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_scope_items_pending_yara_santos_1202": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_three_writes_return_pending+exchange_1+status_exchange_mohamed_lee_5442_2": [
+   1,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_three_writes_return_pending+status_exchange+exchange_1_chen_anderson_8078": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ }
+}

@@ -1,0 +1,118 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a07",
+    "a10",
+    "a11",
+    "a12",
+    "a13",
+    "a14",
+    "a15"
+  ],
+  "start": "2026-11-02T09:34:47",
+  "end": "2026-11-02T09:39:04",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "When the user provides a description of a reservation but not the reservation ID, the agent must call get_reservation_details for every reservation ID in the user's profile before informing the user that the reservation cannot be found.",
+        "support": [
+          "a13"
+        ],
+        "reason": "Fixes a systematic failure to verify all candidate reservation IDs when the ID is not provided."
+      },
+      {
+        "op": "REPLACE",
+        "file": "airline:modify",
+        "rule_id": "airline:modify-1",
+        "text": "When calculating the price difference or refund for a modification, sum the prices of the new flight segments and the original prices of the kept flight segments, subtract the sum of the prices of all flights in the original reservation, and multiply the result by the number of passengers.",
+        "support": [
+          "a03"
+        ],
+        "reason": "Corrects the calculation logic to ensure kept flight segments are priced at their original values as required by policy."
+      },
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "When the user asks to change flights or find different flights for an existing trip, load the airline:modify skill.",
+        "support": [
+          "a10"
+        ],
+        "reason": "Ensures the correct skill is loaded when the user requests a flight modification rather than a new booking."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a01",
+        "reason": "A lower priority issue compared to routing and calculation fixes."
+      },
+      {
+        "proposal": "a02",
+        "reason": "A lower priority issue compared to routing and calculation fixes."
+      },
+      {
+        "proposal": "a07",
+        "reason": "A lower priority issue compared to routing and calculation fixes."
+      },
+      {
+        "proposal": "a11",
+        "reason": "A lower priority issue compared to routing and calculation fixes."
+      },
+      {
+        "proposal": "a12",
+        "reason": "A lower priority issue compared to routing and calculation fixes."
+      },
+      {
+        "proposal": "a14",
+        "reason": "A lower priority issue compared to routing and calculation fixes."
+      },
+      {
+        "proposal": "a15",
+        "reason": "A lower priority issue compared to routing and calculation fixes."
+      }
+    ],
+    "summary": "Improved skill routing for flight modifications, corrected modification price calculations, and ensured thorough verification of reservation candidates."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "When the user provides a description of a reservation but not the reservation ID, the agent must call get_reservation_details for every reservation ID in the user's profile before informing the user that the reservation cannot be found.",
+      "support": [
+        "generated_triple_write_cancel_recent+book_again+fewer_cancel_aarav_silva_6452"
+      ],
+      "reason": "Fixes a systematic failure to verify all candidate reservation IDs when the ID is not provided.",
+      "written": "airline-9"
+    },
+    {
+      "op": "REPLACE",
+      "file": "airline:modify",
+      "rule_id": "airline:modify-1",
+      "text": "When calculating the price difference or refund for a modification, sum the prices of the new flight segments and the original prices of the kept flight segments, subtract the sum of the prices of all flights in the original reservation, and multiply the result by the number of passengers.",
+      "support": [
+        "generated_change_upgrade_budget_PVUB64_v0"
+      ],
+      "reason": "Corrects the calculation logic to ensure kept flight segments are priced at their original values as required by policy.",
+      "written": "airline:modify-1"
+    },
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "When the user asks to change flights or find different flights for an existing trip, load the airline:modify skill.",
+      "support": [
+        "generated_pair_cancel_none+change_same_day_mei_lopez_9471"
+      ],
+      "reason": "Ensures the correct skill is loaded when the user requests a flight modification rather than a new booking.",
+      "written": "airline-10"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Improved skill routing for flight modifications, corrected modification price calculations, and ensured thorough verification of reservation candidates."
+}

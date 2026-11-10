@@ -1,0 +1,486 @@
+{
+ "candidate": {
+  "generated_address_items_status_order_W4096800": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_bound_group_W4514908_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_budget_group_W7594624_v1": [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_cancel_refund_cancel_W6426438": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_mind_pay_W5544629": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_exchange_mind_return_W1578930": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_relative_pref_W5202795": [
+   1,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_exchange_same_as_W3135192": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_exchange_same_as_W6573840": [
+   0,
+   1,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_linked_same_W6070601": [
+   0,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_status_exchange+card_sofia_ito_7804_2": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_stock_cancel+card_raj_lopez_5873": [
+   1,
+   0,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_modify_bound_W9537685": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_gift_covers_W2325029": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_one_action_group_W4887592_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_other_type_return_W2112666": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_other_type_return_W2421430": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_other_type_return_W3504981": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_other_type_return_W7450915": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_attribute+refund_scope_original_mia_smith_1623_1": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_pair_exchange_mind+user_address_given_james_wilson_1842_1": [
+   0,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_pair_priciest+user_address_given_fatima_moore_8152_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_payment_W3761872": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_payment_W6599568": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_card_original_W9784474": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_write_all_pending_cancel+change_delivered_olivia_ito_3591_1": [
+   1,
+   0,
+   1,
+   1,
+   0,
+   0
+  ],
+  "generated_status_exchange_2_W7532822": [
+   0,
+   0,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_stock_group_W7613749_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_three_writes_exchange_pending+status_exchange+change_delivered_harper_brown_7363_2": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_stock_cancel+fast_refund+undo_james_lee_5010": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ]
+ },
+ "current": {
+  "generated_address_items_status_order_W4096800": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_bound_group_W4514908_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_budget_group_W7594624_v1": [
+   0,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_cancel_refund_cancel_W6426438": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_mind_pay_W5544629": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_exchange_mind_return_W1578930": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_relative_pref_W5202795": [
+   0,
+   1,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_exchange_same_as_W3135192": [
+   0,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_exchange_same_as_W6573840": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_linked_same_W6070601": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_status_exchange+card_sofia_ito_7804_2": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_stock_cancel+card_raj_lopez_5873": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_modify_bound_W9537685": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_gift_covers_W2325029": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_one_action_group_W4887592_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_other_type_return_W2112666": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_other_type_return_W2421430": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_other_type_return_W3504981": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_other_type_return_W7450915": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_pair_attribute+refund_scope_original_mia_smith_1623_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_exchange_mind+user_address_given_james_wilson_1842_1": [
+   1,
+   0,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_pair_priciest+user_address_given_fatima_moore_8152_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_payment_W3761872": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_payment_W6599568": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_card_original_W9784474": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_write_all_pending_cancel+change_delivered_olivia_ito_3591_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_status_exchange_2_W7532822": [
+   1,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_stock_group_W7613749_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_three_writes_exchange_pending+status_exchange+change_delivered_harper_brown_7363_2": [
+   0,
+   1,
+   1,
+   0,
+   0,
+   1
+  ],
+  "generated_triple_stock_cancel+fast_refund+undo_james_lee_5010": [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ]
+ }
+}

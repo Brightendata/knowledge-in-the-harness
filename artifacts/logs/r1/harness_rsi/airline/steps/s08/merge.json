@@ -1,0 +1,143 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a06",
+    "a07",
+    "a09",
+    "a10",
+    "a11",
+    "a12",
+    "a13",
+    "a14"
+  ],
+  "start": "2026-10-29T15:49:06",
+  "end": "2026-10-29T15:54:40",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "Before calling any tool that requires a reservation_id, if the user did not provide the ID or if the provided ID does not match the requested origin, destination, and trip type, the agent must call get_reservation_details for each candidate ID from the user's profile to verify which one matches the user's description.",
+        "support": [
+          "a02",
+          "a11"
+        ],
+        "reason": "Combines proposals to ensure the agent correctly identifies the intended reservation when the provided ID is missing or incorrect for the requested trip."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Before calling `cancel_reservation`, verify that the reservation was made within the last 24 hours, the flight was cancelled by the airline, it is a business flight, or the user has travel insurance and the reason for cancellation is covered. If none of these conditions are met, inform the user that the cancellation is not allowed and do not call the tool.",
+        "support": [
+          "a01"
+        ],
+        "reason": "Ensures the agent verifies all policy-mandated cancellation criteria before calling the tool, as required by the policy."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When the user provides explicit confirmation (yes) for a database update, call the corresponding tool to perform that update before addressing other requests or transferring the user.",
+        "support": [
+          "a06"
+        ],
+        "reason": "Prevents the agent from failing to execute a tool call after receiving a user's confirmation."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:compensation",
+        "rule_id": "",
+        "text": "Before offering a compensation certificate, call `get_flight_status` to verify the status of the flight.",
+        "support": [
+          "a12"
+        ],
+        "reason": "Enforces the policy to always confirm facts before offering compensation."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a03",
+        "reason": "The agent should follow the calculation logic, and while stating prices is helpful, it is less critical than the logic fix."
+      },
+      {
+        "proposal": "a04",
+        "reason": "The agent should use the payment ID provided or clearly indicated; identifying by description is less critical than the other fixes."
+      },
+      {
+        "proposal": "a07",
+        "reason": "The agent should focus on the primary procedural and policy-mandated verification steps first."
+      },
+      {
+        "proposal": "a09",
+        "reason": "The agent's failure to check the balance is a specific case compared to the broader procedural failures being addressed."
+      },
+      {
+        "proposal": "a10",
+        "reason": "Calculating the total price for all segments is useful but less critical than the higher-impact policy violations."
+      },
+      {
+        "proposal": "a13",
+        "reason": "The agent should ask for bags if not specified, but this is less critical than the core database update and cancellation logic."
+      },
+      {
+        "proposal": "a14",
+        "reason": "This is a specific baggage carry-over error and is less critical than the overarching rules."
+      }
+    ],
+    "summary": "Added rules to verify reservation IDs, cancellation criteria, compensation facts, and immediate execution of tools following user confirmation."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "Before calling any tool that requires a reservation_id, if the user did not provide the ID or if the provided ID does not match the requested origin, destination, and trip type, the agent must call get_reservation_details for each candidate ID from the user's profile to verify which one matches the user's description.",
+      "support": [
+        "generated_pair_bags+change_cabin_liam_johnson_6488",
+        "generated_triple_cancel_insured+book_same_cap_any+passengers_liam_wilson_9173_1"
+      ],
+      "reason": "Combines proposals to ensure the agent correctly identifies the intended reservation when the provided ID is missing or incorrect for the requested trip.",
+      "written": "airline-7"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "Before calling `cancel_reservation`, verify that the reservation was made within the last 24 hours, the flight was cancelled by the airline, it is a business flight, or the user has travel insurance and the reason for cancellation is covered. If none of these conditions are met, inform the user that the cancellation is not allowed and do not call the tool.",
+      "support": [
+        "generated_pair_fewer_cancel+bags_lei_rossi_4874"
+      ],
+      "reason": "Ensures the agent verifies all policy-mandated cancellation criteria before calling the tool, as required by the policy.",
+      "written": "airline:cancel-2"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "When the user provides explicit confirmation (yes) for a database update, call the corresponding tool to perform that update before addressing other requests or transferring the user.",
+      "support": [
+        "generated_pair_bags+cancel_negotiate_isabella_ito_3653"
+      ],
+      "reason": "Prevents the agent from failing to execute a tool call after receiving a user's confirmation.",
+      "written": "airline:modify-8"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:compensation",
+      "rule_id": "",
+      "text": "Before offering a compensation certificate, call `get_flight_status` to verify the status of the flight.",
+      "support": [
+        "generated_pair_compensation_false+book_certificate_mia_wilson_2051_1"
+      ],
+      "reason": "Enforces the policy to always confirm facts before offering compensation.",
+      "written": "airline:compensation-1"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Added rules to verify reservation IDs, cancellation criteria, compensation facts, and immediate execution of tools following user confirmation."
+}

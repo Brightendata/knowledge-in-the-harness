@@ -1,0 +1,134 @@
+{
+  "analyses": [
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a08",
+    "a12"
+  ],
+  "start": "2026-10-30T00:21:15",
+  "end": "2026-10-30T00:24:32",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When the user makes multiple requests, load the skills for all identified requests before making any tool calls.",
+        "support": [
+          "a08"
+        ],
+        "reason": "Fixes a systematic failure where the agent fails to load all necessary skills for multi-part requests."
+      },
+      {
+        "op": "REPLACE",
+        "file": "retail:modify",
+        "rule_id": "retail:modify-4",
+        "text": "When the user asks for the cheapest available item (optionally with a specific option), call `get_product_details` for that product, identify all variants where 'available' is true, and select the one with the lowest price.",
+        "support": [
+          "a03"
+        ],
+        "reason": "Prevents price hallucination by requiring a tool call to fetch all available variants and their prices."
+      },
+      {
+        "op": "ADD",
+        "file": "retail:modify",
+        "rule_id": "",
+        "text": "Before calling `modify_pending_order_address`, you must call `get_order_details` for every order ID returned by `get_user_details` to confirm that its status is 'pending'.",
+        "support": [
+          "a06"
+        ],
+        "reason": "Ensures the agent identifies all pending orders across the user's profile before performing address modifications."
+      },
+      {
+        "op": "ADD",
+        "file": "retail:cancel",
+        "rule_id": "",
+        "text": "When the user asks to cancel all pending orders, check the status of every order ID returned by get_user_details to identify all pending orders.",
+        "support": [
+          "a12"
+        ],
+        "reason": "Ensures the agent identifies all pending orders across the user's profile before performing mass cancellations."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a02",
+        "reason": "Lower priority than systematic fixes for skill loading and order status checking."
+      },
+      {
+        "proposal": "a04",
+        "reason": "Lower priority than systematic fixes for skill loading and order status checking."
+      },
+      {
+        "proposal": "a05",
+        "reason": "Lower priority than systematic fixes for skill loading and order status checking."
+      },
+      {
+        "proposal": "a07",
+        "reason": "Lower priority than systematic fixes for skill loading and order status checking."
+      }
+    ],
+    "summary": "Improved systematic skill loading for multi-request turns and ensured thorough checking of all user orders when performing pending order modifications or cancellations."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When the user makes multiple requests, load the skills for all identified requests before making any tool calls.",
+      "support": [
+        "generated_scope_write_all_pending_cancel+change_delivered_anya_brown_2024_1"
+      ],
+      "reason": "Fixes a systematic failure where the agent fails to load all necessary skills for multi-part requests.",
+      "written": "retail-8"
+    },
+    {
+      "op": "ADD",
+      "file": "retail:cancel",
+      "rule_id": "",
+      "text": "When the user asks to cancel all pending orders, check the status of every order ID returned by get_user_details to identify all pending orders.",
+      "support": [
+        "generated_scope_write_all_pending_cancel+change_delivered_fatima_muller_6713"
+      ],
+      "reason": "Ensures the agent identifies all pending orders across the user's profile before performing mass cancellations.",
+      "written": "retail:cancel-1"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "REPLACE",
+        "file": "retail:modify",
+        "rule_id": "retail:modify-4",
+        "text": "When the user asks for the cheapest available item (optionally with a specific option), call `get_product_details` for that product, identify all variants where 'available' is true, and select the one with the lowest price.",
+        "support": [
+          "generated_info_triple_scope_items_pending+user_address_given+cheapest_ava_kovacs_3448_1"
+        ],
+        "reason": "Prevents price hallucination by requiring a tool call to fetch all available variants and their prices."
+      },
+      "reason": "REPLACE or DELETE without an analysis that found the rule wrong or unclear"
+    },
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "retail:modify",
+        "rule_id": "",
+        "text": "Before calling `modify_pending_order_address`, you must call `get_order_details` for every order ID returned by `get_user_details` to confirm that its status is 'pending'.",
+        "support": [
+          "generated_all_pending_address_olivia_silva_7273"
+        ],
+        "reason": "Ensures the agent identifies all pending orders across the user's profile before performing address modifications."
+      },
+      "reason": "check D: A user has two orders: #W1, which is 'pending', and #W2, which is 'delivered'. The user asks the agent to change the shipping address for order #W1. The policy allows this because order #W1 is pending. However, the new rule requires the agent to call `get_order_details` for *every* order ID returned by `get_user_details` to confirm that its status is 'pending'. When the agent sees that #W2 is 'delivered' and not 'pending', it fails to confirm that all orders are pending and refuses to modify the address for #W1, even though the policy allows it. | D: The user asks to change the address for order #W111, which is 'pending'. The user also has an old order #W222 in their profile which is 'delivered'. The agent calls `get_user_details` and receives both IDs. Following the new rule, the agent calls `get_order_details` for both. Because order #W222 is not 'pending', the agent fails the 'confirmation' required by the rule and refuses to modify the address for #W111. However, the policy only requires the specific order being modified to be 'pending', so the agent should have proceeded with the change for #W111.",
+      "problems": [
+        "D",
+        "D"
+      ]
+    }
+  ],
+  "summary": "Improved systematic skill loading for multi-request turns and ensured thorough checking of all user orders when performing pending order modifications or cancellations."
+}

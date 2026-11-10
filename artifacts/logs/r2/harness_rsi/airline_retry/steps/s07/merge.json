@@ -1,0 +1,126 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a10",
+    "a12",
+    "a13",
+    "a14"
+  ],
+  "start": "2026-11-02T13:46:54",
+  "end": "2026-11-02T13:50:20",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline:compensation",
+        "rule_id": "",
+        "text": "Before offering a compensation certificate, if the get_flight_status tool does not return 'cancelled' (for a cancellation complaint) or 'delayed' (for a delay complaint), inform the user that you cannot offer compensation because the flight status does not confirm the claim and do not call send_certificate.",
+        "support": [
+          "a10"
+        ],
+        "reason": "Prevents the agent from offering compensation when the flight status does not confirm the user's claim, as required by the policy."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Even if the user provides explicit confirmation to proceed with a cancellation, do not call cancel_reservation if the criteria in rule airline:cancel-2 are not met.",
+        "support": [
+          "a12"
+        ],
+        "reason": "Ensures the agent adheres to cancellation criteria even when the user provides explicit confirmation."
+      },
+      {
+        "op": "REPLACE",
+        "file": "airline:modify",
+        "rule_id": "airline:modify-1",
+        "text": "When calculating the price difference or refund for a modification, sum the prices of all flights in the new reservation (using their original prices if they were kept from the original reservation and their new prices if they are new), subtract the sum of the prices of all flights in the original reservation, and multiply the result by the number of passengers.",
+        "support": [
+          "a02"
+        ],
+        "reason": "Corrects a systematic calculation error where the agent used new prices for kept flight segments when determining price differences."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a01",
+        "reason": "The proposed edit contains the same allowance numbers already present in the existing rule; a different approach or more explicit instruction was needed."
+      },
+      {
+        "proposal": "a03",
+        "reason": "This is a UX improvement rather than a fix for a systematic policy violation or calculation error."
+      },
+      {
+        "proposal": "a04",
+        "reason": "Less impactful than the primary calculation and policy enforcement edits."
+      },
+      {
+        "proposal": "a05",
+        "reason": "Less impactful than the primary calculation and policy enforcement edits."
+      },
+      {
+        "proposal": "a06",
+        "reason": "While a good fix for basic economy, it was not selected as one of the top 3 highest-impact edits."
+      },
+      {
+        "proposal": "a07",
+        "reason": "While a good fix for the sequence of operations, it was not selected as one of the top 3 highest-impact edits."
+      },
+      {
+        "proposal": "a13",
+        "reason": "Less impactful than the primary calculation and policy enforcement edits."
+      },
+      {
+        "proposal": "a14",
+        "reason": "This proposal was blocked because it forbids what the policy allows (refusing modification of basic economy instead of providing a path to modify it)."
+      }
+    ],
+    "summary": "Fixed policy violations regarding compensation and cancellation eligibility, and corrected the logic for calculating price differences during reservation modifications."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline:compensation",
+      "rule_id": "",
+      "text": "Before offering a compensation certificate, if the get_flight_status tool does not return 'cancelled' (for a cancellation complaint) or 'delayed' (for a delay complaint), inform the user that you cannot offer compensation because the flight status does not confirm the claim and do not call send_certificate.",
+      "support": [
+        "generated_pair_reroute+compensation_false_olivia_smith_4705"
+      ],
+      "reason": "Prevents the agent from offering compensation when the flight status does not confirm the user's claim, as required by the policy.",
+      "written": "airline:compensation-4"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "Even if the user provides explicit confirmation to proceed with a cancellation, do not call cancel_reservation if the criteria in rule airline:cancel-2 are not met.",
+      "support": [
+        "generated_pair_compensation_delayed+chain_liam_ito_4473"
+      ],
+      "reason": "Ensures the agent adheres to cancellation criteria even when the user provides explicit confirmation.",
+      "written": "airline:cancel-9"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "REPLACE",
+        "file": "airline:modify",
+        "rule_id": "airline:modify-1",
+        "text": "When calculating the price difference or refund for a modification, sum the prices of all flights in the new reservation (using their original prices if they were kept from the original reservation and their new prices if they are new), subtract the sum of the prices of all flights in the original reservation, and multiply the result by the number of passengers.",
+        "support": [
+          "generated_triple_write_change_cabin+segment+cabin_bags_any_james_li_5992_1"
+        ],
+        "reason": "Corrects a systematic calculation error where the agent used new prices for kept flight segments when determining price differences."
+      },
+      "reason": "REPLACE or DELETE without an analysis that found the rule wrong or unclear"
+    }
+  ],
+  "summary": "Fixed policy violations regarding compensation and cancellation eligibility, and corrected the logic for calculating price differences during reservation modifications."
+}

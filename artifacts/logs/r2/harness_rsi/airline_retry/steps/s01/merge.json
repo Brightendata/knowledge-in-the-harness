@@ -1,0 +1,177 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a06",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a11",
+    "a12",
+    "a13"
+  ],
+  "start": "2026-11-02T08:21:03",
+  "end": "2026-11-02T08:26:09",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "Before calling `update_reservation_flights`, `update_reservation_baggages`, or `update_reservation_passengers`, list the action details and obtain explicit user confirmation (yes) to proceed.",
+        "support": [
+          "a01"
+        ],
+        "reason": "The agent failed to list the action details before obtaining confirmation, leading to a hallucination that a database update had been completed."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:book",
+        "rule_id": "",
+        "text": "When the user specifies the number of bags for a booking, set total_baggages to that number and nonfree_baggages to the number of bags in excess of the free allowance (minimum 0).",
+        "support": [
+          "a08",
+          "a12"
+        ],
+        "reason": "The agent failed to respect the user's specified bag count, either defaulting to the allowance or failing to update the correct field."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:compensation",
+        "rule_id": "",
+        "text": "Before offering a compensation certificate for a delayed flight, verify that the user wants to change or cancel the reservation, and perform that change or cancellation before calling `send_certificate`.",
+        "support": [
+          "a04",
+          "a11"
+        ],
+        "reason": "The agent failed to follow the policy's required order of operations: it offered a certificate before performing the change or cancellation and before verifying the user's intent."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a02",
+        "reason": "While important, this was prioritized lower than core policy requirements like confirmation and order of operations."
+      },
+      {
+        "proposal": "a03",
+        "reason": "The policy is vague on what constitutes a 'need', making this a lower-priority gap fill."
+      },
+      {
+        "proposal": "a06",
+        "reason": "A single-task failure that is less critical than the selected edits."
+      },
+      {
+        "proposal": "a07",
+        "reason": "A specific arithmetic check that is less critical than the selected edits."
+      },
+      {
+        "proposal": "a09",
+        "reason": "A single-task failure that is less critical than the selected edits."
+      },
+      {
+        "proposal": "a10",
+        "reason": "A single-task failure that is less critical than the selected edits."
+      },
+      {
+        "proposal": "a13",
+        "reason": "A single-task failure that is less critical than the selected edits."
+      }
+    ],
+    "summary": "Added rules to ensure mandatory confirmation for modifications, correct bag count handling in bookings, and proper order of operations for delayed flight compensation."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "Before calling `update_reservation_flights`, `update_reservation_baggages`, or `update_reservation_passengers`, list the action details and obtain explicit user confirmation (yes) to proceed.",
+      "support": [
+        "generated_triple_cancel_recent+cabin+change_upgrade_mohamed_taylor_9830_1"
+      ],
+      "reason": "The agent failed to list the action details before obtaining confirmation, leading to a hallucination that a database update had been completed.",
+      "written": "airline:modify-11"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:book",
+      "rule_id": "",
+      "text": "When the user specifies the number of bags for a booking, set total_baggages to that number and nonfree_baggages to the number of bags in excess of the free allowance (minimum 0).",
+      "support": [
+        "generated_book_pay_by_total_james_ahmed_4322_v1",
+        "generated_pair_upgrade_cancel+book_mason_lee_7450"
+      ],
+      "reason": "The agent failed to respect the user's specified bag count, either defaulting to the allowance or failing to update the correct field.",
+      "written": "airline:book-7"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:compensation",
+      "rule_id": "",
+      "text": "Before offering a compensation certificate for a delayed flight, verify that the user wants to change or cancel the reservation, and perform that change or cancellation before calling `send_certificate`.",
+      "support": [
+        "generated_pair_compensation_delayed+book_friend_ivan_kim_3844_1",
+        "generated_triple_compensation_delayed+cancel_business+change_upgrade_emma_jackson_2190_1"
+      ],
+      "reason": "The agent failed to follow the policy's required order of operations: it offered a certificate before performing the change or cancellation and before verifying the user's intent.",
+      "written": "airline:compensation-2"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Added rules to ensure mandatory confirmation for modifications, correct bag count handling in bookings, and proper order of operations for delayed flight compensation.",
+  "removed_after_retest": [
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "Before calling `update_reservation_flights`, `update_reservation_baggages`, or `update_reservation_passengers`, list the action details and obtain explicit user confirmation (yes) to proceed.",
+        "support": [
+          "generated_triple_cancel_recent+cabin+change_upgrade_mohamed_taylor_9830_1"
+        ],
+        "reason": "The agent failed to list the action details before obtaining confirmation, leading to a hallucination that a database update had been completed.",
+        "written": "airline:modify-11"
+      },
+      "problems": [
+        "H"
+      ],
+      "tasks": [
+        {
+          "task": "generated_pair_compensation_delayed+book_friend_ivan_kim_3844_1",
+          "current": 4,
+          "candidate": 0,
+          "failed": 6,
+          "naming": 3
+        }
+      ]
+    },
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:compensation",
+        "rule_id": "",
+        "text": "Before offering a compensation certificate for a delayed flight, verify that the user wants to change or cancel the reservation, and perform that change or cancellation before calling `send_certificate`.",
+        "support": [
+          "generated_pair_compensation_delayed+book_friend_ivan_kim_3844_1",
+          "generated_triple_compensation_delayed+cancel_business+change_upgrade_emma_jackson_2190_1"
+        ],
+        "reason": "The agent failed to follow the policy's required order of operations: it offered a certificate before performing the change or cancellation and before verifying the user's intent.",
+        "written": "airline:compensation-2"
+      },
+      "problems": [
+        "H"
+      ],
+      "tasks": [
+        {
+          "task": "generated_pair_compensation_delayed+book_friend_ivan_kim_3844_1",
+          "current": 4,
+          "candidate": 0,
+          "failed": 6,
+          "naming": 5
+        }
+      ]
+    }
+  ]
+}

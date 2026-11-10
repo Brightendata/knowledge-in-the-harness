@@ -1,0 +1,145 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a09",
+    "a11",
+    "a12",
+    "a13",
+    "a14",
+    "a16",
+    "a17"
+  ],
+  "start": "2026-10-29T17:14:15",
+  "end": "2026-10-29T17:20:28",
+  "output": {
+    "edits": [
+      {
+        "op": "REPLACE",
+        "file": "airline:modify",
+        "rule_id": "airline:modify-1",
+        "text": "When calculating the price difference or refund for a modification, determine the prices of the new flight segments, use the original prices for any flight segments that are kept (from the reservation's payment history), sum these prices, subtract the sum of the prices of all flights in the original reservation (from the reservation's payment history), and multiply the result by the number of passengers.",
+        "support": [
+          "a05",
+          "a16"
+        ],
+        "reason": "Combines the requirement to use original prices from payment history and the specific instruction to keep original prices for segments that are not changed during a modification."
+      },
+      {
+        "op": "REPLACE",
+        "file": "airline:cancel",
+        "rule_id": "airline:cancel-2",
+        "text": "Before calling `cancel_reservation`, call `get_flight_status` for each flight in the reservation to verify if any were cancelled by the airline, and verify that the flight is in the future (not already flown), and that it meets one of the following: was made within the last 24 hours, the flight was cancelled by the airline, it is a business flight, or the user has travel insurance and the reason for cancellation is for health or weather reasons. If none of these conditions are met, inform the user that the cancellation is not allowed and do not call the tool.",
+        "support": [
+          "a04",
+          "a09"
+        ],
+        "reason": "Combines the need to verify flight status using a tool with the precise policy-mandated criteria for cancellation, including future dates and specific insurance coverage."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When the user specifies a payment method by amount or balance, call `get_user_details` to identify the correct payment_id from the user's profile.",
+        "support": [
+          "a01",
+          "a02"
+        ],
+        "reason": "Merges the requirement to identify the correct payment ID from the user's profile when the user provides a specific amount or balance."
+      },
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "When the user makes a request that is not about booking, modifying, or canceling a flight, or requesting a refund or compensation, transfer the user to a human agent.",
+        "support": [
+          "a14"
+        ],
+        "reason": "Ensures the agent follows the policy to transfer the user if the request falls outside the scope of the provided airline actions."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a03",
+        "reason": "Adopting this would allow a workaround for the basic economy modification restriction that is not explicitly supported by the policy's primary instructions."
+      },
+      {
+        "proposal": "a07",
+        "reason": "This is a specific filtering logic for upcoming reservations which is less systemic than the other adopted edits."
+      },
+      {
+        "proposal": "a11",
+        "reason": "The cancellation criteria check in the adopted edit is a higher priority than the specific instruction to obtain reasons for each reservation."
+      },
+      {
+        "proposal": "a12",
+        "reason": "The verification of cancellation criteria is already addressed by the replacement of rule airline:cancel-2."
+      },
+      {
+        "proposal": "a13",
+        "reason": "Verification of user identity is already implicitly handled by the payment identification rule which requires calling get_user_details."
+      },
+      {
+        "proposal": "a17",
+        "reason": "Clarification for ambiguous requests is less critical than enforcing the strict scope of the airline agent's capabilities."
+      }
+    ],
+    "summary": "Improved price calculation for modifications, clarified and tool-verified cancellation criteria, and added explicit rules for payment identification and out-of-scope transfers."
+  },
+  "edits": [
+    {
+      "op": "REPLACE",
+      "file": "airline:modify",
+      "rule_id": "airline:modify-1",
+      "text": "When calculating the price difference or refund for a modification, determine the prices of the new flight segments, use the original prices for any flight segments that are kept (from the reservation's payment history), sum these prices, subtract the sum of the prices of all flights in the original reservation (from the reservation's payment history), and multiply the result by the number of passengers.",
+      "support": [
+        "generated_change_upgrade_budget_4G711O_v1",
+        "generated_scope_downgrade_harper_martin_8348"
+      ],
+      "reason": "Combines the requirement to use original prices from payment history and the specific instruction to keep original prices for segments that are not changed during a modification.",
+      "written": "airline:modify-1"
+    },
+    {
+      "op": "REPLACE",
+      "file": "airline:cancel",
+      "rule_id": "airline:cancel-2",
+      "text": "Before calling `cancel_reservation`, call `get_flight_status` for each flight in the reservation to verify if any were cancelled by the airline, and verify that the flight is in the future (not already flown), and that it meets one of the following: was made within the last 24 hours, the flight was cancelled by the airline, it is a business flight, or the user has travel insurance and the reason for cancellation is for health or weather reasons. If none of these conditions are met, inform the user that the cancellation is not allowed and do not call the tool.",
+      "support": [
+        "generated_cancel_fallback_HVGOCW_v1",
+        "generated_scope_cancel_all_anya_khan_1074"
+      ],
+      "reason": "Combines the need to verify flight status using a tool with the precise policy-mandated criteria for cancellation, including future dates and specific insurance coverage.",
+      "written": "airline:cancel-2"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "When the user specifies a payment method by amount or balance, call `get_user_details` to identify the correct payment_id from the user's profile.",
+      "support": [
+        "generated_change_same_day_AEQA05",
+        "generated_triple_change+reroute+book_certificate_juan_hernandez_3837"
+      ],
+      "reason": "Merges the requirement to identify the correct payment ID from the user's profile when the user provides a specific amount or balance.",
+      "written": "airline:modify-10"
+    },
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "When the user makes a request that is not about booking, modifying, or canceling a flight, or requesting a refund or compensation, transfer the user to a human agent.",
+      "support": [
+        "generated_balances_ava_hernandez_2083"
+      ],
+      "reason": "Ensures the agent follows the policy to transfer the user if the request falls outside the scope of the provided airline actions.",
+      "written": "airline-8"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Improved price calculation for modifications, clarified and tool-verified cancellation criteria, and added explicit rules for payment identification and out-of-scope transfers."
+}

@@ -1,0 +1,179 @@
+{
+ "v00": {
+  "start": "plugins/retail",
+  "holds": []
+ },
+ "v01": {
+  "step": 1,
+  "from": "v00",
+  "holds": [
+   "s01"
+  ],
+  "summary": "Merged systematic improvements for item modification limits, completion of database actions before transfer, and strict tool usage for product details.",
+  "kept": true,
+  "successes": {
+   "current": 136,
+   "candidate": 145
+  }
+ },
+ "v02": {
+  "step": 2,
+  "from": "v01",
+  "holds": [
+   "s01",
+   "s02"
+  ],
+  "summary": "Deleted the restrictive modification rule, added requirements to load all relevant skills for multi-part requests, and ensured all changes are listed in confirmations.",
+  "kept": true,
+  "successes": {
+   "current": 140,
+   "candidate": 149
+  }
+ },
+ "v03": {
+  "step": 3,
+  "from": "v02",
+  "holds": [
+   "s01",
+   "s02",
+   "s03"
+  ],
+  "summary": "Improved order identification scope, ensured partial fulfillment of confirmed actions, and corrected skill routing for pending order exchanges.",
+  "kept": false,
+  "successes": {
+   "current": 133,
+   "candidate": 136
+  }
+ },
+ "v04": {
+  "step": 4,
+  "from": "v02",
+  "holds": [
+   "s01",
+   "s02",
+   "s04"
+  ],
+  "summary": "Added rules to handle price comparisons, ensure correct modification order, and confirm all items for order modifications.",
+  "kept": false,
+  "successes": {
+   "current": 147,
+   "candidate": 146
+  }
+ },
+ "v05": {
+  "step": 5,
+  "from": "v02",
+  "holds": [
+   "s01",
+   "s02",
+   "s05"
+  ],
+  "summary": "Added rules to ensure all order statuses are verified, mandatory tool calls are executed before confirmation, and modification flow is not blocked by inaccessible information.",
+  "kept": true,
+  "successes": {
+   "current": 134,
+   "candidate": 142
+  }
+ },
+ "v06": {
+  "step": 6,
+  "from": "v05",
+  "holds": [
+   "s01",
+   "s02",
+   "s05",
+   "s06"
+  ],
+  "summary": "Added rules to enforce different product options for exchanges, correctly identify orders by content, and verify payment balances before proposing modifications.",
+  "kept": true,
+  "successes": {
+   "current": 133,
+   "candidate": 145
+  }
+ },
+ "v07": {
+  "step": 7,
+  "from": "v06",
+  "holds": [
+   "s01",
+   "s02",
+   "s05",
+   "s06",
+   "s07"
+  ],
+  "summary": "Added procedural rules for exchange and return to ensure correct tool call timing, status management, and turn-based execution.",
+  "kept": false,
+  "successes": {
+   "current": 127,
+   "candidate": 123
+  }
+ },
+ "v08": {
+  "step": 8,
+  "from": "v06",
+  "holds": [
+   "s01",
+   "s02",
+   "s05",
+   "s06",
+   "s08"
+  ],
+  "summary": "Added rules to improve order grouping, skill loading for pending exchanges, and consistency between confirmed modification summaries and tool calls.",
+  "kept": false,
+  "successes": {
+   "current": 146,
+   "candidate": 138
+  }
+ },
+ "v09": {
+  "step": 9,
+  "from": "v06",
+  "holds": [
+   "s01",
+   "s02",
+   "s05",
+   "s06",
+   "s09"
+  ],
+  "summary": "Added rules to ensure policy compliance for user address modifications and exchanges, and to improve order identification accuracy.",
+  "kept": false,
+  "successes": {
+   "current": 139,
+   "candidate": 141
+  }
+ },
+ "v10": {
+  "step": 10,
+  "from": "v06",
+  "holds": [
+   "s01",
+   "s02",
+   "s05",
+   "s06",
+   "s10"
+  ],
+  "summary": "Updated rules to ensure confirmed changes are completed before transfer, honor explicit escalation requests, and prevent being swayed by users on exchange options.",
+  "kept": false,
+  "successes": {
+   "current": 153,
+   "candidate": 144
+  }
+ },
+ "v11": {
+  "step": 11,
+  "from": "v06",
+  "holds": [
+   "s01",
+   "s02",
+   "s05",
+   "s06",
+   "s11"
+  ],
+  "summary": "Improved calculation accuracy for cheapest items, corrected payment detail retrieval logic, and ensured progress on confirmed database changes.",
+  "kept": false,
+  "successes": {
+   "current": 145,
+   "candidate": 135
+  }
+ }
+}

@@ -1,0 +1,113 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a10",
+    "a11"
+  ],
+  "start": "2026-10-30T12:16:18",
+  "end": "2026-10-30T12:18:26",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When a user request involves multiple items, check if there is a single order that contains all of those items before splitting the requests across different orders.",
+        "support": [
+          "a01"
+        ],
+        "reason": "This ensures the agent correctly identifies when a request applies to a single order rather than splitting it incorrectly."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When the user asks to exchange an item in a pending order, load the retail:modify skill.",
+        "support": [
+          "a03"
+        ],
+        "reason": "This ensures the agent loads the correct skill and policy for exchange requests on pending orders."
+      },
+      {
+        "op": "ADD",
+        "file": "retail:modify",
+        "rule_id": "",
+        "text": "After obtaining the user's confirmation for a summary of modification details, the agent must ensure the database tool calls match the items and options confirmed in that summary.",
+        "support": [
+          "a06"
+        ],
+        "reason": "This prevents the agent from performing actions that contradict the details the user specifically confirmed."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a02",
+        "reason": "The priority was given to routing and accuracy fixes that prevent the agent from failing to see policies or acting on confirmed details."
+      },
+      {
+        "proposal": "a04",
+        "reason": "The priority was given to routing and accuracy fixes that prevent the agent from failing to see policies or acting on confirmed details."
+      },
+      {
+        "proposal": "a05",
+        "reason": "The priority was given to routing and accuracy fixes that prevent the agent from failing to see policies or acting on confirmed details."
+      },
+      {
+        "proposal": "a07",
+        "reason": "The priority was given to routing and accuracy fixes that prevent the agent from failing to see policies or acting on confirmed details."
+      },
+      {
+        "proposal": "a10",
+        "reason": "The priority was given to routing and accuracy fixes that prevent the agent from failing to see policies or acting on confirmed details."
+      },
+      {
+        "proposal": "a11",
+        "reason": "The priority was given to routing and accuracy fixes that prevent the agent from failing to see policies or acting on confirmed details."
+      }
+    ],
+    "summary": "Added rules to improve order grouping, skill loading for pending exchanges, and consistency between confirmed modification summaries and tool calls."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When a user request involves multiple items, check if there is a single order that contains all of those items before splitting the requests across different orders.",
+      "support": [
+        "generated_status_exchange_2_W1579621"
+      ],
+      "reason": "This ensures the agent correctly identifies when a request applies to a single order rather than splitting it incorrectly.",
+      "written": "retail-9"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When the user asks to exchange an item in a pending order, load the retail:modify skill.",
+      "support": [
+        "generated_address_items_status_default_W3386832"
+      ],
+      "reason": "This ensures the agent loads the correct skill and policy for exchange requests on pending orders.",
+      "written": "retail-10"
+    },
+    {
+      "op": "ADD",
+      "file": "retail:modify",
+      "rule_id": "",
+      "text": "After obtaining the user's confirmation for a summary of modification details, the agent must ensure the database tool calls match the items and options confirmed in that summary.",
+      "support": [
+        "generated_modify_mind_keep_pay_W3320020"
+      ],
+      "reason": "This prevents the agent from performing actions that contradict the details the user specifically confirmed.",
+      "written": "retail:modify-7"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Added rules to improve order grouping, skill loading for pending exchanges, and consistency between confirmed modification summaries and tool calls."
+}

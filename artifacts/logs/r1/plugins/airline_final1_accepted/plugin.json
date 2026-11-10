@@ -1,0 +1,13 @@
+{
+  "name": "airline",
+  "version": "0",
+  "description": "Airline customer service. Load it first for any flight request; it says which airline skill to load next.",
+  "author": "knora",
+  "last_rule": {
+    "airline:modify": 10,
+    "airline": 8,
+    "airline:book": 6,
+    "airline:cancel": 6,
+    "airline:compensation": 1
+  }
+}

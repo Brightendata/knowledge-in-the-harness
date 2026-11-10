@@ -1,0 +1,148 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a08",
+    "a09",
+    "a12"
+  ],
+  "start": "2026-11-02T03:23:31",
+  "end": "2026-11-02T03:28:13",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "Before calling update_reservation_flights, if the reservation's cabin class is basic_economy, inform the user that basic economy flights cannot be modified and refuse that part of the request.",
+        "support": [
+          "a01"
+        ],
+        "reason": "The agent failed to follow the policy that basic economy flights cannot be modified, even though it identified the cabin class correctly."
+      },
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "Before calling a tool to perform a database update, ensure that the tool's arguments match the action details you listed to the user for confirmation.",
+        "support": [
+          "a06"
+        ],
+        "reason": "The agent performed a database update with parameters that did not match the specific action details it had listed and received explicit user confirmation for."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When calling update_reservation_flights, the agent must only include the flight segments that the user explicitly asked to change, while keeping all other original flight segments unchanged.",
+        "support": [
+          "a08"
+        ],
+        "reason": "The agent replaced flight segments in the reservation that the user did not ask to change because it found cheaper options for those legs."
+      },
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "Before calling load_skill for any skill, the agent must first load the airline skill to understand the general policy and scope of the business.",
+        "support": [
+          "a12"
+        ],
+        "reason": "The agent loaded an unrelated skill because it failed to first load the airline skill to understand the general policy and scope of the business."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a02",
+        "reason": "Rule 4: a08 has a higher impact as it prevents incorrect database changes, whereas a02 fixes an arithmetic error."
+      },
+      {
+        "proposal": "a03",
+        "reason": "Rule 4: a08 is a more prevalent and high-impact failure in flight modification than maintaining the exact number of days."
+      },
+      {
+        "proposal": "a04",
+        "reason": "Rule 4: a08 is a more prevalent and high-impact failure in flight modification than verifying specific dates for every segment."
+      },
+      {
+        "proposal": "a05",
+        "reason": "Rule 4: a08 is a more prevalent and high-impact failure in flight modification than preventing a duplicate call for the same cabin class."
+      },
+      {
+        "proposal": "a07",
+        "reason": "Rule 4: a12 is a higher priority as it fixes a systemic routing failure that prevents the agent from seeing relevant policies."
+      },
+      {
+        "proposal": "a09",
+        "reason": "Rule 4: a12 is a higher priority as it addresses the root cause of the agent loading the wrong skill initially."
+      }
+    ],
+    "summary": "Added rules to enforce basic economy restrictions, ensure confirmation matches tool arguments, restrict modifications to requested segments only, and require loading the entry skill first."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "Before calling a tool to perform a database update, ensure that the tool's arguments match the action details you listed to the user for confirmation.",
+      "support": [
+        "generated_change_upgrade_budget_RF9ICL_v1"
+      ],
+      "reason": "The agent performed a database update with parameters that did not match the specific action details it had listed and received explicit user confirmation for.",
+      "written": "airline-12"
+    },
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "Before calling load_skill for any skill, the agent must first load the airline skill to understand the general policy and scope of the business.",
+      "support": [
+        "generated_balances_ava_davis_9130"
+      ],
+      "reason": "The agent loaded an unrelated skill because it failed to first load the airline skill to understand the general policy and scope of the business.",
+      "written": "airline-13"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "Before calling update_reservation_flights, if the reservation's cabin class is basic_economy, inform the user that basic economy flights cannot be modified and refuse that part of the request.",
+        "support": [
+          "generated_change_or_cancel_0CYPBQ"
+        ],
+        "reason": "The agent failed to follow the policy that basic economy flights cannot be modified, even though it identified the cabin class correctly."
+      },
+      "reason": "check D: A user has a reservation with a 'basic_economy' cabin class and asks to change the cabin to 'economy' (and no flights have been flown). The policy states that 'all reservations, including basic economy, can change cabin without changing the flights.' However, the rule would cause the agent to refuse the request because the reservation's cabin class is 'basic_economy', even though the change is allowed by the policy. | D: A user with a basic_economy reservation asks to change their cabin class to economy without changing the flight numbers. The policy states: 'In other cases, all reservations, including basic economy, can change cabin without changing the flights.' However, the agent would need to call `update_reservation_flights` to perform this change. The rule would see the current cabin is basic_economy and refuse the request, even though the policy allows it.",
+      "problems": [
+        "D",
+        "D"
+      ]
+    },
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When calling update_reservation_flights, the agent must only include the flight segments that the user explicitly asked to change, while keeping all other original flight segments unchanged.",
+        "support": [
+          "generated_basic_change_B1TDOL_v1"
+        ],
+        "reason": "The agent replaced flight segments in the reservation that the user did not ask to change because it found cheaper options for those legs."
+      },
+      "reason": "check E: User: \"I have a round-trip reservation (ID: 123) with an outbound flight HAT001 and a return flight HAT002. I want to change the outbound flight to HAT003.\" \n\nThe agent identifies the flights in the reservation. According to the rule, it should only include the flight segments the user asked to change (HAT003) in the tool call. However, the `update_reservation_flights` tool description specifies that the `flights` argument must contain the \"ENTIRE new reservation,\" including segments that are not changed. By only including HAT003, the agent would cause the return flight HAT002 to be removed from the reservation, which violates the policy's allowance for keeping other segments. | E: A user has a reservation with three flight segments: (1) SFO-LAX, (2) LAX-JFK, and (3) JFK-SFO. The user asks the agent to change the first flight segment (SFO-LAX) to a new flight (SFO-SAN). The agent identifies the new flight and follows the new rule: 'the agent must only include the flight segments that the user explicitly asked to change, while keeping all other original flight segments unchanged.' Because the user only asked to change the first segment, the agent calls `update_reservation_flights` with an array containing only the new SFO-SAN flight. However, the tool `update_reservation_flights` requires the 'ENTIRE new reservation' to be included in the array, stating that even unchanged segments 'should still be included'. By only including the one changed segment, the agent provides a quantity (count of 1) other than the one the tool asks for (count of 3), resulting in the other two segments being removed from the user's reservation.",
+      "problems": [
+        "E",
+        "E"
+      ]
+    }
+  ],
+  "summary": "Added rules to enforce basic economy restrictions, ensure confirmation matches tool arguments, restrict modifications to requested segments only, and require loading the entry skill first."
+}

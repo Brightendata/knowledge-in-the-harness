@@ -1,0 +1,157 @@
+{
+  "analyses": [
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a11",
+    "a14"
+  ],
+  "start": "2026-11-02T19:18:06",
+  "end": "2026-11-02T19:25:06",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "retail:exchange",
+        "rule_id": "",
+        "text": "When a user specifies a constraint such as 'keeping everything else the same' while requesting a change, you must prioritize that constraint and only consider options that match those attributes.",
+        "support": [
+          "a08",
+          "a09"
+        ],
+        "reason": "These proposals both address the same situation of handling 'keeping everything else the same' constraints in exchanges, which is a prevalent failure pattern."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When a user states that an item is lost, do not offer or process a return or exchange for that item.",
+        "support": [
+          "a06"
+        ],
+        "reason": "This prevents the agent from performing a database change that would violate the implied policy that returns require the item to be sent back."
+      },
+      {
+        "op": "ADD",
+        "file": "retail:modify",
+        "rule_id": "",
+        "text": "When a user's request to modify an order refers to an item type that has multiple items in the order, you must list all such items and ask the user to clarify which one they want to modify.",
+        "support": [
+          "a05"
+        ],
+        "reason": "This ensures the agent clarifies which specific item to modify when multiple items of the same type are present in a pending order."
+      },
+      {
+        "op": "ADD",
+        "file": "retail:modify",
+        "rule_id": "",
+        "text": "When a user provides a description of an order that contradicts the order ID they provide, clarify with the user which order they wish to modify before asking for confirmation.",
+        "support": [
+          "a02"
+        ],
+        "reason": "This prevents the agent from proceeding with a database change on an incorrect order when the user's description and ID are inconsistent."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a03",
+        "reason": "This point is covered by the prevalent pattern in retail:exchange, and while it also applies to modify, the chosen edits prioritize high-impact database corrections."
+      },
+      {
+        "proposal": "a04",
+        "reason": "This is a narrow case involving partial variant availability that is less impactful than the selected clarifications."
+      },
+      {
+        "proposal": "a07",
+        "reason": "This is a narrow case regarding specific height comparisons."
+      },
+      {
+        "proposal": "a10",
+        "reason": "This is a minor descriptive error regarding finding the cheapest/most expensive price."
+      },
+      {
+        "proposal": "a11",
+        "reason": "This is a minor counting error that is less impactful than the selected database safety rules."
+      },
+      {
+        "proposal": "a14",
+        "reason": "This is a narrow case regarding handling specific corrections to exchange IDs."
+      }
+    ],
+    "summary": "Added rules to prevent incorrect database changes by clarifying order/item contradictions and excluding lost items from returns, and improved logic for handling 'keep everything the same' constraints."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "retail:modify",
+      "rule_id": "",
+      "text": "When a user provides a description of an order that contradicts the order ID they provide, clarify with the user which order they wish to modify before asking for confirmation.",
+      "support": [
+        "generated_payment_W7941031"
+      ],
+      "reason": "This prevents the agent from proceeding with a database change on an incorrect order when the user's description and ID are inconsistent.",
+      "written": "retail:modify-7"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "retail:exchange",
+        "rule_id": "",
+        "text": "When a user specifies a constraint such as 'keeping everything else the same' while requesting a change, you must prioritize that constraint and only consider options that match those attributes.",
+        "support": [
+          "generated_exchange_gift_covers_W9706917",
+          "generated_exchange_mind_keep_pay_W1544028"
+        ],
+        "reason": "These proposals both address the same situation of handling 'keeping everything else the same' constraints in exchanges, which is a prevalent failure pattern."
+      },
+      "reason": "check D: User: \"I'd like to exchange my order #W12345. I want to keep the size Medium and the color Red.\"\nAgent: \"I see that we have Red Medium, Red Small, and Blue Medium available. Which would you like?\"\nUser: \"Actually, I've changed my mind. I'd like the Blue Medium one instead.\"\nAgent (following the rule): \"I'm sorry, I can only show you options that are Red, as you previously requested to keep the color Red.\"\nPolicy: The policy states that \"for a delivered order, each item can be exchanged to an available new item of the same product but of different product option.\" Since Blue Medium is a valid different product option for the same product, the agent should be able to fulfill this request. The rule prevents the agent from doing so by prioritizing a previous constraint over a subsequent request. | D: User: \"I'd like to exchange my red shirt (#123) for a blue one, keeping the size the same.\"\nAgent: \"I found a blue shirt in the same size. Would you like to proceed with the exchange?\"\nUser: \"Actually, I'd like it in a size Large now, even if it's a different size than I first said.\"\nAgent: \"I'm sorry, but you previously specified that you wanted to keep the size the same. I can only offer you options in that size.\"\nPolicy: The policy allows the exchange of an item for a new item of the same product type but with different options (such as a different size). Since the user's second request is for a valid exchange (same product type, different option), the agent should be able to fulfill it, even if it contradicts a previous constraint.",
+      "problems": [
+        "D",
+        "D"
+      ]
+    },
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When a user states that an item is lost, do not offer or process a return or exchange for that item.",
+        "support": [
+          "generated_lost_pair_lost_item+address_items_status_given_anya_patel_3710"
+        ],
+        "reason": "This prevents the agent from performing a database change that would violate the implied policy that returns require the item to be sent back."
+      },
+      "reason": "check D: User: \"My order #W9999999 was delivered, but I've already lost the item. Can I still return it for a refund?\"\nAgent: \"I'm sorry, but since you mentioned the item is lost, I cannot offer or process a return or exchange for that item.\"\nPolicy: The policy allows returns for any order with a status of 'delivered'. The agent should check the order status, and if it is 'delivered', proceed with the return process by asking for confirmation of the order ID, the items to be returned, and a payment method for the refund. | D: User: \"I lost my item, can I get a return?\"\n\nThe order is 'delivered'. The policy allows a return for any delivered order (\"An order can only be returned if its status is 'delivered'\"). The rule forbids the agent from offering or processing a return if the user states the item is lost. Because the policy allows the return of a delivered order and does not forbid returning a lost item, the rule forbids an action allowed by the policy. This is a problem of type D (Forbidding what the policy allows) because the rule refuses a part of the request (the return) that the policy allows because another part (the lost status) is ruled out (the agent cannot handle the 'lost' status as there is no policy or tool for it). The \"however strict it is\" clause in the \"How to check\" section applies here because the rule is specific to lost items, and the \"only together\" exception does not apply as it is a single request rather than two distinct requests joined together.",
+      "problems": [
+        "D",
+        "D"
+      ]
+    },
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "retail:modify",
+        "rule_id": "",
+        "text": "When a user's request to modify an order refers to an item type that has multiple items in the order, you must list all such items and ask the user to clarify which one they want to modify.",
+        "support": [
+          "generated_modify_same_as_W8367567"
+        ],
+        "reason": "This ensures the agent clarifies which specific item to modify when multiple items of the same type are present in a pending order."
+      },
+      "reason": "check D: User: \"I have two bookshelves in my pending order #W0000000. I want to change both of them to a different color.\"\n\nAgent (following rule): \"You have two bookshelves in your order (#W0000000). Which one would you like to modify?\"\n\nPolicy Requirement: The policy allows the user to modify multiple items in a pending order as long as the details are confirmed and collected into a list before the tool call. The rule incorrectly forces the agent to ask for a choice of a single item even when the user has already specified they want to modify both. | D: User: 'I want to modify the bookshelf with item ID 8649999816.' (The user's order contains two bookshelves). The agent, following the new rule, would list both bookshelves and ask the user to clarify which one they want to modify, even though the user already specified the item ID. The policy allows modifying the order, and the rule's trigger is wider than the situation of ambiguity it was intended to address, thus blocking the action in a case where the policy allows it.",
+      "problems": [
+        "D",
+        "D"
+      ]
+    }
+  ],
+  "summary": "Added rules to prevent incorrect database changes by clarifying order/item contradictions and excluding lost items from returns, and improved logic for handling 'keep everything the same' constraints."
+}

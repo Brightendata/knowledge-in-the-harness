@@ -1,0 +1,486 @@
+{
+ "candidate": {
+  "generated_addr_write_exchange_pending+address_items_status_given_yusuf_khan_7091_1": [
+   0,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_address_items_mind_W1416704": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_address_items_status_order_W6478051": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_address_items_status_order_W7040556": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_bound_group_W3529525_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_budget_group_W4160705_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_budget_group_W4183735_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_refund_group_W8389220_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_count_group_W1971958_v0": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_info_triple_count_enough+user_address_order+cheapest_sophia_garcia_5025": [
+   0,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_lookup_pair_status_exchange+card_raj_sanchez_2970_1": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_gift_covers_W4423731": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_mind_W5861600": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_one_action_group_W2002172_v1": [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_one_action_group_W5697187_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_one_action_group_W6015009_v0": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_one_action_group_W7647404_v0": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_one_action_group_W7647404_v1": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_other_type_return_W6798117": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_priciest+cheapest_harper_ahmed_4844": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_payment_W4538969": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_across_daiki_hernandez_1356": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_return_except_card_human_W6075915": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_items_delivered_emma_kim_1076": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_items_pending_harper_johansson_2663": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_write_all_delivered+exchange_pending_ethan_muller_6097_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_write_all_delivered_but+cancel_partial_whole_raj_sanchez_2970_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_stock_group_W2989580_v1": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_triple_write_cancel_processed+return_across+user_address_given_liam_anderson_5973_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_write_cancel_processed+return_across+user_address_given_mia_smith_1623": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "current": {
+  "generated_addr_write_exchange_pending+address_items_status_given_yusuf_khan_7091_1": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_address_items_mind_W1416704": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_address_items_status_order_W6478051": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_address_items_status_order_W7040556": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_bound_group_W3529525_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_budget_group_W4160705_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_budget_group_W4183735_v0": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_refund_group_W8389220_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_count_group_W1971958_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_info_triple_count_enough+user_address_order+cheapest_sophia_garcia_5025": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_lookup_pair_status_exchange+card_raj_sanchez_2970_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_gift_covers_W4423731": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_mind_W5861600": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_one_action_group_W2002172_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_one_action_group_W5697187_v0": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_one_action_group_W6015009_v0": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_one_action_group_W7647404_v0": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_one_action_group_W7647404_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_other_type_return_W6798117": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_priciest+cheapest_harper_ahmed_4844": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_payment_W4538969": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_across_daiki_hernandez_1356": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_return_except_card_human_W6075915": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_items_delivered_emma_kim_1076": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_scope_items_pending_harper_johansson_2663": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1
+  ],
+  "generated_scope_write_all_delivered+exchange_pending_ethan_muller_6097_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_write_all_delivered_but+cancel_partial_whole_raj_sanchez_2970_1": [
+   0,
+   0,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_stock_group_W2989580_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_write_cancel_processed+return_across+user_address_given_liam_anderson_5973_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_write_cancel_processed+return_across+user_address_given_mia_smith_1623": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ]
+ }
+}

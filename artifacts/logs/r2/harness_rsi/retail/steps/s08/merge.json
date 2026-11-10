@@ -1,0 +1,130 @@
+{
+  "analyses": [
+    "a01",
+    "a04",
+    "a05",
+    "a06",
+    "a08",
+    "a09",
+    "a10",
+    "a11",
+    "a12"
+  ],
+  "start": "2026-11-03T00:20:52",
+  "end": "2026-11-03T00:23:30",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "Before calling any tool that updates the database, you must obtain an explicit 'yes' from the user to confirm the action details. Do not accept 'Please proceed' or other instructions as a 'yes'.",
+        "support": [
+          "a05"
+        ],
+        "reason": "Ensures explicit 'yes' confirmation for database updates as required by policy."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When the user asks to exchange an item from a pending order, load the `retail:modify` skill.",
+        "support": [
+          "a01"
+        ],
+        "reason": "Ensures the correct skill is loaded when a user requests an exchange on a pending order."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When the user's request involves modifying their default user address, you must load the `retail:user-address` skill at the beginning of the conversation.",
+        "support": [
+          "a10"
+        ],
+        "reason": "Ensures the user-address skill is loaded when the user wants to update their default address."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When the item a user wants to modify or cancel is not found in the order ID they provided, you must call `get_user_details` to identify the correct order.",
+        "support": [
+          "a08"
+        ],
+        "reason": "Enables the agent to find the correct order when the user provides an incorrect ID for a specific item."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a04",
+        "reason": "Ranked lower than more fundamental routing and policy adherence edits."
+      },
+      {
+        "proposal": "a06",
+        "reason": "Ranked lower than more fundamental routing and policy adherence edits."
+      },
+      {
+        "proposal": "a09",
+        "reason": "Ranked lower than more fundamental routing and policy adherence edits."
+      },
+      {
+        "proposal": "a11",
+        "reason": "Ranked lower than more fundamental routing and policy adherence edits."
+      },
+      {
+        "proposal": "a12",
+        "reason": "Ranked lower than more fundamental routing and policy adherence edits."
+      }
+    ],
+    "summary": "Add rules to improve skill loading, ensure explicit 'yes' confirmation, and improve order identification."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "Before calling any tool that updates the database, you must obtain an explicit 'yes' from the user to confirm the action details. Do not accept 'Please proceed' or other instructions as a 'yes'.",
+      "support": [
+        "generated_pair_exchange_mind_return+return_across_olivia_ahmed_6778"
+      ],
+      "reason": "Ensures explicit 'yes' confirmation for database updates as required by policy.",
+      "written": "retail-20"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When the user asks to exchange an item from a pending order, load the `retail:modify` skill.",
+      "support": [
+        "generated_three_writes_return_twin+status_exchange+exchange_pending_noah_kovacs_1216_2"
+      ],
+      "reason": "Ensures the correct skill is loaded when a user requests an exchange on a pending order.",
+      "written": "retail-21"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When the user's request involves modifying their default user address, you must load the `retail:user-address` skill at the beginning of the conversation.",
+      "support": [
+        "generated_quad_cancel_processed+new_order+user_address_given+undo_emma_lopez_8196"
+      ],
+      "reason": "Ensures the user-address skill is loaded when the user wants to update their default address.",
+      "written": "retail-22"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When the item a user wants to modify or cancel is not found in the order ID they provided, you must call `get_user_details` to identify the correct order.",
+      "support": [
+        "generated_pair_shipped_to+cancel_partial_whole_mason_johansson_2485"
+      ],
+      "reason": "Enables the agent to find the correct order when the user provides an incorrect ID for a specific item.",
+      "written": "retail-23"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Add rules to improve skill loading, ensure explicit 'yes' confirmation, and improve order identification."
+}

@@ -1,0 +1,157 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a11",
+    "a12",
+    "a13"
+  ],
+  "start": "2026-10-29T13:14:22",
+  "end": "2026-10-29T13:21:07",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "When the user asks for a refund, also load the `airline:cancel` skill.",
+        "support": [
+          "a05"
+        ],
+        "reason": "Prevents the agent from using the `cancel_reservation` tool for partial refunds, which would cancel the entire reservation."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:book",
+        "rule_id": "",
+        "text": "Before calling book_reservation, check if the user already has a reservation that matches the requested origin, destination, and dates. If they do, update that reservation instead of booking a new one.",
+        "support": [
+          "a10"
+        ],
+        "reason": "Prevents the agent from creating duplicate reservations when a matching one already exists."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:book",
+        "rule_id": "",
+        "text": "When calculating the total cost for a reservation, multiply the sum of the prices of all flights in the itinerary by the number of passengers.",
+        "support": [
+          "a11"
+        ],
+        "reason": "Ensures the agent correctly calculates the total cost per passenger for the booking tool."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When the user specifies a sequence of changes (e.g., 'first... then...'), perform each change as a separate tool call in the order requested.",
+        "support": [
+          "a01"
+        ],
+        "reason": "Prevents the agent from merging sequential requests into a single tool call, ensuring intermediate states are preserved."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a02",
+        "reason": "The existing rule airline:modify-3 already contains the correct logic for calculating nonfree_baggages; the agent's failure was a case of not following the rule rather than the rule being incorrect."
+      },
+      {
+        "proposal": "a03",
+        "reason": "Less impactful than the core arithmetic and routing fixes adopted."
+      },
+      {
+        "proposal": "a04",
+        "reason": "The policy does not require asking for consent before transfer, and other edits address more critical functional failures."
+      },
+      {
+        "proposal": "a06",
+        "reason": "Less impactful than the core arithmetic and routing fixes adopted."
+      },
+      {
+        "proposal": "a07",
+        "reason": "Less impactful than the core arithmetic and routing fixes adopted."
+      },
+      {
+        "proposal": "a08",
+        "reason": "Merged into a more comprehensive check or overshadowed by core logic."
+      },
+      {
+        "proposal": "a09",
+        "reason": "Merged into a more comprehensive check or overshadowed by core logic."
+      },
+      {
+        "proposal": "a12",
+        "reason": "Less impactful than the core arithmetic and routing fixes adopted."
+      },
+      {
+        "proposal": "a13",
+        "reason": "Less impactful than the core arithmetic and routing fixes adopted."
+      }
+    ],
+    "summary": "Added rules to handle sequential change requests, prevent duplicate bookings, ensure correct cost calculations, and improve skill loading for refunds."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "When the user asks for a refund, also load the `airline:cancel` skill.",
+      "support": [
+        "generated_pair_bags+insurance_ethan_li_4016"
+      ],
+      "reason": "Prevents the agent from using the `cancel_reservation` tool for partial refunds, which would cancel the entire reservation.",
+      "written": "airline-4"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:book",
+      "rule_id": "",
+      "text": "When calculating the total cost for a reservation, multiply the sum of the prices of all flights in the itinerary by the number of passengers.",
+      "support": [
+        "generated_pair_compensation_delayed+book_emma_jackson_2190"
+      ],
+      "reason": "Ensures the agent correctly calculates the total cost per passenger for the booking tool.",
+      "written": "airline:book-4"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "When the user specifies a sequence of changes (e.g., 'first... then...'), perform each change as a separate tool call in the order requested.",
+      "support": [
+        "generated_basic_change_P9L9FV_v1"
+      ],
+      "reason": "Prevents the agent from merging sequential requests into a single tool call, ensuring intermediate states are preserved.",
+      "written": "airline:modify-5"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:book",
+        "rule_id": "",
+        "text": "Before calling book_reservation, check if the user already has a reservation that matches the requested origin, destination, and dates. If they do, update that reservation instead of booking a new one.",
+        "support": [
+          "generated_triple_compensation_delayed+cabin+segment_fatima_ahmed_2248"
+        ],
+        "reason": "Prevents the agent from creating duplicate reservations when a matching one already exists."
+      },
+      "reason": "check D: User: \"I'd like to book a flight from SFO to JFK on 2024-06-01.\" \nAgent: (Checks and finds an existing reservation for SFO-JFK on 2024-06-01) \"I see you already have a reservation for that trip. I will update that existing reservation instead of creating a new one.\"\nUser: \"No, I need two separate bookings. One for myself and one for my friend who is traveling with me on the same day.\"\nPolicy Requirement: The policy allows the agent to book a flight as long as the required details (user id, trip type, origin, destination, cabin, passengers, payment, baggage, insurance) are provided. It does not forbid booking multiple reservations for the same route and date. The agent should perform the booking as requested by the user, but the rule forces it to refuse the new booking and instead modify an existing one. | B: A user wants to book a second, separate reservation for the same route and date as one they already have (for example, booking for a different passenger or a separate trip). The user says, 'I want to book a flight from SFO to JFK on 2024-06-01.' The agent finds an existing reservation for that route and date. Following the rule, the agent updates the existing reservation instead of creating the new booking the user requested. The policy allows for multiple bookings, and the agent should not decide to update an existing one unless the user specifically requests that.",
+      "problems": [
+        "D",
+        "B"
+      ]
+    }
+  ],
+  "summary": "Added rules to handle sequential change requests, prevent duplicate bookings, ensure correct cost calculations, and improve skill loading for refunds."
+}

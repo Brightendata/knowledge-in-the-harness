@@ -1,0 +1,59 @@
+# Human-set parameters of GRPO (step 5 of a round) and the model gate (step 6). Each GRPO run copies the recipe, [grpo]
+# without the machine's paths and GPUs, into its config.json. Agent sampling, the user simulator and the gates' runs of
+# a task are those of config/harness_rsi_config.toml.
+
+[grpo]
+epochs = 4
+steps_per_epoch = 6
+# epochs after which the adapter is kept as a checkpoint for the model gate: the last ones, as gains build up slowly
+# over the epochs; with all three in the gate's final, a checkpoint that improves is more likely to pass the gate's noise
+checkpoints = [3, 3.5, 4]
+# rollouts of a task by its latest runs: the difficulty profile in the first epoch, the previous epoch's rollouts after
+# it; for tasks solved in none, some and all of them
+rollouts = [16, 8, 5]
+# task ids to leave out of training; none
+excluded = []
+shuffle_seed = 20261021
+lora_rank = 32
+lora_alpha = 32
+# every linear layer of the language model; the global attention layers have no v_proj (their V is k_proj's output),
+# and the trainer writes their k_proj LoRA also as v_proj for vLLM (rsi.grpo.train.copy_k_to_v)
+lora_targets = ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+lr = 3e-5
+# optimizer updates per step, each on a random part of the step's rollouts
+mini_batches = 4
+clip = 0.2
+# for a negative advantage, ratios beyond this add no gradient (dual clip, verl's default clip_ratio_c)
+dual_clip = 3.0
+# a pack (one conversation, or half of a long one) whose gradient per token, its gradient norm per unit of advantage,
+# weight and completion token, is above this is left out of its update. Packs sit around 1 (median), with a thin tail
+# that runs on without a gap to the contexts that blow up the gradient of every later token (hundreds to tens of
+# thousands); about 1.5% of packs are above 30, and below it a single pack rarely takes over its update. Then the
+# update's summed gradient is clipped to max_grad_norm.
+max_token_grad = 30
+max_grad_norm = 1.0
+# the trainer: model weights (a local copy of google/gemma-4-12B-it at revision 707f0a3, loaded at every step), an
+# interpreter with torch, transformers and peft (scripts/env/vllm-env.txt), and the GPUs the model server leaves free
+# (it runs the next step's rollouts meanwhile)
+base = "models/gemma-4-12B-it"
+python = "python"
+gpus = "2,3"
+# the model server during GRPO (scripts/serve_gemma.sh, restarted when it runs elsewhere), and the rollouts
+# in flight on it, 64 on each GPU
+server_gpus = "0,1"
+concurrency = 128
+
+[model_gate]
+# the model server restarts on all the box's GPUs for the gate, 64 conversations in flight on each ([run] concurrency
+# of config/harness_rsi_config.toml says why not more)
+gpus = "0,1,2,3"
+concurrency = 256
+# every checkpoint first runs V this many times, and the finalists with the highest pass^1 there go on; with 0 every
+# checkpoint is a finalist. The finalists run V [gate] trials times (config/harness_rsi_config.toml) against the
+# current model
+screen_trials = 0
+finalists = 2
+# a finalist passes when its score on V, (1 - pass4_weight) mean pass^1 + pass4_weight mean pass^4, beats the current
+# model's. GRPO mostly makes tasks that succeed most of the time succeed every time, which moves pass^4 more than
+# pass^1; a fifth of the noisier pass^4 adds little noise
+pass4_weight = 0.2

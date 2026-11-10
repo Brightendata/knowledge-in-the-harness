@@ -1,0 +1,121 @@
+{
+  "analyses": [
+    "a03",
+    "a05",
+    "a06",
+    "a07",
+    "a08",
+    "a09",
+    "a11",
+    "a12",
+    "a14",
+    "a15"
+  ],
+  "start": "2026-10-30T09:27:20",
+  "end": "2026-10-30T09:32:58",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When a user request involves identifying or acting on multiple orders or specific orders based on criteria (e.g., status, content), you must retrieve and verify the details for all orders that meet those criteria before identifying them to the user or listing actions for confirmation.",
+        "support": [
+          "a03",
+          "a11"
+        ],
+        "reason": "Combines the need to verify order details for both specific and multi-order requests before providing any information or confirmation."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "Once you have provided all the information you are able to provide, perform all database changes that the user has confirmed (even if that confirmation was contingent on you providing some information that you are unable to provide).",
+        "support": [
+          "a08",
+          "a14"
+        ],
+        "reason": "Ensures that actionable parts of a request are completed even when the agent cannot provide some of the additional information requested by the user."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When a user asks to exchange an item from a pending order, load the `retail:modify` skill.",
+        "support": [
+          "a06"
+        ],
+        "reason": "Ensures the agent correctly routes pending order exchanges to the modification skill."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a05",
+        "reason": "The requested edit for attribute matching was not selected because higher-impact, more supported edits were prioritized."
+      },
+      {
+        "proposal": "a07",
+        "reason": "The requested edit for finding the cheapest variant was not selected because higher-impact, more supported edits were prioritized."
+      },
+      {
+        "proposal": "a09",
+        "reason": "The requested edit for handling mutual exclusivity of actions was not selected because higher-impact, more supported edits were prioritized."
+      },
+      {
+        "proposal": "a12",
+        "reason": "The requested edit for listing items in returns was not selected because higher-impact, more supported edits were prioritized."
+      },
+      {
+        "proposal": "a15",
+        "reason": "The requested edit for action order preference was not selected because higher-impact, more supported edits were prioritized."
+      }
+    ],
+    "summary": "Improved order identification scope, ensured partial fulfillment of confirmed actions, and corrected skill routing for pending order exchanges."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When a user request involves identifying or acting on multiple orders or specific orders based on criteria (e.g., status, content), you must retrieve and verify the details for all orders that meet those criteria before identifying them to the user or listing actions for confirmation.",
+      "support": [
+        "generated_lookup_pair_payment+shipped_to_mia_moore_8366_2",
+        "generated_scope_write_all_delivered+return_pending_lucas_muller_4380_1"
+      ],
+      "reason": "Combines the need to verify order details for both specific and multi-order requests before providing any information or confirmation.",
+      "written": "retail-5"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When a user asks to exchange an item from a pending order, load the `retail:modify` skill.",
+      "support": [
+        "generated_status_modify_W4096800"
+      ],
+      "reason": "Ensures the agent correctly routes pending order exchanges to the modification skill.",
+      "written": "retail-6"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "Once you have provided all the information you are able to provide, perform all database changes that the user has confirmed (even if that confirmation was contingent on you providing some information that you are unable to provide).",
+        "support": [
+          "generated_address_items_status_order_W9677982",
+          "generated_one_action_group_W8209112_v0"
+        ],
+        "reason": "Ensures that actionable parts of a request are completed even when the agent cannot provide some of the additional information requested by the user."
+      },
+      "reason": "check G: User: \"Please change my shipping address to 123 Oak St, but only if you can tell me the current tracking number for my order #W1111111.\"\nAgent: \"I'm sorry, I don't have access to tracking numbers. I can, however, change your shipping address to 123 Oak St. [Lists details for address modification].\"\n\nFollowing the rule, the agent performs the address modification. However, the policy requires the agent to obtain explicit user confirmation (yes) to proceed. Since the user's confirmation was contingent on the tracking number which was not provided, the agent did not obtain a valid confirmation to proceed. | G: User: \"I confirm the change to the shipping address, provided you can tell me the estimated delivery date.\" \nAgent: \"I am sorry, I cannot provide the estimated delivery date. However, I can still proceed with changing your shipping address if you'd like.\"\nUser: \"Yes, please proceed.\"\nAgent: [Performs the change]\n\nPolicy check: The policy states that 'a part it allows is carried out even when another part cannot be handled... unless the user asked for them only together.' Because the user made the change contingent on the delivery date (asking for them together), the agent is forbidden from carrying out the part it allows (the change). The rule explicitly tells the agent to perform the change anyway if the confirmation was contingent, which allows an action the policy forbids.",
+      "problems": [
+        "G",
+        "G"
+      ]
+    }
+  ],
+  "summary": "Improved order identification scope, ensured partial fulfillment of confirmed actions, and corrected skill routing for pending order exchanges."
+}

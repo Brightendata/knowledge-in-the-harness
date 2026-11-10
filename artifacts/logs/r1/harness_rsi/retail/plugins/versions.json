@@ -1,0 +1,168 @@
+{
+ "v00": {
+  "start": "plugins/retail",
+  "holds": []
+ },
+ "v01": {
+  "step": 1,
+  "from": "v00",
+  "holds": [
+   "s01"
+  ],
+  "summary": "Improved multi-part request handling, refund calculations, skill loading for changes, and item availability verification.",
+  "kept": false,
+  "successes": {
+   "current": 156,
+   "candidate": 157
+  }
+ },
+ "v02": {
+  "step": 2,
+  "from": "v00",
+  "holds": [
+   "s02"
+  ],
+  "summary": "Added rules to ensure correct skill loading for multiple requests, thorough data retrieval for all user orders, correct tool call sequencing for database updates, and stricter adherence to user constraints during item modifications.",
+  "kept": false,
+  "successes": {
+   "current": 150,
+   "candidate": 148
+  }
+ },
+ "v03": {
+  "step": 3,
+  "from": "v00",
+  "holds": [
+   "s03"
+  ],
+  "summary": "Added systematic rules for partial fulfillment before transfer, correct skill loading for pending exchanges, status checks for modifications, and logic for identifying the cheapest available variants.",
+  "kept": true,
+  "successes": {
+   "current": 131,
+   "candidate": 135
+  }
+ },
+ "v04": {
+  "step": 4,
+  "from": "v03",
+  "holds": [
+   "s03",
+   "s04"
+  ],
+  "summary": "Added validation checks for item availability, established correct ordering for multi-action requests, and handled lost item returns via transfer.",
+  "kept": false,
+  "successes": {
+   "current": 153,
+   "candidate": 152
+  }
+ },
+ "v05": {
+  "step": 5,
+  "from": "v03",
+  "holds": [
+   "s03",
+   "s05"
+  ],
+  "summary": "Improved systematic skill loading for multi-request turns and ensured thorough checking of all user orders when performing pending order modifications or cancellations.",
+  "kept": true,
+  "successes": {
+   "current": 133,
+   "candidate": 143
+  }
+ },
+ "v06": {
+  "step": 6,
+  "from": "v05",
+  "holds": [
+   "s03",
+   "s05",
+   "s06"
+  ],
+  "summary": "Added rules to ensure tool calls follow user confirmation, load the return skill for exchanges to access refund policies, and strictly enforce status checks and different-option requirements for exchanges.",
+  "kept": false,
+  "successes": {
+   "current": 144,
+   "candidate": 136
+  }
+ },
+ "v07": {
+  "step": 7,
+  "from": "v05",
+  "holds": [
+   "s03",
+   "s05",
+   "s07"
+  ],
+  "summary": "Improved routing for ambiguous requests, ensured all requested actions are included in confirmation summaries and performed sequentially, and enforced product option differences for exchanges.",
+  "kept": false,
+  "successes": {
+   "current": 140,
+   "candidate": 133
+  }
+ },
+ "v08": {
+  "step": 8,
+  "from": "v05",
+  "holds": [
+   "s03",
+   "s05",
+   "s08"
+  ],
+  "summary": "Improved order identification, handled 'same model' exchange requests, offered modifications for pending orders, and added return feasibility checks.",
+  "kept": true,
+  "successes": {
+   "current": 132,
+   "candidate": 145
+  }
+ },
+ "v09": {
+  "step": 9,
+  "from": "v08",
+  "holds": [
+   "s03",
+   "s05",
+   "s08",
+   "s09"
+  ],
+  "summary": "Refined order identification, ensured actionable parts of requests are completed, and corrected procedure for confirmation and offering modifications.",
+  "kept": true,
+  "successes": {
+   "current": 135,
+   "candidate": 142
+  }
+ },
+ "v10": {
+  "step": 10,
+  "from": "v09",
+  "holds": [
+   "s03",
+   "s05",
+   "s08",
+   "s09",
+   "s10"
+  ],
+  "summary": "Fixed logic for handling conditional actions with unanswerable questions, corrected multi-item price verification, and improved precision in item selection and confirmation handling.",
+  "kept": false,
+  "successes": {
+   "current": 140,
+   "candidate": 131
+  }
+ },
+ "v11": {
+  "step": 11,
+  "from": "v09",
+  "holds": [
+   "s03",
+   "s05",
+   "s08",
+   "s09",
+   "s11"
+  ],
+  "summary": "Improved routing for address updates and info queries, reinforced policy on performing actionable parts, and added safeguards against incorrect order cancellations.",
+  "kept": false,
+  "successes": {
+   "current": 148,
+   "candidate": 142
+  }
+ }
+}

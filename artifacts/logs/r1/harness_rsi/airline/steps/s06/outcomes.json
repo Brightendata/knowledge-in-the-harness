@@ -1,0 +1,502 @@
+{
+ "candidate": {
+  "generated_bags_remove_9G6CN3": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_balances_sofia_gonzalez_4431": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_book_pay_by_total_isabella_ito_3653_v0": [
+   0,
+   1,
+   1,
+   0,
+   0,
+   1
+  ],
+  "generated_book_same_cap_ethan_li_4016_v0": [
+   0,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_book_sums_certificate_gift_ava_davis_9130": [
+   0,
+   1,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_book_sums_certificate_gift_isabella_smith_2582": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_book_sums_gift_cards_ethan_davis_4420": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_cancel_fallback_OGWXR5_v1": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_cancel_flown_JMJELL": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_negotiate_AX3OXQ": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_cancel_none_5R125W": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_yesterday_1JR46H": [
+   0,
+   0,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_cancel_yesterday_8833H3": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_change_basic_32QL8S": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_basic_V4D9ZA": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_basic_YD5SZN": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_compensation_ineligible_3VIYOC": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_cancel_insured+change_basic_amelia_taylor_4937": [
+   0,
+   0,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_change+bags_yara_sanchez_8382_1": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_pair_change_same_day+cabin_bags_any_raj_johnson_6495": [
+   1,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_pair_passengers+bags_mohamed_martin_1679_1": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1
+  ],
+  "generated_pair_passengers+insurance_lucas_khan_6285_1": [
+   0,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_passengers_5849AT": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_reroute_ZQVILE": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_cancel_all_sofia_sanchez_4758": [
+   0,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_several_HF4LIS": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_several_YH238W": [
+   1,
+   1,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_triple_compensation_delayed+passengers+change_both_liam_ito_4473": [
+   1,
+   0,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_triple_write_basic_upgrade_budget_any+cabin_bags_any+book_gift_cards_evelyn_martin_3582_1": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_triple_write_book_certificate_gift+cancel_business+segment_liam_sanchez_8204": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_triple_write_cancel_recent+change_cabin+compensation_cancelled_evelyn_silva_5208_1": [
+   1,
+   0,
+   1,
+   0,
+   0,
+   1
+  ]
+ },
+ "current": {
+  "generated_bags_remove_9G6CN3": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_balances_sofia_gonzalez_4431": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_book_pay_by_total_isabella_ito_3653_v0": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1
+  ],
+  "generated_book_same_cap_ethan_li_4016_v0": [
+   0,
+   0,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_book_sums_certificate_gift_ava_davis_9130": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_book_sums_certificate_gift_isabella_smith_2582": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_book_sums_gift_cards_ethan_davis_4420": [
+   0,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_cancel_fallback_OGWXR5_v1": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_cancel_flown_JMJELL": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_negotiate_AX3OXQ": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_none_5R125W": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_yesterday_1JR46H": [
+   0,
+   0,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_yesterday_8833H3": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_change_basic_32QL8S": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_basic_V4D9ZA": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_basic_YD5SZN": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_compensation_ineligible_3VIYOC": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_cancel_insured+change_basic_amelia_taylor_4937": [
+   1,
+   1,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_pair_change+bags_yara_sanchez_8382_1": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   0
+  ],
+  "generated_pair_change_same_day+cabin_bags_any_raj_johnson_6495": [
+   0,
+   0,
+   1,
+   1,
+   0,
+   0
+  ],
+  "generated_pair_passengers+bags_mohamed_martin_1679_1": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_pair_passengers+insurance_lucas_khan_6285_1": [
+   1,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_passengers_5849AT": [
+   1,
+   0,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_reroute_ZQVILE": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_cancel_all_sofia_sanchez_4758": [
+   0,
+   0,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_several_HF4LIS": [
+   1,
+   1,
+   0,
+   1,
+   0,
+   1
+  ],
+  "generated_several_YH238W": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_triple_compensation_delayed+passengers+change_both_liam_ito_4473": [
+   1,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_triple_write_basic_upgrade_budget_any+cabin_bags_any+book_gift_cards_evelyn_martin_3582_1": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_triple_write_book_certificate_gift+cancel_business+segment_liam_sanchez_8204": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_triple_write_cancel_recent+change_cabin+compensation_cancelled_evelyn_silva_5208_1": [
+   0,
+   0,
+   1,
+   1,
+   0,
+   0
+  ]
+ }
+}

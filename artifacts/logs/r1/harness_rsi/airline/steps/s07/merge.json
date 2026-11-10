@@ -1,0 +1,158 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a11",
+    "a12",
+    "a13",
+    "a14"
+  ],
+  "start": "2026-10-29T14:57:47",
+  "end": "2026-10-29T15:01:30",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "When the user refers to 'my flight' or 'my reservation' without providing a reservation ID, check the user's reservations to see if any match the description provided by the user.",
+        "support": [
+          "a14"
+        ],
+        "reason": "This addresses a systemic failure where the agent fails to identify the correct reservation context, leading to incorrect skill loading."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Before calling cancel_reservation, verify that the reservation meets one of the cancellation criteria (created within 24 hours, cancelled by airline, business flight, or covered by insurance) using the tool results. If the criteria are not met, refuse the request.",
+        "support": [
+          "a02"
+        ],
+        "reason": "This prevents the agent from performing unauthorized cancellations by enforcing policy criteria check before calling the tool."
+      },
+      {
+        "op": "REPLACE",
+        "file": "airline:modify",
+        "rule_id": "airline:modify-1",
+        "text": "When calculating the price difference or refund for a modification, use the calculate tool to find the result of (sum of prices for flights in the new reservation minus sum of prices for flights in the original reservation) multiplied by the number of passengers.",
+        "support": [
+          "a01"
+        ],
+        "reason": "Replacing the existing rule with a specific instruction to use the calculate tool to fix repeated arithmetic errors."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:book",
+        "rule_id": "",
+        "text": "When calling book_reservation, set total_baggages to the number of bags the user wants to bring, and nonfree_baggages as the number of bags in excess of the baggage allowance (minimum 0).",
+        "support": [
+          "a11"
+        ],
+        "reason": "This ensures the agent correctly sets baggage counts based on user intent and allowance rather than just using the allowance amount."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a03",
+        "reason": "Lower priority than the logic fixes adopted for booking and cancellation."
+      },
+      {
+        "proposal": "a04",
+        "reason": "The agent's current tool outputs and instructions are sufficient for gift card matching unless a specific amount mismatch is recurring."
+      },
+      {
+        "proposal": "a05",
+        "reason": "Included in a07, but a14 and a02 are higher priority systemic fixes."
+      },
+      {
+        "proposal": "a06",
+        "reason": "Lower priority than the more general baggage rule a11."
+      },
+      {
+        "proposal": "a07",
+        "reason": "Higher priority rules were selected to meet the 4-edit limit."
+      },
+      {
+        "proposal": "a08",
+        "reason": "This is a specific case of a modification that is secondary to the general calculation and context fixes."
+      },
+      {
+        "proposal": "a09",
+        "reason": "While important, the agent is generally capable of following the payment limits if it follows the booking process."
+      },
+      {
+        "proposal": "a10",
+        "reason": "The agent's general multi-turn logic is already supported by the policy's requirement to handle requests."
+      },
+      {
+        "proposal": "a12",
+        "reason": "The current rule for collecting passenger details is sufficient for most tasks."
+      },
+      {
+        "proposal": "a13",
+        "reason": "Rule a11 covers the more common failure point regarding baggage counts in the booking process."
+      }
+    ],
+    "summary": "Improve reservation handling by refining cancellation criteria, calculation logic, and baggage counting."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "When the user refers to 'my flight' or 'my reservation' without providing a reservation ID, check the user's reservations to see if any match the description provided by the user.",
+      "support": [
+        "generated_triple_fewer_cancel+bags+cabin_mei_hernandez_8984"
+      ],
+      "reason": "This addresses a systemic failure where the agent fails to identify the correct reservation context, leading to incorrect skill loading.",
+      "written": "airline-6"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "Before calling cancel_reservation, verify that the reservation meets one of the cancellation criteria (created within 24 hours, cancelled by airline, business flight, or covered by insurance) using the tool results. If the criteria are not met, refuse the request.",
+      "support": [
+        "generated_pair_cancel_negotiate+bags_ava_hernandez_2083"
+      ],
+      "reason": "This prevents the agent from performing unauthorized cancellations by enforcing policy criteria check before calling the tool.",
+      "written": "airline:cancel-1"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:book",
+      "rule_id": "",
+      "text": "When calling book_reservation, set total_baggages to the number of bags the user wants to bring, and nonfree_baggages as the number of bags in excess of the baggage allowance (minimum 0).",
+      "support": [
+        "generated_pair_cancel_recent+book_again_amelia_ito_8544"
+      ],
+      "reason": "This ensures the agent correctly sets baggage counts based on user intent and allowance rather than just using the allowance amount.",
+      "written": "airline:book-5"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "REPLACE",
+        "file": "airline:modify",
+        "rule_id": "airline:modify-1",
+        "text": "When calculating the price difference or refund for a modification, use the calculate tool to find the result of (sum of prices for flights in the new reservation minus sum of prices for flights in the original reservation) multiplied by the number of passengers.",
+        "support": [
+          "generated_change_budget_05XIX4_v0"
+        ],
+        "reason": "Replacing the existing rule with a specific instruction to use the calculate tool to fix repeated arithmetic errors."
+      },
+      "reason": "REPLACE or DELETE without an analysis that found the rule wrong or unclear"
+    }
+  ],
+  "summary": "Improve reservation handling by refining cancellation criteria, calculation logic, and baggage counting."
+}

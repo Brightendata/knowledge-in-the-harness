@@ -1,0 +1,155 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a08",
+    "a09",
+    "a10",
+    "a11",
+    "a12",
+    "a13",
+    "a14",
+    "a15"
+  ],
+  "start": "2026-10-29T14:18:16",
+  "end": "2026-10-29T14:22:42",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "When the user asks to book a flight, even if they reference an existing reservation to specify the flight's details, load the `airline:book` skill.",
+        "support": [
+          "a01"
+        ],
+        "reason": "Ensures the agent loads the correct skill for booking requests even when existing reservations are mentioned as context."
+      },
+      {
+        "op": "REPLACE",
+        "file": "airline:modify",
+        "rule_id": "airline:modify-3",
+        "text": "Before calling update_reservation_baggages, calculate the value for nonfree_baggages by subtracting the number of free bags from the total_baggages, and use 0 if the result is negative, where the number of free bags is the number of passengers multiplied by the allowance for their cabin class (regular: basic economy 0, economy 1, business 2; silver: basic economy 1, economy 2, business 3; gold: basic economy 2, economy 3, business 4).",
+        "support": [
+          "a08"
+        ],
+        "reason": "Fixes a calculation error where the agent could pass a negative value for nonfree_baggages."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When the user asks to change the cabin of a reservation, do not change the flight numbers unless the user specifically asks for new flights.",
+        "support": [
+          "a09"
+        ],
+        "reason": "Prevents the agent from violating the policy by changing flight segments during a cabin-only upgrade request."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When the user asks to add a number of bags, calculate `total_baggages` as the current `total_baggages` plus the number the user wants to add, and `nonfree_baggages` as the number of bags in excess of the free allowance (minimum 0).",
+        "support": [
+          "a15"
+        ],
+        "reason": "Correctly handles the calculation of total and non-free baggages when a user specifically asks to 'add' bags."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a02",
+        "reason": "Prioritized other rules with more direct policy or calculation corrections."
+      },
+      {
+        "proposal": "a03",
+        "reason": "Included in a15, which is more comprehensive."
+      },
+      {
+        "proposal": "a04",
+        "reason": "Prioritized other rules with more direct policy or calculation corrections."
+      },
+      {
+        "proposal": "a05",
+        "reason": "Prioritized a09 as a more specific correction for cabin modifications."
+      },
+      {
+        "proposal": "a06",
+        "reason": "Prioritized other rules with more direct policy or calculation corrections."
+      },
+      {
+        "proposal": "a10",
+        "reason": "Prioritized other rules with more direct policy or calculation corrections."
+      },
+      {
+        "proposal": "a11",
+        "reason": "Prioritized other rules with more direct policy or calculation corrections."
+      },
+      {
+        "proposal": "a12",
+        "reason": "a09 provides a more specific correction for cabin changes; prioritized others."
+      },
+      {
+        "proposal": "a13",
+        "reason": "Prioritized other rules with more direct policy or calculation corrections."
+      },
+      {
+        "proposal": "a14",
+        "reason": "Prioritized other rules with more direct policy or calculation corrections."
+      }
+    ],
+    "summary": "Corrected skill routing for bookings, fixed baggage calculation logic, and enforced policy constraints on cabin modifications."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "When the user asks to book a flight, even if they reference an existing reservation to specify the flight's details, load the `airline:book` skill.",
+      "support": [
+        "generated_book_pay_by_total_isabella_ito_3653_v0"
+      ],
+      "reason": "Ensures the agent loads the correct skill for booking requests even when existing reservations are mentioned as context.",
+      "written": "airline-5"
+    },
+    {
+      "op": "REPLACE",
+      "file": "airline:modify",
+      "rule_id": "airline:modify-3",
+      "text": "Before calling update_reservation_baggages, calculate the value for nonfree_baggages by subtracting the number of free bags from the total_baggages, and use 0 if the result is negative, where the number of free bags is the number of passengers multiplied by the allowance for their cabin class (regular: basic economy 0, economy 1, business 2; silver: basic economy 1, economy 2, business 3; gold: basic economy 2, economy 3, business 4).",
+      "support": [
+        "generated_several_HF4LIS"
+      ],
+      "reason": "Fixes a calculation error where the agent could pass a negative value for nonfree_baggages.",
+      "written": "airline:modify-3"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "When the user asks to change the cabin of a reservation, do not change the flight numbers unless the user specifically asks for new flights.",
+      "support": [
+        "generated_triple_write_book_certificate_gift+cancel_business+segment_liam_sanchez_8204"
+      ],
+      "reason": "Prevents the agent from violating the policy by changing flight segments during a cabin-only upgrade request.",
+      "written": "airline:modify-6"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "When the user asks to add a number of bags, calculate `total_baggages` as the current `total_baggages` plus the number the user wants to add, and `nonfree_baggages` as the number of bags in excess of the free allowance (minimum 0).",
+      "support": [
+        "generated_several_YH238W"
+      ],
+      "reason": "Correctly handles the calculation of total and non-free baggages when a user specifically asks to 'add' bags.",
+      "written": "airline:modify-7"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Corrected skill routing for bookings, fixed baggage calculation logic, and enforced policy constraints on cabin modifications."
+}

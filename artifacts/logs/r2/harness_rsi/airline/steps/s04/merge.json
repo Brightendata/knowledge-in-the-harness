@@ -1,0 +1,130 @@
+{
+  "analyses": [
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a11"
+  ],
+  "start": "2026-11-02T00:17:17",
+  "end": "2026-11-02T00:22:45",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "Before calling transfer_to_human_agents, ensure that all other parts of the user's request that can be handled have been completed.",
+        "support": [
+          "a11"
+        ],
+        "reason": "Prevents the agent from transferring to a human agent before completing parts of a request that it is capable of handling."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When the user asks to perform multiple updates in a specific order, the agent must present each update separately for confirmation and perform each as a separate tool call in the specified order.",
+        "support": [
+          "a07"
+        ],
+        "reason": "Ensures that multi-step requests are handled sequentially with individual confirmations as required by the policy."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "Before calling update_reservation_passengers, verify that the passenger name provided by the user exists in the reservation's passenger list. If it does not, ask the user for clarification or to provide the correct reservation ID.",
+        "support": [
+          "a03"
+        ],
+        "reason": "Prevents the agent from incorrectly assuming which passenger or reservation is being updated when the provided name does not match the current reservation."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When the user asks to add a number of bags, the number to add is the total number of bags for the entire reservation unless the user specifies 'per passenger'.",
+        "support": [
+          "a04"
+        ],
+        "reason": "Clarifies that a request to add a quantity of bags refers to the total count for the reservation rather than a per-passenger count."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a02",
+        "reason": "This edit is too specific to the ranking of one-stop flights and less impactful than others."
+      },
+      {
+        "proposal": "a05",
+        "reason": "This edit is specific to a single task's flight selection logic."
+      },
+      {
+        "proposal": "a08",
+        "reason": "The procedural requirement for sequential updates (a07) covers many of the confirmation issues identified here."
+      },
+      {
+        "proposal": "a09",
+        "reason": "This edit is specific to the calculation of 'fastest' itineraries."
+      },
+      {
+        "proposal": "a10",
+        "reason": "The proposal was blocked for deciding for the user, and the similar logic was rejected in a previous step."
+      }
+    ],
+    "summary": "Improved multi-step request handling, transfer logic, data integrity for passenger updates, and baggage count interpretation."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "Before calling transfer_to_human_agents, ensure that all other parts of the user's request that can be handled have been completed.",
+      "support": [
+        "generated_pair_book_same_cap_any+compensation_false_lucas_lee_1916_1"
+      ],
+      "reason": "Prevents the agent from transferring to a human agent before completing parts of a request that it is capable of handling.",
+      "written": "airline-10"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "When the user asks to perform multiple updates in a specific order, the agent must present each update separately for confirmation and perform each as a separate tool call in the specified order.",
+      "support": [
+        "generated_basic_change_ABB0M7_v1"
+      ],
+      "reason": "Ensures that multi-step requests are handled sequentially with individual confirmations as required by the policy.",
+      "written": "airline:modify-14"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "Before calling update_reservation_passengers, verify that the passenger name provided by the user exists in the reservation's passenger list. If it does not, ask the user for clarification or to provide the correct reservation ID.",
+      "support": [
+        "generated_triple_passengers+change_same_day+bags_remove_isabella_khan_4151_1"
+      ],
+      "reason": "Prevents the agent from incorrectly assuming which passenger or reservation is being updated when the provided name does not match the current reservation.",
+      "written": "airline:modify-15"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "When the user asks to add a number of bags, the number to add is the total number of bags for the entire reservation unless the user specifies 'per passenger'.",
+      "support": [
+        "generated_several_NASS9T"
+      ],
+      "reason": "Clarifies that a request to add a quantity of bags refers to the total count for the reservation rather than a per-passenger count.",
+      "written": "airline:modify-16"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Improved multi-step request handling, transfer logic, data integrity for passenger updates, and baggage count interpretation."
+}

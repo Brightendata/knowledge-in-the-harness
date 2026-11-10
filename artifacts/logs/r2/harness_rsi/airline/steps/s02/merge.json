@@ -1,0 +1,183 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a11",
+    "a12",
+    "a13",
+    "a14",
+    "a15"
+  ],
+  "start": "2026-11-01T22:21:55",
+  "end": "2026-11-01T22:25:24",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline:book",
+        "rule_id": "",
+        "text": "When calling book_reservation, set total_baggages and nonfree_baggages to 0 unless the user specifically requests any bags.",
+        "support": [
+          "a09",
+          "a11",
+          "a14"
+        ],
+        "reason": "Fixes a recurring failure to follow the policy of not adding bags the user does not need by explicitly setting the baggage counts to 0."
+      },
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "When the user asks for different flights for an existing trip or reservation, load the airline:modify skill.",
+        "support": [
+          "a12"
+        ],
+        "reason": "Ensures the agent correctly identifies requests for changing existing trip details as modifications rather than new bookings."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "If a reservation is for a business flight, it is eligible for cancellation regardless of the booking date or the reason for cancellation.",
+        "support": [
+          "a10"
+        ],
+        "reason": "Clarifies a standalone sufficient condition for cancellation that the agent repeatedly failed to recognize."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When calculating the price difference, first find the difference between the sum of the new flights' prices and the sum of the original flights' prices, and then multiply that result by the number of passengers.",
+        "support": [
+          "a04",
+          "a05"
+        ],
+        "reason": "Provides a more concrete calculation order to ensure the price difference is correctly multiplied by the passenger count."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a01",
+        "reason": "This was passed over to prioritize the calculation, baggage, and routing fixes which addressed more systematic failures."
+      },
+      {
+        "proposal": "a02",
+        "reason": "While useful, this was less critical than the calculation and policy-compliance fixes."
+      },
+      {
+        "proposal": "a03",
+        "reason": "Specific to a single task's instruction priority rather than a systematic policy or routing failure."
+      },
+      {
+        "proposal": "a06",
+        "reason": "The current rules already require using a payment method from the user profile; this was not a primary failure point."
+      },
+      {
+        "proposal": "a07",
+        "reason": "The agent should already verify information against its own previous turns; this is less critical than the calculation fix."
+      },
+      {
+        "proposal": "a08",
+        "reason": "While important, it is a specific request handling rather than a general rule correction."
+      },
+      {
+        "proposal": "a13",
+        "reason": "A specific evaluation step that is less critical than the broader routing and calculation rules."
+      },
+      {
+        "proposal": "a15",
+        "reason": "The cancel condition for business flights (a10) addresses the core eligibility logic."
+      }
+    ],
+    "summary": "Improved baggage booking logic, corrected modification calculation order, refined skill routing for existing trips, and clarified business flight cancellation eligibility."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline:book",
+      "rule_id": "",
+      "text": "When calling book_reservation, set total_baggages and nonfree_baggages to 0 unless the user specifically requests any bags.",
+      "support": [
+        "generated_book_pay_by_total_james_ahmed_4322_v0",
+        "generated_book_pay_by_total_james_ahmed_4322_v1",
+        "generated_pair_cancel_recent+book_friend_amelia_ito_8544_1"
+      ],
+      "reason": "Fixes a recurring failure to follow the policy of not adding bags the user does not need by explicitly setting the baggage counts to 0.",
+      "written": "airline:book-7"
+    },
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "When the user asks for different flights for an existing trip or reservation, load the airline:modify skill.",
+      "support": [
+        "generated_pair_cancel_none+change_same_day_mei_lopez_9471"
+      ],
+      "reason": "Ensures the agent correctly identifies requests for changing existing trip details as modifications rather than new bookings.",
+      "written": "airline-9"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "If a reservation is for a business flight, it is eligible for cancellation regardless of the booking date or the reason for cancellation.",
+      "support": [
+        "generated_pair_upgrade_cancel+book_mason_lee_7450"
+      ],
+      "reason": "Clarifies a standalone sufficient condition for cancellation that the agent repeatedly failed to recognize.",
+      "written": "airline:cancel-8"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "When calculating the price difference, first find the difference between the sum of the new flights' prices and the sum of the original flights' prices, and then multiply that result by the number of passengers.",
+      "support": [
+        "generated_change_upgrade_budget_LS1NEQ_v0",
+        "generated_scope_downgrade_mei_lee_8701"
+      ],
+      "reason": "Provides a more concrete calculation order to ensure the price difference is correctly multiplied by the passenger count.",
+      "written": "airline:modify-12"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Improved baggage booking logic, corrected modification calculation order, refined skill routing for existing trips, and clarified business flight cancellation eligibility.",
+  "removed_after_retest": [
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:book",
+        "rule_id": "",
+        "text": "When calling book_reservation, set total_baggages and nonfree_baggages to 0 unless the user specifically requests any bags.",
+        "support": [
+          "generated_book_pay_by_total_james_ahmed_4322_v0",
+          "generated_book_pay_by_total_james_ahmed_4322_v1",
+          "generated_pair_cancel_recent+book_friend_amelia_ito_8544_1"
+        ],
+        "reason": "Fixes a recurring failure to follow the policy of not adding bags the user does not need by explicitly setting the baggage counts to 0.",
+        "written": "airline:book-7"
+      },
+      "problems": [
+        "H"
+      ],
+      "tasks": [
+        {
+          "task": "generated_pair_cancel_recent+book_friend_amelia_ito_8544_1",
+          "current": 5,
+          "candidate": 0,
+          "failed": 6,
+          "naming": 3
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,502 @@
+{
+ "candidate": {
+  "generated_bags_remove_7LM9SM": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_balances_lei_ito_5790": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_book_cards_fatima_silva_7735": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_book_sums_certificate_gift_lucas_rossi_9391": [
+   0,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_book_sums_certificate_gift_lucas_taylor_8203": [
+   1,
+   0,
+   0,
+   0,
+   1,
+   1
+  ],
+  "generated_book_sums_gift_cards_olivia_martin_3393": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_book_sums_gift_only_fatima_ito_3977": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_cabin_bags_X53YKA_v1": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_cancel_fallback_ZGW4PL_v1": [
+   1,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_cancel_flown_QBHMZ5": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_insured_other_RF9ICL": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_upgrade_VC3MQ9_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_chain_B41JHU": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_basic_1GFU5A": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_basic_H43D2Y": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_change_or_cancel_H43D2Y": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_upgrade_budget_YJYQTI_v1": [
+   1,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_pair_bags+cancel_negotiate_isabella_ito_3653": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_bags+change_cabin_liam_johnson_6488": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_pair_compensation_false+book_certificate_mia_wilson_2051_1": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_pair_fewer_cancel+bags_lei_rossi_4874": [
+   1,
+   0,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_pair_fewer_cancel+compensation_false_mia_muller_3268_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_insurance+cancel_insured_olivia_garcia_3026_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_passengers_TTC1U5": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_reroute_GB1E1W": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_reroute_I6KKNF": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_reroute_rebook_1INNSN": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_cancel_alone_mohamed_martin_1679": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_scope_downgrade_chen_anderson_9197": [
+   0,
+   0,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_triple_cancel_insured+book_same_cap_any+passengers_liam_wilson_9173_1": [
+   1,
+   1,
+   0,
+   1,
+   0,
+   1
+  ],
+  "generated_triple_write_cabin_bags_any+change_or_rebook+upgrade_cancel_mei_wilson_9061_2": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ },
+ "current": {
+  "generated_bags_remove_7LM9SM": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_balances_lei_ito_5790": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_book_cards_fatima_silva_7735": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_book_sums_certificate_gift_lucas_rossi_9391": [
+   1,
+   1,
+   1,
+   0,
+   0,
+   1
+  ],
+  "generated_book_sums_certificate_gift_lucas_taylor_8203": [
+   0,
+   1,
+   0,
+   0,
+   1,
+   1
+  ],
+  "generated_book_sums_gift_cards_olivia_martin_3393": [
+   0,
+   0,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_book_sums_gift_only_fatima_ito_3977": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_cabin_bags_X53YKA_v1": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_cancel_fallback_ZGW4PL_v1": [
+   1,
+   0,
+   0,
+   1,
+   0,
+   1
+  ],
+  "generated_cancel_flown_QBHMZ5": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_cancel_insured_other_RF9ICL": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_upgrade_VC3MQ9_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_chain_B41JHU": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_basic_1GFU5A": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_change_basic_H43D2Y": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_or_cancel_H43D2Y": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_change_upgrade_budget_YJYQTI_v1": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_pair_bags+cancel_negotiate_isabella_ito_3653": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_bags+change_cabin_liam_johnson_6488": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_pair_compensation_false+book_certificate_mia_wilson_2051_1": [
+   1,
+   0,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_pair_fewer_cancel+bags_lei_rossi_4874": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   0
+  ],
+  "generated_pair_fewer_cancel+compensation_false_mia_muller_3268_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_insurance+cancel_insured_olivia_garcia_3026_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_passengers_TTC1U5": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_reroute_GB1E1W": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_reroute_I6KKNF": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_reroute_rebook_1INNSN": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_scope_cancel_alone_mohamed_martin_1679": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_scope_downgrade_chen_anderson_9197": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_triple_cancel_insured+book_same_cap_any+passengers_liam_wilson_9173_1": [
+   0,
+   1,
+   1,
+   1,
+   0,
+   0
+  ],
+  "generated_triple_write_cabin_bags_any+change_or_rebook+upgrade_cancel_mei_wilson_9061_2": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ }
+}

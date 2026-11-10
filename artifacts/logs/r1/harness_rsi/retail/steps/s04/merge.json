@@ -1,0 +1,135 @@
+{
+  "analyses": [
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a11"
+  ],
+  "start": "2026-10-29T23:48:46",
+  "end": "2026-10-29T23:52:50",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "retail:modify",
+        "rule_id": "",
+        "text": "Before calling `modify_pending_order_items`, check the `get_product_details` tool result to ensure the `new_item_ids` are listed and have their 'available' attribute set to true.",
+        "support": [
+          "a09"
+        ],
+        "reason": "This adds a necessary validation check to ensure that the selected items are valid and available before attempting a database update."
+      },
+      {
+        "op": "ADD",
+        "file": "retail:modify",
+        "rule_id": "",
+        "text": "Before calling `modify_pending_order_items`, ask the user if they would like to make any other modifications to the order, such as a shipping address change, and perform those first.",
+        "support": [
+          "a05"
+        ],
+        "reason": "Since modifying items changes the order status and prevents further modifications, the agent must proactively elicit other requests first."
+      },
+      {
+        "op": "ADD",
+        "file": "retail:exchange",
+        "rule_id": "",
+        "text": "When the user asks for both a return and an exchange for the same order, perform the exchange first to ensure the exchange can be processed.",
+        "support": [
+          "a08"
+        ],
+        "reason": "This prevents the return action from changing the order status to 'return requested', which would block the subsequent exchange action."
+      },
+      {
+        "op": "ADD",
+        "file": "retail:return",
+        "rule_id": "",
+        "text": "If the user states they cannot return an item (e.g., because it is lost or missing), do not use the return tool; instead, transfer the user to a human agent.",
+        "support": [
+          "a07"
+        ],
+        "reason": "The return tool is inappropriate for lost items because it triggers a 'how to return' email, so the agent must transfer the request instead."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a02",
+        "reason": "The proposal to call `get_order_details` to find addresses is less critical than the systemic tool and logic fixes selected."
+      },
+      {
+        "proposal": "a03",
+        "reason": "This is a specific selection logic for one type of request, while others address broader systemic failures."
+      },
+      {
+        "proposal": "a04",
+        "reason": "This is a specific selection logic for one type of request, while others address broader systemic failures."
+      },
+      {
+        "proposal": "a06",
+        "reason": "This is less critical than the ordering and validation rules that prevent tool failures."
+      },
+      {
+        "proposal": "a10",
+        "reason": "Proposal a07 provides a more concrete and actionable instruction for the lost item scenario."
+      },
+      {
+        "proposal": "a11",
+        "reason": "This is a helpful gap-fill but lower impact than the tool failure and sequence fixes."
+      }
+    ],
+    "summary": "Added validation checks for item availability, established correct ordering for multi-action requests, and handled lost item returns via transfer."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "retail:modify",
+      "rule_id": "",
+      "text": "Before calling `modify_pending_order_items`, check the `get_product_details` tool result to ensure the `new_item_ids` are listed and have their 'available' attribute set to true.",
+      "support": [
+        "generated_three_writes_exchange_pending+return_all+cancel_delivered_olivia_ahmed_6778"
+      ],
+      "reason": "This adds a necessary validation check to ensure that the selected items are valid and available before attempting a database update.",
+      "written": "retail:modify-5"
+    },
+    {
+      "op": "ADD",
+      "file": "retail:modify",
+      "rule_id": "",
+      "text": "Before calling `modify_pending_order_items`, ask the user if they would like to make any other modifications to the order, such as a shipping address change, and perform those first.",
+      "support": [
+        "generated_address_items_held_W2904339"
+      ],
+      "reason": "Since modifying items changes the order status and prevents further modifications, the agent must proactively elicit other requests first.",
+      "written": "retail:modify-6"
+    },
+    {
+      "op": "ADD",
+      "file": "retail:exchange",
+      "rule_id": "",
+      "text": "When the user asks for both a return and an exchange for the same order, perform the exchange first to ensure the exchange can be processed.",
+      "support": [
+        "generated_one_action_group_W6564160_v0"
+      ],
+      "reason": "This prevents the return action from changing the order status to 'return requested', which would block the subsequent exchange action.",
+      "written": "retail:exchange-1"
+    },
+    {
+      "op": "ADD",
+      "file": "retail:return",
+      "rule_id": "",
+      "text": "If the user states they cannot return an item (e.g., because it is lost or missing), do not use the return tool; instead, transfer the user to a human agent.",
+      "support": [
+        "generated_lost_pair_lost_item+paid_over_daiki_muller_8062"
+      ],
+      "reason": "The return tool is inappropriate for lost items because it triggers a 'how to return' email, so the agent must transfer the request instead.",
+      "written": "retail:return-1"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Added validation checks for item availability, established correct ordering for multi-action requests, and handled lost item returns via transfer."
+}

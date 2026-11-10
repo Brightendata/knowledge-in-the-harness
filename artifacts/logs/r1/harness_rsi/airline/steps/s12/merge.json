@@ -1,0 +1,110 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a06",
+    "a07"
+  ],
+  "start": "2026-10-29T18:26:00",
+  "end": "2026-10-29T18:30:13",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "Before calling transfer_to_human_agents, the agent must first complete all parts of the user's request that are permitted by the policy and can be handled with the available tools.",
+        "support": [
+          "a07"
+        ],
+        "reason": "This rule ensures the agent fulfills the policy requirement to handle permitted parts of a request even when other parts require transfer."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "When the user asks for the total amount paid for other upcoming reservations, the agent must call get_reservation_details for every reservation ID returned by get_user_details to verify the flight dates and retrieve the payment history for each.",
+        "support": [
+          "a02"
+        ],
+        "reason": "This provides a concrete instruction for retrieving the necessary data to calculate totals for other reservations during a cancellation request."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "If the agent finds a reservation that matches the trip details provided by the user but has a different passenger name, the agent must ask the user to confirm if that is the correct reservation.",
+        "support": [
+          "a03"
+        ],
+        "reason": "This prevents the agent from incorrectly assuming a reservation is missing when only a passenger name mismatch exists."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When identifying the cheapest flight option for a user, ensure that the connection is valid by verifying that the arrival time of a flight is before the departure time of the next flight in the itinerary.",
+        "support": [
+          "a06"
+        ],
+        "reason": "This ensures the agent correctly identifies valid and cheapest flight options by checking connection times."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a01",
+        "reason": "This proposal is superseded by a02, which provides a more concrete action for the same situation (calculating totals for other reservations)."
+      }
+    ],
+    "summary": "Added specific checks for reservation matching, flight connection validity, and multi-part request handling before transfers, and specified tool calls for calculating totals on other reservations."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "Before calling transfer_to_human_agents, the agent must first complete all parts of the user's request that are permitted by the policy and can be handled with the available tools.",
+      "support": [
+        "generated_pair_compensation_false+balances_ivan_davis_3016"
+      ],
+      "reason": "This rule ensures the agent fulfills the policy requirement to handle permitted parts of a request even when other parts require transfer.",
+      "written": "airline-9"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "When the user asks for the total amount paid for other upcoming reservations, the agent must call get_reservation_details for every reservation ID returned by get_user_details to verify the flight dates and retrieve the payment history for each.",
+      "support": [
+        "generated_cancel_total_Y1ZIDC"
+      ],
+      "reason": "This provides a concrete instruction for retrieving the necessary data to calculate totals for other reservations during a cancellation request.",
+      "written": "airline:cancel-7"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "If the agent finds a reservation that matches the trip details provided by the user but has a different passenger name, the agent must ask the user to confirm if that is the correct reservation.",
+      "support": [
+        "generated_cancel_recent_UB8QZ1"
+      ],
+      "reason": "This prevents the agent from incorrectly assuming a reservation is missing when only a passenger name mismatch exists.",
+      "written": "airline:cancel-8"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "When identifying the cheapest flight option for a user, ensure that the connection is valid by verifying that the arrival time of a flight is before the departure time of the next flight in the itinerary.",
+      "support": [
+        "generated_pair_change_cabin+compensation_cancelled_amelia_wilson_8288_1"
+      ],
+      "reason": "This ensures the agent correctly identifies valid and cheapest flight options by checking connection times.",
+      "written": "airline:modify-11"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Added specific checks for reservation matching, flight connection validity, and multi-part request handling before transfers, and specified tool calls for calculating totals on other reservations."
+}

@@ -1,0 +1,114 @@
+{
+  "time": "2026-11-05T06:08:48",
+  "seed": 2201000,
+  "user": {
+    "model": "deepseek/deepseek-flash",
+    "args": {
+      "temperature": 0.0,
+      "extra_body": {
+        "thinking": {
+          "type": "disabled"
+        }
+      }
+    }
+  },
+  "plugins": [
+    "artifacts/logs/r2/plugins/airline_final2_accepted",
+    "artifacts/logs/r2/plugins/retail_final1_accepted"
+  ],
+  "current": "artifacts/logs/r2/gate/plugin_airline_retry/candidate.json",
+  "finalists": {
+    "epoch3": {
+      "pass^1": {
+        "current": 0.789375,
+        "candidate": 0.79625,
+        "diff": 0.006875,
+        "ci95": [
+          -0.011875,
+          0.02625
+        ]
+      },
+      "pass^4": {
+        "current": 0.6145714285714285,
+        "candidate": 0.6283571428571428,
+        "diff": 0.013785714285714285,
+        "ci95": [
+          -0.01764642857142857,
+          0.04650892857142853
+        ]
+      },
+      "score": {
+        "current": 0.7544142857142856,
+        "candidate": 0.7626714285714286,
+        "diff": 0.008257142857142859,
+        "ci95": [
+          -0.011563571428571425,
+          0.029214999999999998
+        ]
+      },
+      "passes": true
+    },
+    "epoch3.5": {
+      "pass^1": {
+        "current": 0.789375,
+        "candidate": 0.811875,
+        "diff": 0.0225,
+        "ci95": [
+          0.00375,
+          0.040625
+        ]
+      },
+      "pass^4": {
+        "current": 0.6145714285714285,
+        "candidate": 0.635,
+        "diff": 0.020428571428571428,
+        "ci95": [
+          -0.014716071428571433,
+          0.05478571428571428
+        ]
+      },
+      "score": {
+        "current": 0.7544142857142856,
+        "candidate": 0.7765000000000001,
+        "diff": 0.02208571428571428,
+        "ci95": [
+          0.0016278571428571423,
+          0.041988214285714275
+        ]
+      },
+      "passes": true
+    },
+    "epoch4": {
+      "pass^1": {
+        "current": 0.789375,
+        "candidate": 0.820625,
+        "diff": 0.03125,
+        "ci95": [
+          0.01125,
+          0.050625
+        ]
+      },
+      "pass^4": {
+        "current": 0.6145714285714285,
+        "candidate": 0.6587142857142857,
+        "diff": 0.04414285714285714,
+        "ci95": [
+          0.00828392857142857,
+          0.07936607142857138
+        ]
+      },
+      "score": {
+        "current": 0.7544142857142856,
+        "candidate": 0.788242857142857,
+        "diff": 0.03382857142857142,
+        "ci95": [
+          0.011437857142857142,
+          0.054987499999999995
+        ]
+      },
+      "passes": true
+    }
+  },
+  "accepted": "epoch4",
+  "saved": "artifacts/checkpoints/r2/airline/epoch4"
+}

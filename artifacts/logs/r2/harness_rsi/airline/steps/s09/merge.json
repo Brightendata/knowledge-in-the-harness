@@ -1,0 +1,137 @@
+{
+  "analyses": [
+    "a01",
+    "a03",
+    "a04",
+    "a05",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a11"
+  ],
+  "start": "2026-11-02T04:12:45",
+  "end": "2026-11-02T04:20:01",
+  "output": {
+    "edits": [
+      {
+        "op": "REPLACE",
+        "file": "airline:modify",
+        "rule_id": "airline:modify-15",
+        "text": "Before calling update_reservation_passengers, verify that the number of passengers in the new list is equal to the current number of passengers in the reservation and, if the user is replacing a specific passenger, verify that the passenger being replaced exists in the reservation's list; if either condition is not met, ask for clarification.",
+        "support": [
+          "generated_triple_change+passengers+cancel_insured_harper_patel_1045"
+        ],
+        "reason": "Clarifies that the agent must verify the count of passengers remains unchanged and that the passenger being replaced (not the new name) must exist."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When the user asks to change the cabin, check if the price of the new cabin for each flight segment is the same as its current price in the reservation. If the prices are different, refuse the request and inform the user that the cabin cannot be changed without changing the flights.",
+        "support": [
+          "generated_triple_change_same_day+cabin+cancel_negotiate_evelyn_rossi_4078_1"
+        ],
+        "reason": "Prevents cabin changes that would implicitly change flight prices, which is prohibited by the policy."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "A reservation is considered a 'business flight' if its cabin class is 'business'.",
+        "support": [
+          "generated_triple_write_cabin_bags_any+cancel_business+upgrade_cancel_aarav_martin_4744"
+        ],
+        "reason": "Clarifies that 'business flight' eligibility for cancellation refers to the cabin class."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:book",
+        "rule_id": "",
+        "text": "When the user specifies a date for a flight or a return trip, an itinerary is valid if its first flight segment is on that date, regardless of the dates of subsequent segments.",
+        "support": [
+          "generated_triple_cancel_insured+book_certificate+fewer_cancel_mia_ahmed_3713"
+        ],
+        "reason": "Clarifies that only the first leg of a return trip must match the user's requested date."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a03",
+        "reason": "Not adopted as only one task supported it and it is a lower priority than the multi-task supported edits."
+      },
+      {
+        "proposal": "a04",
+        "reason": "Not adopted as only two tasks supported it and it is a lower priority than the multi-task supported edits."
+      },
+      {
+        "proposal": "a05",
+        "reason": "Not adopted because the existing rule was correct but not followed; replacing it would remove valid checks."
+      },
+      {
+        "proposal": "a07",
+        "reason": "Not adopted as only two tasks supported it and it is a lower priority than the multi-task supported edits."
+      },
+      {
+        "proposal": "a10",
+        "reason": "Not adopted as only two tasks supported it and it is a lower priority than the multi-task supported edits."
+      }
+    ],
+    "summary": "Improved passenger modification logic, cabin change price checks, cancellation eligibility definitions, and flight date interpretation for return trips."
+  },
+  "edits": [
+    {
+      "op": "REPLACE",
+      "file": "airline:modify",
+      "rule_id": "airline:modify-15",
+      "text": "Before calling update_reservation_passengers, verify that the number of passengers in the new list is equal to the current number of passengers in the reservation and, if the user is replacing a specific passenger, verify that the passenger being replaced exists in the reservation's list; if either condition is not met, ask for clarification.",
+      "support": [
+        "generated_triple_change+passengers+cancel_insured_harper_patel_1045"
+      ],
+      "reason": "Clarifies that the agent must verify the count of passengers remains unchanged and that the passenger being replaced (not the new name) must exist.",
+      "written": "airline:modify-15"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "A reservation is considered a 'business flight' if its cabin class is 'business'.",
+      "support": [
+        "generated_triple_write_cabin_bags_any+cancel_business+upgrade_cancel_aarav_martin_4744"
+      ],
+      "reason": "Clarifies that 'business flight' eligibility for cancellation refers to the cabin class.",
+      "written": "airline:cancel-13"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:book",
+      "rule_id": "",
+      "text": "When the user specifies a date for a flight or a return trip, an itinerary is valid if its first flight segment is on that date, regardless of the dates of subsequent segments.",
+      "support": [
+        "generated_triple_cancel_insured+book_certificate+fewer_cancel_mia_ahmed_3713"
+      ],
+      "reason": "Clarifies that only the first leg of a return trip must match the user's requested date.",
+      "written": "airline:book-10"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When the user asks to change the cabin, check if the price of the new cabin for each flight segment is the same as its current price in the reservation. If the prices are different, refuse the request and inform the user that the cabin cannot be changed without changing the flights.",
+        "support": [
+          "generated_triple_change_same_day+cabin+cancel_negotiate_evelyn_rossi_4078_1"
+        ],
+        "reason": "Prevents cabin changes that would implicitly change flight prices, which is prohibited by the policy."
+      },
+      "reason": "check D: A user wants to change their cabin class from economy to business. The policy allows this change as long as the user pays the price difference (or receives a refund if lower). However, because the price of the business cabin is different from the economy cabin, the new rule would cause the agent to refuse the request, stating that the cabin cannot be changed without changing the flights, which contradicts the policy. | D: User: \"I would like to upgrade my economy seat to business for my flight tomorrow.\"\nAgent: [Checks price of economy (e.g., $100) and business (e.g., $300). Since they are different, the agent refuses the request, stating that the cabin cannot be changed without changing the flights.]\nPolicy: The policy states that all reservations can change cabin without changing the flights, and explicitly mentions that if the price is higher, the user is required to pay the difference, and if it is lower, they are refunded the difference. The agent should have allowed the change and processed the price difference.",
+      "problems": [
+        "D",
+        "D"
+      ]
+    }
+  ],
+  "summary": "Improved passenger modification logic, cabin change price checks, cancellation eligibility definitions, and flight date interpretation for return trips."
+}

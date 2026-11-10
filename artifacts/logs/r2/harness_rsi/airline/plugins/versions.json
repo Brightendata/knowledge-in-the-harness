@@ -1,0 +1,156 @@
+{
+ "v00": {
+  "start": "artifacts/logs/r1/plugins/airline_final1_accepted",
+  "holds": []
+ },
+ "v01": {
+  "step": 1,
+  "from": "v00",
+  "holds": [
+   "s01"
+  ],
+  "summary": "Added rules to enforce basic economy restrictions, calculate cancellation windows, ensure ID persistence, and check for contradictory user instructions.",
+  "kept": false,
+  "successes": {
+   "current": 134,
+   "candidate": 133
+  }
+ },
+ "v02": {
+  "step": 2,
+  "from": "v00",
+  "holds": [
+   "s02"
+  ],
+  "summary": "Improved baggage booking logic, corrected modification calculation order, refined skill routing for existing trips, and clarified business flight cancellation eligibility.",
+  "kept": false,
+  "successes": {
+   "current": 127,
+   "candidate": 125
+  }
+ },
+ "v03": {
+  "step": 2,
+  "from": "v00",
+  "holds": [
+   "s02"
+  ],
+  "summary": "Improved baggage booking logic, corrected modification calculation order, refined skill routing for existing trips, and clarified business flight cancellation eligibility.",
+  "without": [
+   "airline:book-7"
+  ],
+  "kept": true,
+  "successes": {
+   "current": 127,
+   "candidate": 133
+  },
+  "rerun": true
+ },
+ "v04": {
+  "step": 3,
+  "from": "v03",
+  "holds": [
+   "s02",
+   "s03"
+  ],
+  "summary": "Enforced policy restrictions on basic economy modifications, payment limits, and corrected booking cost calculations while improving reservation identification.",
+  "kept": false,
+  "successes": {
+   "current": 138,
+   "candidate": 134
+  }
+ },
+ "v05": {
+  "step": 4,
+  "from": "v03",
+  "holds": [
+   "s02",
+   "s04"
+  ],
+  "summary": "Improved multi-step request handling, transfer logic, data integrity for passenger updates, and baggage count interpretation.",
+  "kept": true,
+  "successes": {
+   "current": 132,
+   "candidate": 137
+  }
+ },
+ "v06": {
+  "step": 5,
+  "from": "v05",
+  "holds": [
+   "s02",
+   "s04",
+   "s05"
+  ],
+  "summary": "Added rules to correctly filter upcoming reservations, verify 24-hour cancellation windows, check if flights have already been flown, and enforce eligibility criteria for cancellations.",
+  "kept": true,
+  "successes": {
+   "current": 133,
+   "candidate": 151
+  }
+ },
+ "v07": {
+  "step": 6,
+  "from": "v06",
+  "holds": [
+   "s02",
+   "s04",
+   "s05",
+   "s06"
+  ],
+  "summary": "Added rules to enforce basic economy modification restrictions, ensure multi-reservation cancellation procedures are thorough, correct price difference calculations, and verify flight statuses before cancellation.",
+  "kept": false,
+  "successes": {
+   "current": 140,
+   "candidate": 143
+  }
+ },
+ "v08": {
+  "step": 7,
+  "from": "v06",
+  "holds": [
+   "s02",
+   "s04",
+   "s05",
+   "s07"
+  ],
+  "summary": "Fixed baggage calculation logic, ensured correct sequence and amount for delayed flight compensation, and added requirements for split payment arithmetic and asking for payment methods.",
+  "kept": false,
+  "successes": {
+   "current": 131,
+   "candidate": 129
+  }
+ },
+ "v09": {
+  "step": 8,
+  "from": "v06",
+  "holds": [
+   "s02",
+   "s04",
+   "s05",
+   "s08"
+  ],
+  "summary": "Added rules to enforce basic economy restrictions, ensure confirmation matches tool arguments, restrict modifications to requested segments only, and require loading the entry skill first.",
+  "kept": false,
+  "successes": {
+   "current": 119,
+   "candidate": 110
+  }
+ },
+ "v10": {
+  "step": 9,
+  "from": "v06",
+  "holds": [
+   "s02",
+   "s04",
+   "s05",
+   "s09"
+  ],
+  "summary": "Improved passenger modification logic, cabin change price checks, cancellation eligibility definitions, and flight date interpretation for return trips.",
+  "kept": true,
+  "successes": {
+   "current": 144,
+   "candidate": 154
+  }
+ }
+}

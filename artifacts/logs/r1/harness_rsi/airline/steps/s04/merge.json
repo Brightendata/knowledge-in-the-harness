@@ -1,0 +1,140 @@
+{
+  "analyses": [
+    "a05",
+    "a06",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a11",
+    "a12",
+    "a13",
+    "a14"
+  ],
+  "start": "2026-10-29T12:37:06",
+  "end": "2026-10-29T12:40:40",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline:book",
+        "rule_id": "",
+        "text": "When calling `book_reservation`, ensure each object in the `payment_methods` array includes both the `payment_id` and the `amount` fields.",
+        "support": [
+          "a09",
+          "a14"
+        ],
+        "reason": "Ensures the tool call follows the required schema for payment methods."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:book",
+        "rule_id": "",
+        "text": "Before calling `book_reservation`, verify that the payment methods provided by the user comply with the policy limits: at most one travel certificate, at most one credit card, and at most three gift cards.",
+        "support": [
+          "a11"
+        ],
+        "reason": "Enforces the policy limits on the number of allowed payment methods."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "Before calling `update_reservation_flights`, if the reservation's cabin class is basic_economy, refuse the request and inform the user that basic economy flights cannot be modified.",
+        "support": [
+          "a06"
+        ],
+        "reason": "Enforces the policy that basic economy flights cannot be modified."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:book",
+        "rule_id": "",
+        "text": "Before calling `book_reservation`, verify that the flights and total amount match the specific options (e.g., flight numbers and prices) confirmed by the user in previous turns.",
+        "support": [
+          "a13"
+        ],
+        "reason": "Prevents the agent from booking an incorrect itinerary after the user has already confirmed a specific selection."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a05",
+        "reason": "Other edits were prioritized for fixing fundamental schema, policy, and verification errors."
+      },
+      {
+        "proposal": "a07",
+        "reason": "Other edits were prioritized for fixing fundamental schema, policy, and verification errors."
+      },
+      {
+        "proposal": "a08",
+        "reason": "The verification of confirmed options (a13) is a higher priority logic fix than the specific bag count rule."
+      },
+      {
+        "proposal": "a10",
+        "reason": "The verification of confirmed options (a13) is a higher priority logic fix than skipping failed payments."
+      },
+      {
+        "proposal": "a12",
+        "reason": "Specific policy refusal rules (a06) were prioritized over general tool-capability checks."
+      }
+    ],
+    "summary": "Added rules to enforce payment schema, policy limits, basic economy modification refusals, and verification of confirmed booking options."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline:book",
+      "rule_id": "",
+      "text": "When calling `book_reservation`, ensure each object in the `payment_methods` array includes both the `payment_id` and the `amount` fields.",
+      "support": [
+        "generated_book_pay_by_total_sofia_sanchez_4758_v0",
+        "generated_triple_write_cancel_recent+book_pay_by_total_any+compensation_cancelled_mohamed_taylor_9830_1"
+      ],
+      "reason": "Ensures the tool call follows the required schema for payment methods.",
+      "written": "airline:book-1"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:book",
+      "rule_id": "",
+      "text": "Before calling `book_reservation`, verify that the payment methods provided by the user comply with the policy limits: at most one travel certificate, at most one credit card, and at most three gift cards.",
+      "support": [
+        "generated_book_cards_amelia_moore_2925"
+      ],
+      "reason": "Enforces the policy limits on the number of allowed payment methods.",
+      "written": "airline:book-2"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:book",
+      "rule_id": "",
+      "text": "Before calling `book_reservation`, verify that the flights and total amount match the specific options (e.g., flight numbers and prices) confirmed by the user in previous turns.",
+      "support": [
+        "generated_pair_book_certificate+fewer_cancel_liam_anderson_6815_1"
+      ],
+      "reason": "Prevents the agent from booking an incorrect itinerary after the user has already confirmed a specific selection.",
+      "written": "airline:book-3"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "Before calling `update_reservation_flights`, if the reservation's cabin class is basic_economy, refuse the request and inform the user that basic economy flights cannot be modified.",
+        "support": [
+          "generated_basic_change_50HKW4_v0"
+        ],
+        "reason": "Enforces the policy that basic economy flights cannot be modified."
+      },
+      "reason": "check D: A user with a reservation in 'basic_economy' wants to change their cabin class to 'economy'. The policy states that 'all reservations, including basic economy, can change cabin without changing the flights.' However, the new rule would cause the agent to refuse this request because the current cabin class is 'basic_economy', even though the policy allows cabin changes for this class. | D: A user with a reservation in basic_economy wants to change their cabin class to economy without changing their flight segments. The policy states that 'all reservations, including basic economy, can change cabin without changing the flights.' However, because the agent would need to call `update_reservation_flights` to change the cabin, this rule would cause the agent to refuse the request because the reservation's current cabin class is basic_economy.",
+      "problems": [
+        "D",
+        "D"
+      ]
+    }
+  ],
+  "summary": "Added rules to enforce payment schema, policy limits, basic economy modification refusals, and verification of confirmed booking options."
+}

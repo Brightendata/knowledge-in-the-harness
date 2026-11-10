@@ -1,0 +1,60 @@
+{
+ "round": 2,
+ "domain": "airline",
+ "plugins": [
+  "artifacts/logs/r2/plugins/airline_final2_accepted",
+  "artifacts/logs/r2/plugins/retail_final1_accepted"
+ ],
+ "model": "artifacts/checkpoints/r1/airline/epoch4",
+ "agent": {
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "top_k": 64,
+  "max_tokens": 8192,
+  "max_skill_loads": 4
+ },
+ "user": {
+  "model": "deepseek/deepseek-flash",
+  "args": {
+   "temperature": 0.0,
+   "extra_body": {
+    "thinking": {
+     "type": "disabled"
+    }
+   }
+  }
+ },
+ "grpo": {
+  "epochs": 4,
+  "steps_per_epoch": 6,
+  "checkpoints": [
+   3,
+   3.5,
+   4
+  ],
+  "rollouts": [
+   16,
+   8,
+   5
+  ],
+  "excluded": [],
+  "shuffle_seed": 20261021,
+  "lora_rank": 32,
+  "lora_alpha": 32,
+  "lora_targets": [
+   "q_proj",
+   "k_proj",
+   "v_proj",
+   "o_proj",
+   "gate_proj",
+   "up_proj",
+   "down_proj"
+  ],
+  "lr": 3e-05,
+  "mini_batches": 4,
+  "clip": 0.2,
+  "dual_clip": 3.0,
+  "max_token_grad": 30,
+  "max_grad_norm": 1.0
+ }
+}

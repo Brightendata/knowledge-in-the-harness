@@ -1,0 +1,486 @@
+{
+ "candidate": {
+  "generated_address_items_status_default_W3386832": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_address_items_two_W2040365": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_all_pending_address_chen_taylor_6919": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_bound_W5256976": [
+   0,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_gift_covers_W6131421": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_exchange_mind_keep_pay_W7128968": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_mind_pay_W1544028": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_mind_pay_W2156941": [
+   0,
+   0,
+   1,
+   0,
+   0,
+   1
+  ],
+  "generated_exchange_same_as_W3135192": [
+   0,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_lookup_pair_cancel_delivered+card_raj_sanchez_2970": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_lookup_pair_exchange_mind+attribute_noah_martin_5764": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_exchange_relative+card_olivia_ito_3591": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_payment+card_amelia_ito_8772_1": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_lookup_pair_return_card_original+attribute_mei_gonzalez_4785_2": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lost_pair_lost_item+address_items_given_noah_kovacs_1216": [
+   0,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_lost_pair_lost_item+cancel_ethan_sanchez_7289": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_mind_keep_pay_W3320020": [
+   1,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_modify_pref_W1046662": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_one_action_group_W2936099_v1": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_paid_group_W4806309_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_payment_W6599568": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_card_original_W7190291": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_twin_W2092674": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_items_pending_yara_santos_1202": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_write_all_delivered+exchange_pending_mohamed_lee_5442_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_write_all_pending_cancel+status_exchange_liam_lee_5696_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_status_exchange_2_W1579621": [
+   1,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_stock_group_W7613749_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_three_writes_exchange_pending+cancel_delivered+return_pending_anya_lee_8315_2": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_three_writes_return_pending+exchange_1+status_exchange_mohamed_lee_5442_2": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ]
+ },
+ "current": {
+  "generated_address_items_status_default_W3386832": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_address_items_two_W2040365": [
+   1,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_all_pending_address_chen_taylor_6919": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_bound_W5256976": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_gift_covers_W6131421": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_mind_keep_pay_W7128968": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_exchange_mind_pay_W1544028": [
+   0,
+   0,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_exchange_mind_pay_W2156941": [
+   1,
+   1,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_exchange_same_as_W3135192": [
+   0,
+   0,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_lookup_pair_cancel_delivered+card_raj_sanchez_2970": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_exchange_mind+attribute_noah_martin_5764": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_lookup_pair_exchange_relative+card_olivia_ito_3591": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_payment+card_amelia_ito_8772_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_return_card_original+attribute_mei_gonzalez_4785_2": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lost_pair_lost_item+address_items_given_noah_kovacs_1216": [
+   0,
+   1,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_lost_pair_lost_item+cancel_ethan_sanchez_7289": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_modify_mind_keep_pay_W3320020": [
+   1,
+   0,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_modify_pref_W1046662": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_one_action_group_W2936099_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_paid_group_W4806309_v1": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_payment_W6599568": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_card_original_W7190291": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_twin_W2092674": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_items_pending_yara_santos_1202": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_write_all_delivered+exchange_pending_mohamed_lee_5442_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_write_all_pending_cancel+status_exchange_liam_lee_5696_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_status_exchange_2_W1579621": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_stock_group_W7613749_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_three_writes_exchange_pending+cancel_delivered+return_pending_anya_lee_8315_2": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_three_writes_return_pending+exchange_1+status_exchange_mohamed_lee_5442_2": [
+   1,
+   1,
+   1,
+   0,
+   0,
+   1
+  ]
+ }
+}

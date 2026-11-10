@@ -1,0 +1,486 @@
+{
+ "candidate": {
+  "generated_addr_pair_address_items_home_given+undo_daiki_silva_5033_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_address_default_W2403075": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_address_items_status_order_W4096800": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_all_pending_cancel_ethan_smith_9087": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_bound_group_W3417600_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_refund_cancel_W5861600": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_cancel_refund_cancel_W6426438": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_refund_group_W7602708_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_refund_group_W7602708_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_gift_covers_W1067251": [
+   1,
+   1,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_exchange_pref_W2092674": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   0
+  ],
+  "generated_info_triple_same_item_variant+user_address_given+cheapest_omar_taylor_1594_1": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1
+  ],
+  "generated_linked_same_W6070601": [
+   1,
+   1,
+   1,
+   0,
+   0,
+   1
+  ],
+  "generated_modify_same_as_W2079779": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_other_type_return_W5777276": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_attribute+refund_scope_original_mia_smith_1623_1": [
+   0,
+   1,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_pair_shipped_to+cheapest_emma_lopez_8196": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_payment_W6629830": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_return_across_sophia_nguyen_2370": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_return_card_human_W5254379": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_except_card_human_W5254379": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_same_item_variant_W1763367": [
+   1,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_same_item_variant_W3631991": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_same_item_variant_W7450915": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_same_item_variant_W8969494": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_scope_write_all_delivered_but+cancel_harper_brown_7363": [
+   0,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_write_all_pending_cancel+change_delivered_olivia_ito_3591_1": [
+   1,
+   0,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_stock_group_W7613749_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_stock_cancel+fast_refund+undo_james_lee_5010": [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_triple_write_cancel_processed+all_pending_cancel+user_address_given_ethan_santos_6104": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ]
+ },
+ "current": {
+  "generated_addr_pair_address_items_home_given+undo_daiki_silva_5033_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_address_default_W2403075": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_address_items_status_order_W4096800": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_all_pending_cancel_ethan_smith_9087": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_bound_group_W3417600_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_refund_cancel_W5861600": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_refund_cancel_W6426438": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_refund_group_W7602708_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_refund_group_W7602708_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_gift_covers_W1067251": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_pref_W2092674": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   1
+  ],
+  "generated_info_triple_same_item_variant+user_address_given+cheapest_omar_taylor_1594_1": [
+   1,
+   1,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_linked_same_W6070601": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_same_as_W2079779": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_other_type_return_W5777276": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_attribute+refund_scope_original_mia_smith_1623_1": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_pair_shipped_to+cheapest_emma_lopez_8196": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_payment_W6629830": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_across_sophia_nguyen_2370": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_card_human_W5254379": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_except_card_human_W5254379": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_same_item_variant_W1763367": [
+   0,
+   0,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_same_item_variant_W3631991": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_same_item_variant_W7450915": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_same_item_variant_W8969494": [
+   1,
+   1,
+   0,
+   0,
+   1,
+   1
+  ],
+  "generated_scope_write_all_delivered_but+cancel_harper_brown_7363": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_scope_write_all_pending_cancel+change_delivered_olivia_ito_3591_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_stock_group_W7613749_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_stock_cancel+fast_refund+undo_james_lee_5010": [
+   0,
+   0,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_triple_write_cancel_processed+all_pending_cancel+user_address_given_ethan_santos_6104": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ]
+ }
+}

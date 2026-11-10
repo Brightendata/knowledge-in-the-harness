@@ -1,0 +1,166 @@
+{
+ "v00": {
+  "start": "artifacts/logs/r1/plugins/airline_final1_accepted",
+  "holds": []
+ },
+ "v01": {
+  "step": 1,
+  "from": "v00",
+  "holds": [
+   "s01"
+  ],
+  "summary": "Added rules to ensure mandatory confirmation for modifications, correct bag count handling in bookings, and proper order of operations for delayed flight compensation.",
+  "kept": false,
+  "successes": {
+   "current": 133,
+   "candidate": 128
+  }
+ },
+ "v02": {
+  "step": 1,
+  "from": "v00",
+  "holds": [
+   "s01"
+  ],
+  "summary": "Added rules to ensure mandatory confirmation for modifications, correct bag count handling in bookings, and proper order of operations for delayed flight compensation.",
+  "without": [
+   "airline:modify-11",
+   "airline:compensation-2"
+  ],
+  "kept": false,
+  "successes": {
+   "current": 133,
+   "candidate": 133
+  },
+  "rerun": true
+ },
+ "v03": {
+  "step": 2,
+  "from": "v00",
+  "holds": [
+   "s02"
+  ],
+  "summary": "Improved skill routing for flight modifications, corrected modification price calculations, and ensured thorough verification of reservation candidates.",
+  "kept": false,
+  "successes": {
+   "current": 134,
+   "candidate": 131
+  }
+ },
+ "v04": {
+  "step": 3,
+  "from": "v00",
+  "holds": [
+   "s03"
+  ],
+  "summary": "Added rules to ensure correct skill loading for cancellations, enforce basic economy modification restrictions, and verify prerequisites for delayed flight compensation certificates.",
+  "kept": false,
+  "successes": {
+   "current": 133,
+   "candidate": 134
+  }
+ },
+ "v05": {
+  "step": 4,
+  "from": "v00",
+  "holds": [
+   "s04"
+  ],
+  "summary": "Improved modification logic by refining price difference calculations, enforcing the 'already flown' check for cabin changes, and specifying the call sequence for basic economy updates.",
+  "kept": false,
+  "successes": {
+   "current": 139,
+   "candidate": 133
+  }
+ },
+ "v06": {
+  "step": 5,
+  "from": "v00",
+  "holds": [
+   "s05"
+  ],
+  "summary": "Improved reservation identification, data retrieval for upcoming trips, and consistency when updating flight segments.",
+  "kept": true,
+  "successes": {
+   "current": 129,
+   "candidate": 140
+  }
+ },
+ "v07": {
+  "step": 6,
+  "from": "v06",
+  "holds": [
+   "s05",
+   "s06"
+  ],
+  "summary": "Added rules to handle multi-step cabin/flight modifications, status checks for flown flights during cancellation, and duration-based flight filtering.",
+  "kept": false,
+  "successes": {
+   "current": 143,
+   "candidate": 142
+  }
+ },
+ "v08": {
+  "step": 6,
+  "from": "v06",
+  "holds": [
+   "s05",
+   "s06"
+  ],
+  "summary": "Added rules to handle multi-step cabin/flight modifications, status checks for flown flights during cancellation, and duration-based flight filtering.",
+  "without": [
+   "airline:modify-15"
+  ],
+  "kept": false,
+  "successes": {
+   "current": 143,
+   "candidate": 140
+  },
+  "rerun": true
+ },
+ "v09": {
+  "step": 7,
+  "from": "v06",
+  "holds": [
+   "s05",
+   "s07"
+  ],
+  "summary": "Fixed policy violations regarding compensation and cancellation eligibility, and corrected the logic for calculating price differences during reservation modifications.",
+  "kept": true,
+  "successes": {
+   "current": 122,
+   "candidate": 127
+  }
+ },
+ "v10": {
+  "step": 8,
+  "from": "v09",
+  "holds": [
+   "s05",
+   "s07",
+   "s08"
+  ],
+  "summary": "Improved the modification skill by adding rules to sum flight segment prices, match payment IDs by balance, and respect the user's requested order of updates.",
+  "kept": true,
+  "successes": {
+   "current": 123,
+   "candidate": 133
+  }
+ },
+ "v11": {
+  "step": 9,
+  "from": "v10",
+  "holds": [
+   "s05",
+   "s07",
+   "s08",
+   "s09"
+  ],
+  "summary": "Added a check to prevent canceling past flights, corrected the logic for adding baggage counts, and ensured both direct and one-stop flights are compared for price.",
+  "kept": true,
+  "successes": {
+   "current": 148,
+   "candidate": 157
+  }
+ }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "airline",
+  "version": "0",
+  "description": "Airline customer service. Load it first for any flight request; it says which airline skill to load next.",
+  "author": "knora"
+}

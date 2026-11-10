@@ -1,0 +1,125 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a05",
+    "a06",
+    "a07",
+    "a08",
+    "a10"
+  ],
+  "start": "2026-10-30T05:33:43",
+  "end": "2026-10-30T05:38:22",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "retail:cancel",
+        "rule_id": "",
+        "text": "Before calling cancel_pending_order for an order containing multiple items, list all the items in the order and inform the user that the entire order will be cancelled. If the user only wants to cancel a specific item and not the others, offer to transfer them to a human agent.",
+        "support": [
+          "generated_one_action_group_W8046874_v0"
+        ],
+        "reason": "Prevents the agent from accidentally cancelling an entire order when the user only intended to cancel a single item."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When a user's request includes both an action you can perform and questions you cannot answer, you must perform the actionable part even if the user asks to be transferred because of those questions.",
+        "support": [
+          "generated_same_item_variant_W1763367"
+        ],
+        "reason": "Reinforces the policy that the agent should perform any allowed actions even if the user requests a transfer due to unanswerable questions."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When the user asks to update or set their default address, load the retail:user-address skill.",
+        "support": [
+          "generated_pair_user_address_order+undo_lucas_moore_6941"
+        ],
+        "reason": "Ensures the agent loads the correct skill to perform address updates, even when the request is phrased in relation to an order."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When the user asks for information about an order, product, or profile, load the retail skill.",
+        "support": [
+          "generated_budget_group_W3529525_v1"
+        ],
+        "reason": "Ensures the agent loads the entry skill to access the policy section allowing it to provide information about orders, products, and profiles."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a01",
+        "reason": "Lower impact than the chosen routing and logic fixes."
+      },
+      {
+        "proposal": "a02",
+        "reason": "Lower impact than the chosen routing and logic fixes."
+      },
+      {
+        "proposal": "a07",
+        "reason": "Lower impact than the chosen routing and logic fixes."
+      },
+      {
+        "proposal": "a08",
+        "reason": "Lower impact than the chosen routing and logic fixes."
+      }
+    ],
+    "summary": "Improved routing for address updates and info queries, reinforced policy on performing actionable parts, and added safeguards against incorrect order cancellations."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "retail:cancel",
+      "rule_id": "",
+      "text": "Before calling cancel_pending_order for an order containing multiple items, list all the items in the order and inform the user that the entire order will be cancelled. If the user only wants to cancel a specific item and not the others, offer to transfer them to a human agent.",
+      "support": [
+        "generated_one_action_group_W8046874_v0"
+      ],
+      "reason": "Prevents the agent from accidentally cancelling an entire order when the user only intended to cancel a single item.",
+      "written": "retail:cancel-2"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When a user's request includes both an action you can perform and questions you cannot answer, you must perform the actionable part even if the user asks to be transferred because of those questions.",
+      "support": [
+        "generated_same_item_variant_W1763367"
+      ],
+      "reason": "Reinforces the policy that the agent should perform any allowed actions even if the user requests a transfer due to unanswerable questions.",
+      "written": "retail-16"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When the user asks to update or set their default address, load the retail:user-address skill.",
+      "support": [
+        "generated_pair_user_address_order+undo_lucas_moore_6941"
+      ],
+      "reason": "Ensures the agent loads the correct skill to perform address updates, even when the request is phrased in relation to an order.",
+      "written": "retail-17"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When the user asks for information about an order, product, or profile, load the retail skill.",
+      "support": [
+        "generated_budget_group_W3529525_v1"
+      ],
+      "reason": "Ensures the agent loads the entry skill to access the policy section allowing it to provide information about orders, products, and profiles.",
+      "written": "retail-18"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Improved routing for address updates and info queries, reinforced policy on performing actionable parts, and added safeguards against incorrect order cancellations."
+}

@@ -1,0 +1,502 @@
+{
+ "candidate": {
+  "generated_basic_change_N2KIKA_v0": [
+   1,
+   1,
+   1,
+   0,
+   0,
+   1
+  ],
+  "generated_book_certificates_omar_ahmed_3737": [
+   0,
+   1,
+   0,
+   0,
+   1,
+   1
+  ],
+  "generated_book_pay_by_total_amelia_hernandez_8403_v0": [
+   1,
+   0,
+   1,
+   1,
+   0,
+   0
+  ],
+  "generated_book_same_cap_ava_smith_9007_v1": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_book_sums_certificate_gift_evelyn_johnson_4945": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_book_sums_certificate_gift_noah_garcia_4365": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_book_sums_gift_only_sophia_nguyen_1995": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cabin_bags_D28MAZ_v1": [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_cancel_airline_IPG6ZS": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_airline_LUA6DF": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_flown_OXHSLC": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_flown_V761S8": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_flown_ZU8VTC": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_basic_XZGIBD": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_cabin_6WF51M": [
+   1,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_change_upgrade_budget_0MR5MT_v1": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_compensation_cancelled_67KG5T": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_compensation_delayed_1M8D2L": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_compensation_false_1KSG9Y": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_compensation_false_5A4IYK": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_fewer_cancel_ABB0M7": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_fewer_cancel_XJFC6B": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_book_pay_by_total_any+compensation_false_ava_silva_7424": [
+   1,
+   0,
+   0,
+   0,
+   1,
+   1
+  ],
+  "generated_pair_fewer_cancel+book_certificate_gift_sofia_sanchez_4758": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_pair_insurance+upgrade_cancel_omar_sanchez_7760_1": [
+   1,
+   1,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_pair_passengers+bags_remove_juan_taylor_8806": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_passengers+compensation_false_sofia_johnson_3271": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_downgrade_aarav_nguyen_8793": [
+   0,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_book_again+compensation_delayed+change_basic_ivan_kim_3844_1": [
+   1,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_triple_cancel_business+insurance+balances_omar_sanchez_7760": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   0
+  ],
+  "generated_triple_cancel_insured+book_certificate+fewer_cancel_mia_ahmed_3713": [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ]
+ },
+ "current": {
+  "generated_basic_change_N2KIKA_v0": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_book_certificates_omar_ahmed_3737": [
+   1,
+   0,
+   0,
+   0,
+   1,
+   1
+  ],
+  "generated_book_pay_by_total_amelia_hernandez_8403_v0": [
+   1,
+   1,
+   0,
+   0,
+   1,
+   1
+  ],
+  "generated_book_same_cap_ava_smith_9007_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_book_sums_certificate_gift_evelyn_johnson_4945": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_book_sums_certificate_gift_noah_garcia_4365": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_book_sums_gift_only_sophia_nguyen_1995": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cabin_bags_D28MAZ_v1": [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_cancel_airline_IPG6ZS": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_airline_LUA6DF": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_flown_OXHSLC": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_flown_V761S8": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_flown_ZU8VTC": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_change_basic_XZGIBD": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_change_cabin_6WF51M": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   0
+  ],
+  "generated_change_upgrade_budget_0MR5MT_v1": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_compensation_cancelled_67KG5T": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_compensation_delayed_1M8D2L": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_compensation_false_1KSG9Y": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_compensation_false_5A4IYK": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_fewer_cancel_ABB0M7": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_fewer_cancel_XJFC6B": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_book_pay_by_total_any+compensation_false_ava_silva_7424": [
+   0,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_pair_fewer_cancel+book_certificate_gift_sofia_sanchez_4758": [
+   0,
+   0,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_pair_insurance+upgrade_cancel_omar_sanchez_7760_1": [
+   0,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_pair_passengers+bags_remove_juan_taylor_8806": [
+   0,
+   1,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_pair_passengers+compensation_false_sofia_johnson_3271": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_downgrade_aarav_nguyen_8793": [
+   0,
+   0,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_triple_book_again+compensation_delayed+change_basic_ivan_kim_3844_1": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_triple_cancel_business+insurance+balances_omar_sanchez_7760": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_cancel_insured+book_certificate+fewer_cancel_mia_ahmed_3713": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   0
+  ]
+ }
+}

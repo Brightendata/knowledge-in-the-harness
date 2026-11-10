@@ -1,0 +1,502 @@
+{
+ "candidate": {
+  "generated_address_default_W8642391": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_address_items_held_W2912646": [
+   0,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_budget_group_W6599568_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_budget_group_W7425646_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_budget_group_W7594624_v0": [
+   0,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_cancel_partial_cheapest_W7170967": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_cancel_refund_keep_W4566809": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_count_group_W3977493_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_mind_W5257743": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_address_items_home_given+shipped_to_fatima_anderson_7445_1": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_payment+shipped_to_mia_moore_8366_2": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lost_pair_lost_item+cancel_ethan_sanchez_7289": [
+   0,
+   1,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_lost_pair_lost_item+exchange_relative_pref_omar_khan_2363": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_lost_pair_lost_item+return_except_harper_silva_8534": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_modify_mind_keep_pay_W1416704": [
+   1,
+   0,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_one_action_group_W2936099_v0": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_one_action_group_W4352605_v1": [
+   0,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_one_action_group_W8209112_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_stock_return+scope_items_pending_olivia_ahmed_6778_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_quad_cheapest+scope_items_pending+user_address_given+cancel_across_daiki_khan_6856": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_quad_return_across+new_order+cheapest+fast_refund_olivia_brown_4616": [
+   0,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_return_card_original_W1605168": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_except_card_human_W1605168": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_except_card_original_W4901434": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_write_all_delivered_but+exchange_pending_ava_moore_2033": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_write_all_pending_cancel+status_exchange_liam_lee_5696_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_status_modify_W4096800": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_three_writes_cancel_delivered+return_all+return_pending_ethan_moore_3587_1": [
+   1,
+   1,
+   0,
+   0,
+   1,
+   1
+  ],
+  "generated_three_writes_cancel_delivered+return_except+exchange_pending_harper_brown_7363_1": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_cheapest+return_across+fast_refund_harper_silva_8534": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_scope_items_pending+cheapest+new_order_omar_muller_7891": [
+   1,
+   1,
+   1,
+   0,
+   0,
+   0
+  ]
+ },
+ "current": {
+  "generated_address_default_W8642391": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_address_items_held_W2912646": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_budget_group_W6599568_v1": [
+   1,
+   1,
+   0,
+   1,
+   0,
+   1
+  ],
+  "generated_budget_group_W7425646_v0": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_budget_group_W7594624_v0": [
+   1,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_cancel_partial_cheapest_W7170967": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_cancel_refund_keep_W4566809": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_count_group_W3977493_v0": [
+   0,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_mind_W5257743": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_address_items_home_given+shipped_to_fatima_anderson_7445_1": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_payment+shipped_to_mia_moore_8366_2": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lost_pair_lost_item+cancel_ethan_sanchez_7289": [
+   1,
+   0,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_lost_pair_lost_item+exchange_relative_pref_omar_khan_2363": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_lost_pair_lost_item+return_except_harper_silva_8534": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_mind_keep_pay_W1416704": [
+   0,
+   1,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_one_action_group_W2936099_v0": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_one_action_group_W4352605_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_one_action_group_W8209112_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_pair_stock_return+scope_items_pending_olivia_ahmed_6778_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_quad_cheapest+scope_items_pending+user_address_given+cancel_across_daiki_khan_6856": [
+   0,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_quad_return_across+new_order+cheapest+fast_refund_olivia_brown_4616": [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_return_card_original_W1605168": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_return_except_card_human_W1605168": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_except_card_original_W4901434": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_write_all_delivered_but+exchange_pending_ava_moore_2033": [
+   1,
+   0,
+   1,
+   0,
+   0,
+   1
+  ],
+  "generated_scope_write_all_pending_cancel+status_exchange_liam_lee_5696_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_status_modify_W4096800": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_three_writes_cancel_delivered+return_all+return_pending_ethan_moore_3587_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_three_writes_cancel_delivered+return_except+exchange_pending_harper_brown_7363_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_cheapest+return_across+fast_refund_harper_silva_8534": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_triple_scope_items_pending+cheapest+new_order_omar_muller_7891": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   0
+  ]
+ }
+}

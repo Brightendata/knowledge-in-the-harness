@@ -1,0 +1,502 @@
+{
+ "candidate": {
+  "generated_addr_pair_address_items_status_order+user_address_order_fatima_muller_6713": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_address_items_held_W2904339": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_address_items_home_given_W6368178": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_address_items_mind_W1129578": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_all_pending_address_liam_lopez_7019": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_bound_group_W2624389_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_budget_group_W7425646_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_count_group_W2101159_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_count_group_W7554786_v0": [
+   0,
+   1,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_info_triple_cancel_processed+scope_items_pending+cheapest_james_martin_1500": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   0
+  ],
+  "generated_lookup_pair_address_items_given+shipped_to_ethan_muller_6097_2": [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_lookup_pair_exchange_mind_return+attribute_ava_johnson_5052_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_payment+card_amelia_ito_8772_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lost_pair_lost_item+modify_pref_evelyn_patel_8882": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1
+  ],
+  "generated_lost_pair_lost_item+paid_over_daiki_muller_8062": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_gift_covers_W4862767": [
+   0,
+   0,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_modify_same_as_W2818151": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_same_as_W6371438": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_one_action_group_W6564160_v0": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_other_type_return_W4213437": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_payment_W6207110": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_across_james_li_5688": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_held_W3433080": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_twin_W2092674": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_twin_W8951014": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_items_delivered_james_li_5688": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_write_all_delivered+return_pending_yusuf_hernandez_6467_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_stock_group_W2047423_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_three_writes_exchange_pending+return_all+cancel_delivered_olivia_ahmed_6778": [
+   0,
+   1,
+   1,
+   1,
+   0,
+   0
+  ],
+  "generated_triple_cancel_partial_whole+attribute+user_address_given_mason_wilson_4597": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_tracking+cancel_across+user_address_given_liam_thomas_8833": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ]
+ },
+ "current": {
+  "generated_addr_pair_address_items_status_order+user_address_order_fatima_muller_6713": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_address_items_held_W2904339": [
+   0,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_address_items_home_given_W6368178": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_address_items_mind_W1129578": [
+   1,
+   0,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_all_pending_address_liam_lopez_7019": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_bound_group_W2624389_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_budget_group_W7425646_v1": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_count_group_W2101159_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_count_group_W7554786_v0": [
+   0,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_info_triple_cancel_processed+scope_items_pending+cheapest_james_martin_1500": [
+   0,
+   1,
+   0,
+   0,
+   1,
+   0
+  ],
+  "generated_lookup_pair_address_items_given+shipped_to_ethan_muller_6097_2": [
+   1,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_lookup_pair_exchange_mind_return+attribute_ava_johnson_5052_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_payment+card_amelia_ito_8772_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lost_pair_lost_item+modify_pref_evelyn_patel_8882": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   0
+  ],
+  "generated_lost_pair_lost_item+paid_over_daiki_muller_8062": [
+   1,
+   1,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_modify_gift_covers_W4862767": [
+   1,
+   0,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_modify_same_as_W2818151": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_same_as_W6371438": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_one_action_group_W6564160_v0": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_other_type_return_W4213437": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_payment_W6207110": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_across_james_li_5688": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_held_W3433080": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_twin_W2092674": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_twin_W8951014": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_items_delivered_james_li_5688": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_write_all_delivered+return_pending_yusuf_hernandez_6467_1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_stock_group_W2047423_v1": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_three_writes_exchange_pending+return_all+cancel_delivered_olivia_ahmed_6778": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_triple_cancel_partial_whole+attribute+user_address_given_mason_wilson_4597": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_tracking+cancel_across+user_address_given_liam_thomas_8833": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ]
+ }
+}

@@ -1,0 +1,17 @@
+[project]
+name = "rsi"
+version = "0.0.0"
+license = "Apache-2.0"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "tau2 @ git+https://github.com/sierra-research/tau2-bench@4ce7c0397c1eb65c9bbe59aeacfe1ca44a1cd699",
+    "scikit-learn",  # rsi.data_preprocessing.alignment
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+# Required for the git-pinned tau2 dependency.
+allow-direct-references = true

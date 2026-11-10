@@ -1,0 +1,111 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a06",
+    "a08",
+    "a09",
+    "a11",
+    "a12"
+  ],
+  "start": "2026-11-02T11:52:51",
+  "end": "2026-11-02T11:58:53",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "When the user provides a description of a trip but no reservation ID, call `get_reservation_details` for every reservation ID in the user's profile to identify the correct one before asking the user to select one.",
+        "support": [
+          "generated_several_NASS9T"
+        ],
+        "reason": "Ensures the agent identifies the correct reservation using tool calls rather than asking the user to select from a list."
+      },
+      {
+        "op": "ADD",
+        "file": "airline",
+        "rule_id": "",
+        "text": "When the user asks for information about other upcoming reservations, call `get_user_details` to retrieve all reservation IDs, and then call `get_reservation_details` for each reservation with a flight date later than the current date to confirm the details and sum the amounts.",
+        "support": [
+          "generated_cancel_total_134NGA",
+          "generated_cancel_total_T47GQ8"
+        ],
+        "reason": "Fixes hallucination and data retrieval failures when the user asks about other upcoming reservations."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When calling `update_reservation_flights` to change a part of a trip (e.g., outbound flights) using a search result, replace all segments of that part with the segments from the search result.",
+        "support": [
+          "generated_triple_cancel_recent+change+fewer_cancel_anya_brown_2655_1"
+        ],
+        "reason": "Ensures all flight segments are correctly updated when a trip part is changed using a search result."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a02",
+        "reason": "Ranked lower than other failures; the errors in flight segment updates and reservation identification take priority."
+      },
+      {
+        "proposal": "a04",
+        "reason": "Blocked in a previous run as it was determined to forbid actions allowed by the policy."
+      },
+      {
+        "proposal": "a06",
+        "reason": "Blocked in a previous run as it was determined to forbid actions allowed by the policy."
+      },
+      {
+        "proposal": "a08",
+        "reason": "Ranked lower than other failures."
+      },
+      {
+        "proposal": "a09",
+        "reason": "Ranked lower than other failures."
+      }
+    ],
+    "summary": "Improved reservation identification, data retrieval for upcoming trips, and consistency when updating flight segments."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "When the user provides a description of a trip but no reservation ID, call `get_reservation_details` for every reservation ID in the user's profile to identify the correct one before asking the user to select one.",
+      "support": [
+        "generated_several_NASS9T"
+      ],
+      "reason": "Ensures the agent identifies the correct reservation using tool calls rather than asking the user to select from a list.",
+      "written": "airline-12"
+    },
+    {
+      "op": "ADD",
+      "file": "airline",
+      "rule_id": "",
+      "text": "When the user asks for information about other upcoming reservations, call `get_user_details` to retrieve all reservation IDs, and then call `get_reservation_details` for each reservation with a flight date later than the current date to confirm the details and sum the amounts.",
+      "support": [
+        "generated_cancel_total_134NGA",
+        "generated_cancel_total_T47GQ8"
+      ],
+      "reason": "Fixes hallucination and data retrieval failures when the user asks about other upcoming reservations.",
+      "written": "airline-13"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "When calling `update_reservation_flights` to change a part of a trip (e.g., outbound flights) using a search result, replace all segments of that part with the segments from the search result.",
+      "support": [
+        "generated_triple_cancel_recent+change+fewer_cancel_anya_brown_2655_1"
+      ],
+      "reason": "Ensures all flight segments are correctly updated when a trip part is changed using a search result.",
+      "written": "airline:modify-14"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Improved reservation identification, data retrieval for upcoming trips, and consistency when updating flight segments."
+}

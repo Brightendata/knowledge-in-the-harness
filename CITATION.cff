@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper below."
+title: "Knowledge in the Harness, Reliability in the Weights: Teacher-Free Co-Evolution of an LLM Agent"
+license: Apache-2.0
+repository-code: "https://github.com/Brightendata/knowledge-in-the-harness"
+authors:
+  - family-names: Zhang
+    given-names: Yujia
+    affiliation: Brightendata
+  - family-names: Ren
+    given-names: Xinqi
+    affiliation: Brightendata
+  - family-names: Zhou
+    given-names: Shixiong
+    affiliation: Brightendata
+  - family-names: Meng
+    given-names: Jia
+    affiliation: Brightendata
+preferred-citation:
+  type: article
+  title: "Knowledge in the Harness, Reliability in the Weights: Teacher-Free Co-Evolution of an LLM Agent"
+  authors:
+    - family-names: Zhang
+      given-names: Yujia
+    - family-names: Ren
+      given-names: Xinqi
+    - family-names: Zhou
+      given-names: Shixiong
+    - family-names: Meng
+      given-names: Jia
+  year: 2026

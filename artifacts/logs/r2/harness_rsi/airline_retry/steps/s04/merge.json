@@ -1,0 +1,109 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a08"
+  ],
+  "start": "2026-11-02T10:57:03",
+  "end": "2026-11-02T11:04:48",
+  "output": {
+    "edits": [
+      {
+        "op": "REPLACE",
+        "file": "airline:modify",
+        "rule_id": "airline:modify-1",
+        "text": "When calculating the price difference or refund for a modification, determine the sum of the prices of all flights in the new reservation (for search_onestop_flight, sum the economy prices of both flights in each pair), subtract the sum of the prices of all flights in the original reservation, and multiply that result by the number of passengers. This final amount is the price difference that must be used for all subsequent steps, including informing the user and checking against any user-specified limits.",
+        "support": [
+          "a02",
+          "a05"
+        ],
+        "reason": "Combines the need to sum prices from search_onestop_flight pairs and the need to multiply the final difference by the number of passengers for all subsequent steps."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When identifying which reservations can be modified, verify that no flight in the reservation has already been flown; if so, the cabin cannot be changed.",
+        "support": [
+          "a03"
+        ],
+        "reason": "Enforces the policy that cabin changes are only possible if no flight in the reservation has already been flown."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When the reservation is in basic_economy and the user wants to change both the cabin and the flights, the agent must first call update_reservation_flights to change the cabin to the new cabin class while keeping the current flights, then call update_reservation_flights to change the flights.",
+        "support": [
+          "a04"
+        ],
+        "reason": "Provides a specific sequence of tool calls to comply with the policy that basic economy flights cannot be modified while still allowing the cabin change."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a01",
+        "reason": "A lower-priority calculation for a specific user request regarding 'least total time' which is not a systematic policy failure."
+      },
+      {
+        "proposal": "a06",
+        "reason": "While useful, the instructions for identifying the reservation are already partially covered by rule airline-7, and a04/a03/a02+a05 offer higher impact for modification logic."
+      },
+      {
+        "proposal": "a07",
+        "reason": "A single-task fix for baggage inclusion that is less critical than the systematic calculation and modification logic fixes."
+      },
+      {
+        "proposal": "a08",
+        "reason": "A single-task fix for ensuring details match the latest request, which is less critical than the systematic modification logic fixes."
+      }
+    ],
+    "summary": "Improved modification logic by refining price difference calculations, enforcing the 'already flown' check for cabin changes, and specifying the call sequence for basic economy updates."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "When identifying which reservations can be modified, verify that no flight in the reservation has already been flown; if so, the cabin cannot be changed.",
+      "support": [
+        "generated_scope_downgrade_liam_wilson_9173"
+      ],
+      "reason": "Enforces the policy that cabin changes are only possible if no flight in the reservation has already been flown.",
+      "written": "airline:modify-12"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "When the reservation is in basic_economy and the user wants to change both the cabin and the flights, the agent must first call update_reservation_flights to change the cabin to the new cabin class while keeping the current flights, then call update_reservation_flights to change the flights.",
+      "support": [
+        "generated_triple_write_upgrade_cancel+cabin_bags_any+basic_upgrade_budget_any_liam_santos_5621_2"
+      ],
+      "reason": "Provides a specific sequence of tool calls to comply with the policy that basic economy flights cannot be modified while still allowing the cabin change.",
+      "written": "airline:modify-13"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "REPLACE",
+        "file": "airline:modify",
+        "rule_id": "airline:modify-1",
+        "text": "When calculating the price difference or refund for a modification, determine the sum of the prices of all flights in the new reservation (for search_onestop_flight, sum the economy prices of both flights in each pair), subtract the sum of the prices of all flights in the original reservation, and multiply that result by the number of passengers. This final amount is the price difference that must be used for all subsequent steps, including informing the user and checking against any user-specified limits.",
+        "support": [
+          "generated_change_upgrade_budget_PVUB64_v1",
+          "generated_triple_write_cabin_bags_any+cancel_business+change_both_harper_patel_1045"
+        ],
+        "reason": "Combines the need to sum prices from search_onestop_flight pairs and the need to multiply the final difference by the number of passengers for all subsequent steps."
+      },
+      "reason": "REPLACE or DELETE without an analysis that found the rule wrong or unclear"
+    }
+  ],
+  "summary": "Improved modification logic by refining price difference calculations, enforcing the 'already flown' check for cabin changes, and specifying the call sequence for basic economy updates."
+}

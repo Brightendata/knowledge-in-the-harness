@@ -1,0 +1,502 @@
+{
+ "candidate": {
+  "generated_addr_write_cancel_partial_whole+address_items_order_ethan_smith_9087": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_addr_write_cancel_partial_whole+address_items_status_given_mia_nguyen_6399_1": [
+   1,
+   0,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_address_items_home_order_W1514731": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_address_items_home_order_W3698202": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_address_items_mind_W3883329": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_address_items_status_order_W4386313": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_all_pending_address_order_sofia_muller_1555": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_count_group_W2101159_v1": [
+   0,
+   0,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_exchange_mind_W7826235": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_exchange_mind_keep_pay_W7728728": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_exchange_mind_pay_W2156941": [
+   0,
+   0,
+   0,
+   1,
+   0,
+   1
+  ],
+  "generated_exchange_mind_pay_W7678072": [
+   0,
+   0,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_exchange_mind_pay_W8336711": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_exchange_mind+attribute_noah_martin_5764": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_exchange_relative+card_olivia_ito_3591": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_return_twin+attribute_harper_nguyen_9170": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_return_twin+card_olivia_brown_4616": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_status_modify_2+shipped_to_aarav_gonzalez_5113_1": [
+   1,
+   1,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_modify_same_as_W1890669": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_same_as_W2079779": [
+   0,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_one_action_group_W4352605_v0": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_paid_group_W4806309_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_except_card_human_W3248320": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_gift_W5866402": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_twin_W6735441": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_same_item_variant_W3504981": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   0
+  ],
+  "generated_same_item_variant_W3631991": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_same_item_variant_W7450915": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_items_pending_ethan_sanchez_7289": [
+   1,
+   0,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_scope_write_all_pending_cancel+return_all_evelyn_lopez_5487": [
+   1,
+   1,
+   0,
+   0,
+   1,
+   1
+  ],
+  "generated_triple_cancel_processed+address_items_status_given+new_order_ava_moore_2033": [
+   1,
+   1,
+   0,
+   1,
+   0,
+   0
+  ]
+ },
+ "current": {
+  "generated_addr_write_cancel_partial_whole+address_items_order_ethan_smith_9087": [
+   0,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_addr_write_cancel_partial_whole+address_items_status_given_mia_nguyen_6399_1": [
+   0,
+   1,
+   0,
+   0,
+   0,
+   1
+  ],
+  "generated_address_items_home_order_W1514731": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_address_items_home_order_W3698202": [
+   0,
+   0,
+   0,
+   1,
+   1,
+   1
+  ],
+  "generated_address_items_mind_W3883329": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_address_items_status_order_W4386313": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_all_pending_address_order_sofia_muller_1555": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_count_group_W2101159_v1": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_exchange_mind_W7826235": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_exchange_mind_keep_pay_W7728728": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   0
+  ],
+  "generated_exchange_mind_pay_W2156941": [
+   0,
+   1,
+   0,
+   1,
+   1,
+   0
+  ],
+  "generated_exchange_mind_pay_W7678072": [
+   1,
+   0,
+   0,
+   1,
+   0,
+   0
+  ],
+  "generated_exchange_mind_pay_W8336711": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_exchange_mind+attribute_noah_martin_5764": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_exchange_relative+card_olivia_ito_3591": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_return_twin+attribute_harper_nguyen_9170": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_return_twin+card_olivia_brown_4616": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_lookup_pair_status_modify_2+shipped_to_aarav_gonzalez_5113_1": [
+   1,
+   1,
+   1,
+   1,
+   0,
+   1
+  ],
+  "generated_modify_same_as_W1890669": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_modify_same_as_W2079779": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   0
+  ],
+  "generated_one_action_group_W4352605_v0": [
+   0,
+   1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "generated_paid_group_W4806309_v0": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_except_card_human_W3248320": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_gift_W5866402": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_return_twin_W6735441": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_same_item_variant_W3504981": [
+   1,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_same_item_variant_W3631991": [
+   0,
+   1,
+   1,
+   0,
+   1,
+   1
+  ],
+  "generated_same_item_variant_W7450915": [
+   0,
+   1,
+   1,
+   0,
+   0,
+   0
+  ],
+  "generated_scope_items_pending_ethan_sanchez_7289": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_scope_write_all_pending_cancel+return_all_evelyn_lopez_5487": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "generated_triple_cancel_processed+address_items_status_given+new_order_ava_moore_2033": [
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ]
+ }
+}

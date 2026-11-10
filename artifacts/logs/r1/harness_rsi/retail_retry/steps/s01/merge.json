@@ -1,0 +1,111 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a09",
+    "a10",
+    "a11"
+  ],
+  "start": "2026-10-30T08:21:25",
+  "end": "2026-10-30T08:26:03",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "retail:modify",
+        "rule_id": "",
+        "text": "When modifying items in a pending order, the agent must only change a single product option at a time and must ensure the new item matches all of the original item's options except for the specific option the user wants to change.",
+        "support": [
+          "a01",
+          "a06"
+        ],
+        "reason": "Corrects the agent's failure to restrict modifications to a single product option and preserve other item attributes."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "Before calling `transfer_to_human_agents`, perform all database changes you are able to perform for the requests provided by the user.",
+        "support": [
+          "a10"
+        ],
+        "reason": "Ensures the agent completes all possible actions before transferring the user to a human agent."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "Before providing a price or any other specific details for a product, you must call the relevant tool to retrieve that information.",
+        "support": [
+          "a09"
+        ],
+        "reason": "Prevents the agent from hallucinating product information or prices."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a02",
+        "reason": "This is a single-task fix for canceling multiple orders and was not selected as a top-priority systematic change."
+      },
+      {
+        "proposal": "a04",
+        "reason": "This is a single-task fix for finding the cheapest variant and was not selected as a top-priority systematic change."
+      },
+      {
+        "proposal": "a05",
+        "reason": "This is a single-task fix for checking previous orders and was not selected as a top-priority systematic change."
+      },
+      {
+        "proposal": "a07",
+        "reason": "This is a single-task fix for missing items and was not selected as a top-priority systematic change."
+      },
+      {
+        "proposal": "a11",
+        "reason": "This rule only restates a requirement already present in the policy and therefore does not fill a gap."
+      }
+    ],
+    "summary": "Merged systematic improvements for item modification limits, completion of database actions before transfer, and strict tool usage for product details."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "retail:modify",
+      "rule_id": "",
+      "text": "When modifying items in a pending order, the agent must only change a single product option at a time and must ensure the new item matches all of the original item's options except for the specific option the user wants to change.",
+      "support": [
+        "generated_scope_items_delivered_yara_santos_1202",
+        "generated_scope_write_all_delivered+exchange_pending_aarav_sanchez_9729_1"
+      ],
+      "reason": "Corrects the agent's failure to restrict modifications to a single product option and preserve other item attributes.",
+      "written": "retail:modify-1"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "Before calling `transfer_to_human_agents`, perform all database changes you are able to perform for the requests provided by the user.",
+      "support": [
+        "generated_triple_write_cancel_processed+return_across+user_address_given_ethan_moore_3587_2"
+      ],
+      "reason": "Ensures the agent completes all possible actions before transferring the user to a human agent.",
+      "written": "retail-1"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "Before providing a price or any other specific details for a product, you must call the relevant tool to retrieve that information.",
+      "support": [
+        "generated_info_triple_other_type_return+cancel_across+cheapest_sofia_rossi_8776"
+      ],
+      "reason": "Prevents the agent from hallucinating product information or prices.",
+      "written": "retail-2"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Merged systematic improvements for item modification limits, completion of database actions before transfer, and strict tool usage for product details."
+}

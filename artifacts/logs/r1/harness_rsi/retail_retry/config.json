@@ -1,0 +1,520 @@
+{
+  "round": 1,
+  "domain": "retail",
+  "attempt": 1,
+  "tasks": "data/splits/retail.json:round1",
+  "collection": "artifacts/logs/r1/collect/retail.json",
+  "start_plugin": "plugins/retail",
+  "other_plugin": "plugins/airline",
+  "model": "gemma-4-12b",
+  "steps": [
+    {
+      "step": 1,
+      "failing": [
+        "generated_scope_write_all_delivered+exchange_pending_aarav_sanchez_9729_1",
+        "generated_modify_twin_W9409203",
+        "generated_address_items_status_default_W8645374",
+        "generated_quad_cheapest+scope_items_pending+user_address_given+cancel_across_daiki_khan_6856",
+        "generated_modify_gift_covers_W4862767",
+        "generated_budget_group_W3529525_v0",
+        "generated_address_items_status_order_W4386313",
+        "generated_scope_items_delivered_yara_santos_1202",
+        "generated_lost_pair_lost_item+exchange_relative_pref_omar_khan_2363",
+        "generated_other_type_return_W1075114",
+        "generated_scope_write_all_delivered+return_pending_yusuf_hernandez_6467_1",
+        "generated_info_triple_other_type_return+cancel_across+cheapest_sofia_rossi_8776",
+        "generated_triple_write_cancel_processed+return_across+user_address_given_ethan_moore_3587_2",
+        "generated_one_action_group_W6564160_v0",
+        "generated_one_action_group_W8046874_v1"
+      ],
+      "controls": [
+        "generated_address_default_W3196599",
+        "generated_bound_group_W4514908_v1",
+        "generated_budget_group_W2087737_v1",
+        "generated_address_default_W8642391",
+        "generated_triple_tracking+cancel_across+user_address_given_liam_thomas_8833",
+        "generated_exchange_gift_covers_W7366745",
+        "generated_other_type_return_W3504981",
+        "generated_cancel_refund_cancel_W6426438",
+        "generated_addr_pair_address_items_home_given+undo_daiki_silva_5033_1",
+        "generated_address_items_status_order_W4096800",
+        "generated_modify_same_as_W2079779",
+        "generated_bound_group_W3417600_v1",
+        "generated_address_default_W2403075",
+        "generated_payment_W6629830",
+        "generated_other_type_return_W5777276",
+        "generated_return_card_human_W5254379"
+      ],
+      "seed": 1101001
+    },
+    {
+      "step": 2,
+      "failing": [
+        "generated_info_triple_scope_items_pending+user_address_given+cheapest_ava_kovacs_3448_1",
+        "generated_address_items_home_order_W3698202",
+        "generated_budget_group_W6599568_v0",
+        "generated_address_items_mind_W1129578",
+        "generated_address_items_home_order_W1514731",
+        "generated_address_items_default_W1547606",
+        "generated_addr_pair_address_items_home_given+change_delivered_harper_li_7655",
+        "generated_triple_user_address_given+scope_items_delivered+fast_refund_aarav_nguyen_7344",
+        "generated_count_group_W7554786_v0",
+        "generated_three_writes_exchange_pending+return_all+cancel_delivered_olivia_ahmed_6778",
+        "generated_lost_pair_lost_item+other_type_return_fatima_anderson_7445",
+        "generated_other_type_return_W6519831",
+        "generated_lookup_pair_exchange_mind_return+shipped_to_yara_sanchez_9692",
+        "generated_one_action_group_W4352605_v1",
+        "generated_count_group_W2101159_v0"
+      ],
+      "controls": [
+        "generated_scope_write_all_delivered_but+cancel_harper_brown_7363",
+        "generated_return_across_sophia_nguyen_2370",
+        "generated_return_except_card_human_W5254379",
+        "generated_pair_shipped_to+cheapest_emma_lopez_8196",
+        "generated_pair_attribute+refund_scope_original_mia_smith_1623_1",
+        "generated_cancel_refund_group_W7602708_v1",
+        "generated_cancel_refund_group_W7602708_v0",
+        "generated_address_order_W2403075",
+        "generated_return_held_W3433080",
+        "generated_modify_gift_covers_W6958840",
+        "generated_scope_items_pending_ethan_sanchez_7289",
+        "generated_other_type_return_W4213437",
+        "generated_lost_pair_lost_item+return_except_harper_silva_8534",
+        "generated_budget_group_W6599568_v1",
+        "generated_all_delivered_but_sophia_garcia_5025",
+        "generated_exchange_gift_covers_W1701126"
+      ],
+      "seed": 1101002
+    },
+    {
+      "step": 3,
+      "failing": [
+        "generated_stock_group_W2047423_v0",
+        "generated_triple_scope_items_pending+cheapest+new_order_omar_muller_7891",
+        "generated_lookup_pair_payment+shipped_to_mia_moore_8366_2",
+        "generated_modify_mind_keep_pay_W1416704",
+        "generated_addr_pair_new_order+address_items_status_order_mia_moore_8366",
+        "generated_status_modify_W4096800",
+        "generated_budget_group_W7594624_v0",
+        "generated_address_items_status_order_W9677982",
+        "generated_one_action_group_W2936099_v0",
+        "generated_lost_pair_lost_item+exchange_mind_return_liam_anderson_5973",
+        "generated_scope_write_all_delivered+return_pending_lucas_muller_4380_1",
+        "generated_scope_write_all_delivered_but+exchange_pending_ava_moore_2033",
+        "generated_lost_pair_lost_item+paid_over_daiki_muller_8062",
+        "generated_one_action_group_W8209112_v0",
+        "generated_one_action_group_W4887592_v0"
+      ],
+      "controls": [
+        "generated_lookup_pair_cancel_delivered+card_noah_wilson_6623",
+        "generated_scope_items_delivered_noah_khan_5763",
+        "generated_bound_group_W4514908_v0",
+        "generated_cancel_across_omar_kim_3528",
+        "generated_scope_items_delivered_james_li_5688",
+        "generated_other_type_return_W7450915",
+        "generated_count_group_W8595443_v0",
+        "generated_three_writes_cancel_delivered+return_except+exchange_pending_harper_brown_7363_1",
+        "generated_cancel_refund_keep_W6030855",
+        "generated_lookup_pair_address_items_status_order+attribute_ethan_muller_6097",
+        "generated_payment_W3320020",
+        "generated_budget_group_W2087737_v0",
+        "generated_address_items_status_given_W4423731",
+        "generated_pair_priciest+user_address_given_fatima_moore_8152_1",
+        "generated_other_type_return_W1335809",
+        "generated_pair_stock_return+scope_items_pending_olivia_ahmed_6778_1"
+      ],
+      "seed": 1101003
+    },
+    {
+      "step": 4,
+      "failing": [
+        "generated_addr_write_return_all+address_items_status_given_evelyn_lopez_5487",
+        "generated_stock_group_W2047423_v1",
+        "generated_address_items_status_order_W6731310",
+        "generated_cancel_partial_cheapest_W7170967",
+        "generated_status_modify_2_W3386832",
+        "generated_address_items_held_W2904339",
+        "generated_modify_mind_keep_pay_W4538969",
+        "generated_lost_pair_lost_item+address_items_two_mia_thomas_4629",
+        "generated_lost_pair_lost_item+cancel_olivia_smith_5265",
+        "generated_lost_pair_lost_item+modify_pref_evelyn_patel_8882",
+        "generated_triple_write_cancel_processed+return_across+user_address_given_ethan_kim_8860_2",
+        "generated_three_writes_cancel_delivered+return_all+return_pending_ethan_moore_3587_1",
+        "generated_quad_return_across+new_order+cheapest+fast_refund_olivia_brown_4616",
+        "generated_scope_write_all_pending_cancel+return_held_aarav_gonzalez_5113",
+        "generated_triple_cheapest+return_across+fast_refund_harper_silva_8534"
+      ],
+      "controls": [
+        "generated_modify_gift_covers_W2325029",
+        "generated_return_card_original_W1605168",
+        "generated_cancel_refund_group_W5801125_v1",
+        "generated_count_group_W5911118_v0",
+        "generated_user_address_order_harper_kim_2998",
+        "generated_other_type_return_W2421430",
+        "generated_budget_group_W7425646_v1",
+        "generated_cancel_refund_cancel_W2443586",
+        "generated_exchange_mind_W7826235",
+        "generated_return_except_card_human_W3248320",
+        "generated_cancel_refund_group_W5801125_v0",
+        "generated_option_group_W8098147_v0",
+        "generated_count_group_W3977493_v0",
+        "generated_cancel_refund_keep_W4566809",
+        "generated_other_type_return_W9158156",
+        "generated_scope_write_all_pending_cancel+return_all_evelyn_lopez_5487"
+      ],
+      "seed": 1101004
+    },
+    {
+      "step": 5,
+      "failing": [
+        "generated_lookup_pair_status_modify_2+shipped_to_aarav_gonzalez_5113_1",
+        "generated_addr_pair_address_items_status_order+user_address_order_fatima_muller_6713",
+        "generated_modify_mind_keep_pay_W8255453",
+        "generated_lookup_pair_address_items_status_default+attribute_noah_sanchez_2690_1",
+        "generated_payment_W9160732",
+        "generated_all_pending_address_olivia_silva_7273",
+        "generated_address_items_held_W2912646",
+        "generated_lookup_pair_status_modify_2+shipped_to_isabella_sanchez_2068",
+        "generated_scope_write_all_pending_cancel+change_delivered_fatima_muller_6713",
+        "generated_cancel_refund_cancel_W7634667",
+        "generated_modify_bound_W9537685",
+        "generated_option_group_W8098147_v1",
+        "generated_budget_group_W7594624_v1",
+        "generated_scope_write_all_pending_cancel+change_delivered_anya_brown_2024_1",
+        "generated_lookup_pair_stock_cancel+card_raj_lopez_5873"
+      ],
+      "controls": [
+        "generated_address_items_status_order_W4642822",
+        "generated_cancel_refund_keep_W4423731",
+        "generated_return_gift_W5866402",
+        "generated_modify_same_as_W6371438",
+        "generated_exchange_mind_W5257743",
+        "generated_return_except_card_original_W4901434",
+        "generated_lookup_pair_exchange_mind_return+attribute_ava_johnson_5052_1",
+        "generated_modify_same_as_W1890669",
+        "generated_one_action_group_W6564160_v1",
+        "generated_all_pending_address_liam_lopez_7019",
+        "generated_triple_cancel_partial_whole+attribute+user_address_given_mason_wilson_4597",
+        "generated_count_group_W5911118_v1",
+        "generated_budget_group_W7425646_v0",
+        "generated_bound_group_W2624389_v1",
+        "generated_triple_modify_pref+fast_refund+undo_emma_brown_8847",
+        "generated_exchange_mind_pay_W2922433"
+      ],
+      "seed": 1101005
+    },
+    {
+      "step": 6,
+      "failing": [
+        "generated_address_items_held_W3955289",
+        "generated_address_items_mind_W3883329",
+        "generated_lookup_pair_exchange_pending+shipped_to_aarav_wilson_9535_1",
+        "generated_addr_write_address_items_given+exchange_pending_fatima_martin_9326_1",
+        "generated_modify_gift_covers_W5861600",
+        "generated_pair_address_items_given+exchange_mind_return_mason_wilson_4597",
+        "generated_addr_write_cancel_partial_whole+address_items_status_given_mia_nguyen_6399_1",
+        "generated_pair_same_item_variant+undo_sophia_garcia_5025",
+        "generated_lookup_pair_count_enough+card_yara_lee_7701_1",
+        "generated_lost_pair_lost_item+modify_2_anya_lee_8315",
+        "generated_linked_same_W8496475",
+        "generated_count_group_W3977493_v1",
+        "generated_addr_write_change_delivered+address_items_status_given_chen_anderson_8078",
+        "generated_same_item_variant_W8838515",
+        "generated_pair_exchange_mind+user_address_given_james_wilson_1842_1"
+      ],
+      "controls": [
+        "generated_return_except_card_human_W5697187",
+        "generated_exchange_mind_return_W1578930",
+        "generated_modify_mind_keep_pay_W9121070",
+        "generated_lookup_pair_address_default+attribute_evelyn_patel_8882",
+        "generated_payment_W8557584",
+        "generated_lookup_pair_exchange_mind_return+attribute_mei_li_2872_1",
+        "generated_return_except_card_human_W8033354",
+        "generated_paid_group_W4806309_v0",
+        "generated_payment_W3761872",
+        "generated_return_across_james_li_5688",
+        "generated_lookup_pair_return_twin+attribute_harper_nguyen_9170",
+        "generated_payment_W7162915",
+        "generated_return_except_card_original_W7190291",
+        "generated_addr_write_cancel_partial_whole+address_items_order_ethan_smith_9087",
+        "generated_all_delivered_but_aarav_moore_6923",
+        "generated_other_type_return_W2112666"
+      ],
+      "seed": 1101006
+    },
+    {
+      "step": 7,
+      "failing": [
+        "generated_lookup_pair_address_items_status_given+shipped_to_emma_kim_1076_1",
+        "generated_bound_group_W3417600_v0",
+        "generated_addr_pair_new_order+address_items_home_given_raj_li_9474_1",
+        "generated_modify_mind_keep_pay_W8073920",
+        "generated_modify_same_as_W2818151",
+        "generated_quad_stock_other+priciest+new_order+return_across_ethan_moore_3587",
+        "generated_info_triple_cancel_processed+scope_items_pending+cheapest_james_martin_1500",
+        "generated_lookup_pair_stock_other+card_liam_anderson_5973",
+        "generated_count_group_W8595443_v1",
+        "generated_exchange_mind_keep_pay_W2156941",
+        "generated_status_exchange_2_W3002300",
+        "generated_exchange_relative_pref_W5202795",
+        "generated_exchange_mind_W9706917",
+        "generated_exchange_mind_keep_pay_W9784474",
+        "generated_one_action_group_W8046874_v0"
+      ],
+      "controls": [
+        "generated_triple_priciest+all_delivered_but+cheapest_ethan_kim_8860",
+        "generated_lookup_pair_status_exchange+card_sofia_ito_7804_2",
+        "generated_payment_W8255453",
+        "generated_addr_pair_address_items_home_order+tracking_mei_martin_4260_1",
+        "generated_return_twin_W6735441",
+        "generated_lookup_pair_exchange_pref+attribute_anya_brown_2024_1",
+        "generated_modify_gift_covers_W1080318",
+        "generated_lost_pair_lost_item+cancel_partial_whole_harper_kovacs_8617",
+        "generated_same_item_variant_W3504981",
+        "generated_lookup_pair_return_twin+card_olivia_brown_4616",
+        "generated_bound_group_W2624389_v0",
+        "generated_one_action_group_W4887592_v1",
+        "generated_return_card_original_W9784474",
+        "generated_lookup_pair_paid_over+card_noah_wilson_6623_1",
+        "generated_return_except_card_human_W1605168",
+        "generated_one_action_group_W8209112_v1"
+      ],
+      "seed": 1101007
+    },
+    {
+      "step": 8,
+      "failing": [
+        "generated_status_exchange_2_W1579621",
+        "generated_three_writes_exchange_pending+cancel_delivered+return_pending_anya_lee_8315_2",
+        "generated_address_items_status_default_W3386832",
+        "generated_lost_pair_lost_item+address_items_given_noah_kovacs_1216",
+        "generated_address_items_two_W2040365",
+        "generated_stock_group_W7613749_v0",
+        "generated_modify_mind_keep_pay_W3320020",
+        "generated_paid_group_W4806309_v1",
+        "generated_exchange_same_as_W3135192",
+        "generated_exchange_gift_covers_W6131421",
+        "generated_exchange_mind_pay_W2156941",
+        "generated_three_writes_return_pending+exchange_1+status_exchange_mohamed_lee_5442_2",
+        "generated_one_action_group_W2936099_v1",
+        "generated_exchange_bound_W5256976"
+      ],
+      "controls": [
+        "generated_lookup_pair_return_card_original+attribute_mei_gonzalez_4785_2",
+        "generated_lookup_pair_payment+card_amelia_ito_8772_1",
+        "generated_return_twin_W2092674",
+        "generated_lookup_pair_exchange_mind+attribute_noah_martin_5764",
+        "generated_modify_pref_W1046662",
+        "generated_lookup_pair_exchange_relative+card_olivia_ito_3591",
+        "generated_lookup_pair_cancel_delivered+card_raj_sanchez_2970",
+        "generated_exchange_mind_pay_W1544028",
+        "generated_scope_items_pending_yara_santos_1202",
+        "generated_return_card_original_W7190291",
+        "generated_exchange_mind_keep_pay_W7128968",
+        "generated_scope_write_all_delivered+exchange_pending_mohamed_lee_5442_1",
+        "generated_payment_W6599568",
+        "generated_all_pending_address_chen_taylor_6919",
+        "generated_lost_pair_lost_item+cancel_ethan_sanchez_7289",
+        "generated_scope_write_all_pending_cancel+status_exchange_liam_lee_5696_1"
+      ],
+      "seed": 1101008
+    },
+    {
+      "step": 9,
+      "failing": [
+        "generated_budget_group_W9152938_v0",
+        "generated_scope_items_pending_raj_lopez_5873",
+        "generated_user_address_order_emma_kim_1076",
+        "generated_triple_cancel_processed+address_items_status_given+new_order_ava_moore_2033",
+        "generated_address_items_held_W5918442",
+        "generated_lookup_pair_address_items_given+shipped_to_ethan_muller_6097_2",
+        "generated_pair_address_given+shipped_to_harper_kim_2998_1",
+        "generated_exchange_same_as_W6573840",
+        "generated_exchange_mind_pay_W5544629",
+        "generated_three_writes_return_pending+status_exchange+exchange_1_chen_anderson_8078",
+        "generated_same_item_variant_W7366745",
+        "generated_three_writes_exchange_pending+status_exchange+change_delivered_harper_brown_7363_2",
+        "generated_info_pair_count_enough+attribute_emma_nguyen_6662_1",
+        "generated_same_item_variant_W5220869"
+      ],
+      "controls": [
+        "generated_lookup_pair_address_items_home_given+shipped_to_fatima_anderson_7445_1",
+        "generated_lookup_pair_modify_mind+shipped_to_raj_martin_9275_1",
+        "generated_return_twin_W8951014",
+        "generated_pair_priciest+tracking_noah_khan_5763",
+        "generated_payment_W6207110",
+        "generated_all_pending_address_order_sofia_muller_1555",
+        "generated_cancel_refund_keep_W7634667",
+        "generated_address_items_home_given_W6368178",
+        "generated_payment_W8328493",
+        "generated_address_default_W3196599",
+        "generated_bound_group_W4514908_v1",
+        "generated_budget_group_W2087737_v1",
+        "generated_address_default_W8642391",
+        "generated_triple_tracking+cancel_across+user_address_given_liam_thomas_8833",
+        "generated_exchange_gift_covers_W7366745",
+        "generated_other_type_return_W3504981"
+      ],
+      "seed": 1101009
+    },
+    {
+      "step": 10,
+      "failing": [
+        "generated_same_item_variant_W1763367",
+        "generated_info_triple_same_item_variant+user_address_given+cheapest_omar_taylor_1594_1",
+        "generated_exchange_gift_covers_W1067251",
+        "generated_linked_same_W6070601",
+        "generated_same_item_variant_W7450915",
+        "generated_same_item_variant_W8969494",
+        "generated_exchange_pref_W2092674",
+        "generated_same_item_variant_W3631991",
+        "generated_triple_stock_cancel+fast_refund+undo_james_lee_5010",
+        "generated_scope_write_all_pending_cancel+change_delivered_olivia_ito_3591_1",
+        "generated_triple_write_cancel_processed+all_pending_cancel+user_address_given_ethan_santos_6104",
+        "generated_stock_group_W7613749_v1",
+        "generated_cancel_refund_cancel_W5861600",
+        "generated_all_pending_cancel_ethan_smith_9087"
+      ],
+      "controls": [
+        "generated_cancel_refund_cancel_W6426438",
+        "generated_addr_pair_address_items_home_given+undo_daiki_silva_5033_1",
+        "generated_address_items_status_order_W4096800",
+        "generated_modify_same_as_W2079779",
+        "generated_bound_group_W3417600_v1",
+        "generated_address_default_W2403075",
+        "generated_payment_W6629830",
+        "generated_other_type_return_W5777276",
+        "generated_return_card_human_W5254379",
+        "generated_scope_write_all_delivered_but+cancel_harper_brown_7363",
+        "generated_return_across_sophia_nguyen_2370",
+        "generated_return_except_card_human_W5254379",
+        "generated_pair_shipped_to+cheapest_emma_lopez_8196",
+        "generated_pair_attribute+refund_scope_original_mia_smith_1623_1",
+        "generated_cancel_refund_group_W7602708_v1",
+        "generated_cancel_refund_group_W7602708_v0"
+      ],
+      "seed": 1101010
+    },
+    {
+      "step": 11,
+      "failing": [
+        "generated_count_group_W7554786_v1",
+        "generated_count_group_W2101159_v1",
+        "generated_exchange_mind_pay_W7678072",
+        "generated_exchange_mind_pay_W8336711",
+        "generated_one_action_group_W4352605_v0",
+        "generated_status_exchange_2_W7532822",
+        "generated_exchange_mind_keep_pay_W7728728",
+        "generated_lookup_pair_status_exchange_2+shipped_to_sofia_ito_5484",
+        "generated_triple_user_address_given+return_across+fast_refund_daiki_patel_5953",
+        "generated_lookup_pair_address_items_home_given+card_ava_kovacs_3448_2",
+        "generated_pair_user_address_order+undo_lucas_moore_6941",
+        "generated_pair_user_address_given+undo_isabella_johnson_1272",
+        "generated_info_triple_cancel_processed+user_address_order+cheapest_liam_li_8526",
+        "generated_lookup_pair_cancel_partial_keep+card_amelia_ito_8772_2",
+        "generated_budget_group_W9152938_v1",
+        "generated_budget_group_W3529525_v1"
+      ],
+      "controls": [
+        "generated_address_order_W2403075",
+        "generated_return_held_W3433080",
+        "generated_modify_gift_covers_W6958840",
+        "generated_scope_items_pending_ethan_sanchez_7289",
+        "generated_other_type_return_W4213437",
+        "generated_lost_pair_lost_item+return_except_harper_silva_8534",
+        "generated_budget_group_W6599568_v1",
+        "generated_all_delivered_but_sophia_garcia_5025",
+        "generated_exchange_gift_covers_W1701126",
+        "generated_lookup_pair_cancel_delivered+card_noah_wilson_6623",
+        "generated_scope_items_delivered_noah_khan_5763",
+        "generated_bound_group_W4514908_v0",
+        "generated_cancel_across_omar_kim_3528",
+        "generated_scope_items_delivered_james_li_5688",
+        "generated_other_type_return_W7450915",
+        "generated_count_group_W8595443_v0"
+      ],
+      "seed": 1101011
+    }
+  ],
+  "settings": {
+    "system": {
+      "retail_plugin": "plugins/retail",
+      "airline_plugin": "plugins/airline",
+      "model": "gemma-4-12b"
+    },
+    "agent": {
+      "temperature": 1.0,
+      "top_p": 0.95,
+      "top_k": 64,
+      "max_tokens": 8192,
+      "max_skill_loads": 4
+    },
+    "editor": {
+      "model": "gemma-4-12b",
+      "temperature": 1.0,
+      "top_p": 0.95,
+      "top_k": 64,
+      "max_tokens": 32768,
+      "retries": 4,
+      "quote_retries": 2,
+      "input_tokens": 30000,
+      "workers": 16
+    },
+    "user": {
+      "train": {
+        "model": "deepseek/deepseek-flash",
+        "args": {
+          "temperature": 0.0,
+          "extra_body": {
+            "thinking": {
+              "type": "disabled"
+            }
+          }
+        }
+      },
+      "gate": {
+        "model": "deepseek/deepseek-flash",
+        "args": {
+          "temperature": 0.0,
+          "extra_body": {
+            "thinking": {
+              "type": "disabled"
+            }
+          }
+        }
+      },
+      "test": {
+        "model": "deepseek/deepseek-flash",
+        "args": {
+          "temperature": 0.0,
+          "extra_body": {
+            "thinking": {
+              "type": "disabled"
+            }
+          }
+        }
+      }
+    },
+    "collect": {
+      "trials": 4
+    },
+    "evolve": {
+      "failing_per_step": 16,
+      "category_cap": 8,
+      "controls_per_step": 16,
+      "trials": 6,
+      "keep_margin": 4,
+      "harm_drop": 4,
+      "review_below": 0.8,
+      "max_edits": 3,
+      "min_support": 1,
+      "shuffle_seed": 20261017,
+      "excluded": []
+    },
+    "gate": {
+      "trials": 8,
+      "pass4_weight": 0.2,
+      "bootstrap": 2000
+    }
+  }
+}

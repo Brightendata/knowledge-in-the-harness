@@ -1,0 +1,119 @@
+{
+  "analyses": [
+    "a01",
+    "a03",
+    "a06",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a12",
+    "a13",
+    "a14"
+  ],
+  "start": "2026-11-02T15:30:56",
+  "end": "2026-11-02T15:36:25",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Before calling cancel_reservation, check if any flight in the reservation has already been flown (i.e., its date is before the current date). If it has, do not call cancel_reservation and transfer the user to a human agent.",
+        "support": [
+          "a09",
+          "a12"
+        ],
+        "reason": "The agent failed to check if a flight was in the past before canceling, which is a policy requirement for transferring to a human."
+      },
+      {
+        "op": "REPLACE",
+        "file": "airline:modify",
+        "rule_id": "airline:modify-7",
+        "text": "When the user asks to add a number of bags, calculate total_baggages as the current total_baggages plus the number the user wants to add (not any total number mentioned in a summary), and nonfree_baggages as the number of bags in excess of the free allowance (minimum 0).",
+        "support": [
+          "a06"
+        ],
+        "reason": "The agent incorrectly used a total baggage number from a summary instead of the quantity the user requested to add."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When the user asks for the cheapest flight option (even if it has a stop), the agent must call both search_direct_flight and search_onestop_flight to compare the prices of all available flights.",
+        "support": [
+          "a13"
+        ],
+        "reason": "The agent failed to compare both direct and one-stop flights when asked to find the cheapest option."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a01",
+        "reason": "A single-task proposal that is less critical than the selected edits."
+      },
+      {
+        "proposal": "a03",
+        "reason": "A single-task proposal that is less critical than the selected edits."
+      },
+      {
+        "proposal": "a07",
+        "reason": "The REPLACE edit for bag calculations (a06) is more systemic as it corrects a failed existing rule."
+      },
+      {
+        "proposal": "a08",
+        "reason": "A single-task proposal that is less critical than the selected edits."
+      },
+      {
+        "proposal": "a10",
+        "reason": "A single-task proposal that is less critical than the selected edits."
+      },
+      {
+        "proposal": "a14",
+        "reason": "A clarification of an existing rule that is less critical than the selected edits."
+      }
+    ],
+    "summary": "Added a check to prevent canceling past flights, corrected the logic for adding baggage counts, and ensured both direct and one-stop flights are compared for price."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "Before calling cancel_reservation, check if any flight in the reservation has already been flown (i.e., its date is before the current date). If it has, do not call cancel_reservation and transfer the user to a human agent.",
+      "support": [
+        "generated_scope_cancel_all_olivia_jackson_7257",
+        "generated_scope_cancel_alone_james_thomas_5421"
+      ],
+      "reason": "The agent failed to check if a flight was in the past before canceling, which is a policy requirement for transferring to a human.",
+      "written": "airline:cancel-10"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "When the user asks for the cheapest flight option (even if it has a stop), the agent must call both search_direct_flight and search_onestop_flight to compare the prices of all available flights.",
+      "support": [
+        "generated_triple_change_same_day+insurance+passengers_raj_khan_9352"
+      ],
+      "reason": "The agent failed to compare both direct and one-stop flights when asked to find the cheapest option.",
+      "written": "airline:modify-19"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "REPLACE",
+        "file": "airline:modify",
+        "rule_id": "airline:modify-7",
+        "text": "When the user asks to add a number of bags, calculate total_baggages as the current total_baggages plus the number the user wants to add (not any total number mentioned in a summary), and nonfree_baggages as the number of bags in excess of the free allowance (minimum 0).",
+        "support": [
+          "generated_pair_book_gift_cards+cabin_bags_any_evelyn_martin_3582"
+        ],
+        "reason": "The agent incorrectly used a total baggage number from a summary instead of the quantity the user requested to add."
+      },
+      "reason": "REPLACE or DELETE without an analysis that found the rule wrong or unclear"
+    }
+  ],
+  "summary": "Added a check to prevent canceling past flights, corrected the logic for adding baggage counts, and ensured both direct and one-stop flights are compared for price."
+}

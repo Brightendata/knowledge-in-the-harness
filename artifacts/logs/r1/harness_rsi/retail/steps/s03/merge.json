@@ -1,0 +1,141 @@
+{
+  "analyses": [
+    "a01",
+    "a03",
+    "a05",
+    "a06",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a11",
+    "a12",
+    "a13",
+    "a14"
+  ],
+  "start": "2026-10-29T22:36:17",
+  "end": "2026-10-29T22:41:26",
+  "output": {
+    "edits": [
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "Before calling `transfer_to_human_agents`, perform any actions requested by the user that are allowed by the policy.",
+        "support": [
+          "a13"
+        ],
+        "reason": "Ensures the agent follows the policy to carry out allowed parts of a request even when other parts require a transfer."
+      },
+      {
+        "op": "ADD",
+        "file": "retail",
+        "rule_id": "",
+        "text": "When the user asks to exchange or replace an item in an order that is pending, load the `retail:modify` skill.",
+        "support": [
+          "a11"
+        ],
+        "reason": "Ensures the correct skill is loaded for modifying items in a pending order, which the policy describes under 'Modify pending order'."
+      },
+      {
+        "op": "ADD",
+        "file": "retail:modify",
+        "rule_id": "",
+        "text": "Before calling `modify_pending_order_address` or `modify_pending_order_payment`, check that the order status is 'pending'. If the status is 'pending (items modifed)', do not perform the modification.",
+        "support": [
+          "a01"
+        ],
+        "reason": "Enforces the policy constraint that an order cannot be modified once its items have been modified."
+      },
+      {
+        "op": "ADD",
+        "file": "retail:modify",
+        "rule_id": "",
+        "text": "When the user asks for the cheapest available item (optionally with a specific option), identify all variants of that product where 'available' is true and select the one with the lowest price.",
+        "support": [
+          "a05",
+          "a06",
+          "a08"
+        ],
+        "reason": "Systematically corrects the agent's failure to accurately identify and select the cheapest available variant across multiple tasks."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a03",
+        "reason": "Only supported by a single task and ranked lower than the more systemic edits."
+      },
+      {
+        "proposal": "a07",
+        "reason": "Only supported by a single task and ranked lower than the more systemic edits."
+      },
+      {
+        "proposal": "a09",
+        "reason": "Contradicts a12 and neither is clearly better justified by policy."
+      },
+      {
+        "proposal": "a10",
+        "reason": "Only supported by a single task and ranked lower than the more systemic edits."
+      },
+      {
+        "proposal": "a12",
+        "reason": "Contradicts a09 and neither is clearly better justified by policy."
+      },
+      {
+        "proposal": "a14",
+        "reason": "Only supported by a single task and ranked lower than the more systemic edits."
+      }
+    ],
+    "summary": "Added systematic rules for partial fulfillment before transfer, correct skill loading for pending exchanges, status checks for modifications, and logic for identifying the cheapest available variants."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "Before calling `transfer_to_human_agents`, perform any actions requested by the user that are allowed by the policy.",
+      "support": [
+        "generated_quad_return_across+new_order+cheapest+fast_refund_olivia_brown_4616"
+      ],
+      "reason": "Ensures the agent follows the policy to carry out allowed parts of a request even when other parts require a transfer.",
+      "written": "retail-6"
+    },
+    {
+      "op": "ADD",
+      "file": "retail",
+      "rule_id": "",
+      "text": "When the user asks to exchange or replace an item in an order that is pending, load the `retail:modify` skill.",
+      "support": [
+        "generated_scope_write_all_delivered_but+exchange_pending_ava_moore_2033"
+      ],
+      "reason": "Ensures the correct skill is loaded for modifying items in a pending order, which the policy describes under 'Modify pending order'.",
+      "written": "retail-7"
+    },
+    {
+      "op": "ADD",
+      "file": "retail:modify",
+      "rule_id": "",
+      "text": "Before calling `modify_pending_order_address` or `modify_pending_order_payment`, check that the order status is 'pending'. If the status is 'pending (items modifed)', do not perform the modification.",
+      "support": [
+        "generated_quad_cheapest+scope_items_pending+user_address_given+cancel_across_daiki_khan_6856"
+      ],
+      "reason": "Enforces the policy constraint that an order cannot be modified once its items have been modified.",
+      "written": "retail:modify-3"
+    },
+    {
+      "op": "ADD",
+      "file": "retail:modify",
+      "rule_id": "",
+      "text": "When the user asks for the cheapest available item (optionally with a specific option), identify all variants of that product where 'available' is true and select the one with the lowest price.",
+      "support": [
+        "generated_budget_group_W7594624_v0",
+        "generated_cancel_partial_cheapest_W7170967",
+        "generated_status_modify_W4096800"
+      ],
+      "reason": "Systematically corrects the agent's failure to accurately identify and select the cheapest available variant across multiple tasks.",
+      "written": "retail:modify-4"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Added systematic rules for partial fulfillment before transfer, correct skill loading for pending exchanges, status checks for modifications, and logic for identifying the cheapest available variants."
+}

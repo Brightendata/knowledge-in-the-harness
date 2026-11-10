@@ -1,0 +1,138 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a06",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a11"
+  ],
+  "start": "2026-10-29T17:52:58",
+  "end": "2026-10-29T17:58:11",
+  "output": {
+    "edits": [
+      {
+        "op": "REPLACE",
+        "file": "airline:cancel",
+        "rule_id": "airline:cancel-2",
+        "text": "Before calling `cancel_reservation`, verify that the reservation was made within the last 24 hours, the flight was cancelled by the airline, it is a business flight, or the user has travel insurance and the reason for cancellation is a health or weather reason. If the user's reason for cancellation is based on insurance, ask the user to confirm that it is covered; if none of these conditions are met, inform the user that the cancellation is not allowed and do not call the tool.",
+        "support": [
+          "a04",
+          "a06"
+        ],
+        "reason": "This combines the policy-specific health/weather requirements with the need for explicit user confirmation of insurance coverage."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Before calling `cancel_reservation`, if the user claims a flight was cancelled by the airline, call `get_flight_status` for the flight segments in the reservation to verify that the status is 'cancelled'.",
+        "support": [
+          "a01"
+        ],
+        "reason": "The agent must verify claims of airline cancellation using the provided tool rather than taking the user's word at face value."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:cancel",
+        "rule_id": "",
+        "text": "Before calling `cancel_reservation`, if the user's confirmation includes a request or condition (e.g., regarding insurance), ensure that the request is addressed and the user is informed of the result before calling the tool.",
+        "support": [
+          "a05"
+        ],
+        "reason": "The agent must not skip questions or conditions provided by the user in the same turn as their confirmation to proceed."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:book",
+        "rule_id": "",
+        "text": "When calling `book_reservation`, the `payment_methods` objects must use the `payment_id` key for the payment's unique identifier and the `amount` key with an integer value.",
+        "support": [
+          "a07"
+        ],
+        "reason": "This corrects a schema violation where the agent used the wrong key and data type for payment information."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a02",
+        "reason": "This rule is covered more specifically by the addition of a05 to the cancellation skill."
+      },
+      {
+        "proposal": "a03",
+        "reason": "This is merged into the replacement of rule airline:cancel-2."
+      },
+      {
+        "proposal": "a08",
+        "reason": "This is a specific constraint check that is lower priority than schema and policy fixes."
+      },
+      {
+        "proposal": "a09",
+        "reason": "This is a selection logic preference that is lower priority than schema and policy fixes."
+      },
+      {
+        "proposal": "a10",
+        "reason": "This is a calculation usage error that is lower priority than the selected edits."
+      },
+      {
+        "proposal": "a11",
+        "reason": "This is a selection logic preference that is lower priority than schema and policy fixes."
+      }
+    ],
+    "summary": "Updated cancellation verification to include policy-specific insurance reasons, added required status checks, ensured user questions in confirmation turns are addressed, and corrected the booking tool's payment schema."
+  },
+  "edits": [
+    {
+      "op": "REPLACE",
+      "file": "airline:cancel",
+      "rule_id": "airline:cancel-2",
+      "text": "Before calling `cancel_reservation`, verify that the reservation was made within the last 24 hours, the flight was cancelled by the airline, it is a business flight, or the user has travel insurance and the reason for cancellation is a health or weather reason. If the user's reason for cancellation is based on insurance, ask the user to confirm that it is covered; if none of these conditions are met, inform the user that the cancellation is not allowed and do not call the tool.",
+      "support": [
+        "generated_fewer_cancel_DN1AG3",
+        "generated_scope_cancel_alone_noah_rossi_6214"
+      ],
+      "reason": "This combines the policy-specific health/weather requirements with the need for explicit user confirmation of insurance coverage.",
+      "written": "airline:cancel-2"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "Before calling `cancel_reservation`, if the user claims a flight was cancelled by the airline, call `get_flight_status` for the flight segments in the reservation to verify that the status is 'cancelled'.",
+      "support": [
+        "generated_cancel_negotiate_DV0WUJ"
+      ],
+      "reason": "The agent must verify claims of airline cancellation using the provided tool rather than taking the user's word at face value.",
+      "written": "airline:cancel-5"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:cancel",
+      "rule_id": "",
+      "text": "Before calling `cancel_reservation`, if the user's confirmation includes a request or condition (e.g., regarding insurance), ensure that the request is addressed and the user is informed of the result before calling the tool.",
+      "support": [
+        "generated_cancel_none_WM2V3M"
+      ],
+      "reason": "The agent must not skip questions or conditions provided by the user in the same turn as their confirmation to proceed.",
+      "written": "airline:cancel-6"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:book",
+      "rule_id": "",
+      "text": "When calling `book_reservation`, the `payment_methods` objects must use the `payment_id` key for the payment's unique identifier and the `amount` key with an integer value.",
+      "support": [
+        "generated_reroute_rebook_U21HRK"
+      ],
+      "reason": "This corrects a schema violation where the agent used the wrong key and data type for payment information.",
+      "written": "airline:book-6"
+    }
+  ],
+  "dropped_by_checks": [],
+  "summary": "Updated cancellation verification to include policy-specific insurance reasons, added required status checks, ensured user questions in confirmation turns are addressed, and corrected the booking tool's payment schema."
+}

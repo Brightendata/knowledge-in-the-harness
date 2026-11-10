@@ -1,0 +1,1632 @@
+{
+ "airline": {
+  "0": [
+   "cancel_refuse",
+   "verify_claim",
+   "false_claim",
+   "fallback",
+   "out_nowrite"
+  ],
+  "1": [
+   "find_res",
+   "cancel_refuse",
+   "false_claim",
+   "fallback",
+   "out_nowrite"
+  ],
+  "2": [
+   "multi",
+   "change_mind",
+   "find_res",
+   "verify_claim",
+   "wrong_info",
+   "comp_no_proactive",
+   "comp_refuse",
+   "comp_delay",
+   "status_check",
+   "out_nowrite"
+  ],
+  "3": [
+   "bag_allowance",
+   "verify_claim",
+   "false_claim",
+   "pressure",
+   "info_count",
+   "out_nowrite"
+  ],
+  "4": [
+   "find_res",
+   "comp_refuse",
+   "verify_claim",
+   "false_claim",
+   "pressure",
+   "emotion",
+   "out_nowrite"
+  ],
+  "5": [
+   "comp_refuse",
+   "comp_delay",
+   "status_check",
+   "pressure",
+   "emotion",
+   "out_nowrite"
+  ],
+  "6": [
+   "find_res",
+   "ins_no_add",
+   "pressure",
+   "no_transfer",
+   "out_nowrite"
+  ],
+  "7": [
+   "multi",
+   "cond_value",
+   "cabin_change",
+   "cabin_diff",
+   "mod_pay",
+   "cancel_ok",
+   "order",
+   "filter_res",
+   "price_calc",
+   "info_amount",
+   "out_write"
+  ],
+  "8": [
+   "book",
+   "book_pax",
+   "sel_same_as",
+   "find_res",
+   "search_direct",
+   "cond_value",
+   "budget",
+   "book_pay",
+   "book_insurance",
+   "bag_allowance",
+   "out_write"
+  ],
+  "9": [
+   "multi",
+   "cancel_refuse",
+   "mod_flights",
+   "same_day",
+   "search_direct",
+   "fallback",
+   "offtopic",
+   "out_nowrite"
+  ],
+  "10": [
+   "mod_flights",
+   "cabin_whole",
+   "cabin_diff",
+   "price_calc",
+   "budget",
+   "cond_value",
+   "fallback",
+   "pressure",
+   "out_nowrite"
+  ],
+  "11": [
+   "pax_no_count",
+   "fallback",
+   "cabin_change",
+   "cabin_diff",
+   "mod_pay",
+   "price_calc",
+   "info_amount",
+   "reactive",
+   "out_write"
+  ],
+  "12": [
+   "multi",
+   "cabin_change",
+   "cabin_diff",
+   "price_calc",
+   "budget",
+   "cabin_whole",
+   "fallback",
+   "bags_add",
+   "bag_allowance",
+   "out_partial",
+   "out_write"
+  ],
+  "13": [
+   "same_od",
+   "same_day",
+   "fallback",
+   "transfer",
+   "out_transfer"
+  ],
+  "14": [
+   "multi",
+   "balance_sum",
+   "balance_pay",
+   "info_balance",
+   "find_res",
+   "basic_no_change",
+   "fallback",
+   "cancel_ok",
+   "book",
+   "book_insurance",
+   "sel_cheapest",
+   "search_onestop",
+   "pay_alloc",
+   "book_pay",
+   "budget",
+   "info_amount",
+   "out_write"
+  ],
+  "15": [
+   "find_res",
+   "mod_flights",
+   "cabin_change",
+   "cabin_diff",
+   "cabin_flights",
+   "sel_cheapest",
+   "sel_time",
+   "same_od",
+   "search_direct",
+   "mod_pay",
+   "out_write"
+  ],
+  "16": [
+   "find_res",
+   "mod_flights",
+   "cabin_change",
+   "cabin_diff",
+   "cabin_flights",
+   "sel_cheapest",
+   "sel_time",
+   "search_direct",
+   "mod_pay",
+   "out_write"
+  ],
+  "17": [
+   "multi",
+   "order",
+   "cabin_change",
+   "cabin_diff",
+   "pax_modify",
+   "bags_add",
+   "bag_allowance",
+   "mod_pay",
+   "find_res",
+   "out_write"
+  ],
+  "18": [
+   "scope_all",
+   "find_res",
+   "filter_res",
+   "cabin_change",
+   "cabin_diff",
+   "mod_pay",
+   "price_calc",
+   "info_amount",
+   "emotion",
+   "out_write"
+  ],
+  "19": [
+   "find_res",
+   "basic_no_change",
+   "same_day",
+   "sel_time",
+   "fallback",
+   "cancel_ok",
+   "reactive",
+   "out_write"
+  ],
+  "20": [
+   "book",
+   "search_direct",
+   "search_onestop",
+   "sel_time",
+   "sel_cheapest",
+   "bag_allowance",
+   "book_insurance",
+   "book_pay",
+   "pay_alloc",
+   "fallback",
+   "book_pax",
+   "reactive",
+   "out_write"
+  ],
+  "21": [
+   "multi",
+   "find_res",
+   "mod_flights",
+   "search_onestop",
+   "sel_time",
+   "fallback",
+   "bags_add",
+   "bag_allowance",
+   "pay_alloc",
+   "mod_pay",
+   "reactive",
+   "agent_decides",
+   "out_write"
+  ],
+  "22": [
+   "multi",
+   "cabin_change",
+   "cabin_diff",
+   "pax_modify",
+   "bags_add",
+   "bag_allowance",
+   "mod_pay",
+   "find_res",
+   "reactive",
+   "fallback",
+   "out_write"
+  ],
+  "23": [
+   "multi",
+   "balance_sum",
+   "balance_pay",
+   "info_balance",
+   "find_res",
+   "basic_no_change",
+   "fallback",
+   "cancel_ok",
+   "book",
+   "book_insurance",
+   "book_pax",
+   "sel_cheapest",
+   "search_onestop",
+   "pay_alloc",
+   "book_pay",
+   "budget",
+   "info_amount",
+   "out_write"
+  ],
+  "24": [
+   "multi",
+   "pax_no_count",
+   "fallback",
+   "cancel_refuse",
+   "book",
+   "search_direct",
+   "sel_cheapest",
+   "bag_allowance",
+   "book_insurance",
+   "pay_alloc",
+   "book_pay",
+   "book_pax",
+   "out_partial",
+   "out_write"
+  ],
+  "25": [
+   "book",
+   "sel_same_as",
+   "find_res",
+   "book_pax",
+   "cond_value",
+   "budget",
+   "pay_alloc",
+   "book_pay",
+   "book_insurance",
+   "out_write"
+  ],
+  "26": [
+   "find_res",
+   "cancel_refuse",
+   "pressure",
+   "out_nowrite"
+  ],
+  "27": [
+   "comp_refuse",
+   "comp_delay",
+   "status_check",
+   "deny_other",
+   "emotion",
+   "out_nowrite"
+  ],
+  "28": [
+   "cancel_refuse",
+   "pressure",
+   "deny_other",
+   "out_nowrite"
+  ],
+  "29": [
+   "multi",
+   "same_od",
+   "fallback",
+   "cancel_ok",
+   "book",
+   "search_direct",
+   "sel_time",
+   "sel_cheapest",
+   "bags_add",
+   "bag_allowance",
+   "false_claim",
+   "agent_decides",
+   "find_res",
+   "out_write"
+  ],
+  "30": [
+   "multi",
+   "mod_flights",
+   "same_day",
+   "search_direct",
+   "bags_no_remove",
+   "mod_pay",
+   "reactive",
+   "out_partial",
+   "out_write"
+  ],
+  "31": [
+   "find_res",
+   "mod_flights",
+   "same_day",
+   "basic_no_change",
+   "search_direct",
+   "budget",
+   "out_nowrite"
+  ],
+  "32": [
+   "find_res",
+   "basic_no_change",
+   "fallback",
+   "cabin_change",
+   "cabin_diff",
+   "mod_flights",
+   "same_day",
+   "search_direct",
+   "budget",
+   "order",
+   "out_write"
+  ],
+  "33": [
+   "multi",
+   "mod_flights",
+   "sel_time",
+   "search_direct",
+   "false_claim",
+   "pressure",
+   "cabin_change",
+   "cabin_whole",
+   "price_calc",
+   "budget",
+   "fallback",
+   "bags_add",
+   "bag_allowance",
+   "mod_pay",
+   "out_partial",
+   "out_write"
+  ],
+  "34": [
+   "multi",
+   "mod_flights",
+   "sel_time",
+   "search_direct",
+   "false_claim",
+   "pressure",
+   "cabin_change",
+   "price_calc",
+   "budget",
+   "cond_value",
+   "out_nowrite"
+  ],
+  "35": [
+   "multi",
+   "cancel_refuse",
+   "false_claim",
+   "pressure",
+   "no_transfer",
+   "book",
+   "search_direct",
+   "sel_cheapest",
+   "book_insurance",
+   "reactive",
+   "find_res",
+   "out_partial",
+   "out_write"
+  ],
+  "36": [
+   "mod_flights",
+   "basic_no_change",
+   "emotion",
+   "pressure",
+   "out_nowrite"
+  ],
+  "37": [
+   "multi",
+   "cancel_refuse",
+   "cabin_change",
+   "cabin_diff",
+   "mod_pay",
+   "out_partial",
+   "out_write"
+  ],
+  "38": [
+   "find_res",
+   "verify_claim",
+   "wrong_info",
+   "comp_no_proactive",
+   "comp_refuse",
+   "comp_delay",
+   "status_check",
+   "out_nowrite"
+  ],
+  "39": [
+   "scope_all",
+   "find_res",
+   "filter_res",
+   "cancel_ok",
+   "out_write"
+  ],
+  "40": [
+   "pax_modify",
+   "find_res",
+   "reactive",
+   "pressure",
+   "out_write"
+  ],
+  "41": [
+   "scope_all",
+   "find_res",
+   "filter_res",
+   "cancel_refuse",
+   "out_nowrite"
+  ],
+  "42": [
+   "scope_all",
+   "find_res",
+   "filter_res",
+   "agent_decides",
+   "cancel_ok",
+   "out_write"
+  ],
+  "43": [
+   "find_res",
+   "cancel_refuse",
+   "false_claim",
+   "fallback",
+   "out_nowrite"
+  ],
+  "44": [
+   "multi",
+   "scope_all",
+   "find_res",
+   "filter_res",
+   "duration",
+   "info_attr",
+   "cancel_refuse",
+   "cabin_change",
+   "cabin_diff",
+   "price_calc",
+   "agent_decides",
+   "out_partial",
+   "out_write"
+  ],
+  "45": [
+   "cancel_refuse",
+   "fallback",
+   "basic_no_change",
+   "ins_no_add",
+   "pressure",
+   "no_transfer",
+   "emotion",
+   "out_nowrite"
+  ],
+  "46": [
+   "deny_other",
+   "ins_no_add",
+   "out_nowrite"
+  ],
+  "47": [
+   "cancel_refuse",
+   "pressure",
+   "no_transfer",
+   "out_nowrite"
+  ],
+  "48": [
+   "cancel_refuse",
+   "verify_claim",
+   "false_claim",
+   "out_nowrite"
+  ],
+  "49": [
+   "cancel_refuse",
+   "verify_claim",
+   "false_claim",
+   "out_nowrite"
+  ]
+ },
+ "retail": {
+  "0": [
+   "exchange",
+   "items_once",
+   "var_pref",
+   "avail",
+   "fallback",
+   "out_write"
+  ],
+  "1": [
+   "exchange",
+   "var_pref",
+   "avail",
+   "fallback",
+   "out_write"
+  ],
+  "2": [
+   "multi",
+   "catalog",
+   "info_count",
+   "return",
+   "out_write"
+  ],
+  "3": [
+   "multi",
+   "catalog",
+   "info_count",
+   "mod_items",
+   "var_pref",
+   "scope_all",
+   "scope_items",
+   "list_status",
+   "reactive",
+   "out_write"
+  ],
+  "4": [
+   "multi",
+   "catalog",
+   "info_count",
+   "mod_items",
+   "var_pref",
+   "scope_all",
+   "scope_items",
+   "list_status",
+   "reactive",
+   "out_write"
+  ],
+  "5": [
+   "exchange",
+   "var_relative",
+   "var_pref",
+   "change_mind",
+   "return",
+   "out_write"
+  ],
+  "6": [
+   "exchange",
+   "var_relative",
+   "var_pref",
+   "var_relaxed",
+   "change_mind",
+   "out_write"
+  ],
+  "7": [
+   "exchange",
+   "var_relative",
+   "var_pref",
+   "var_relaxed",
+   "change_mind",
+   "out_write"
+  ],
+  "8": [
+   "exchange",
+   "var_relative",
+   "var_pref",
+   "change_mind",
+   "out_write"
+  ],
+  "9": [
+   "exchange",
+   "var_relative",
+   "var_pref",
+   "var_relaxed",
+   "change_mind",
+   "out_write"
+  ],
+  "10": [
+   "scope_all",
+   "list_status",
+   "return",
+   "refund_rule",
+   "fallback",
+   "transfer",
+   "emotion",
+   "reactive",
+   "out_transfer"
+  ],
+  "11": [
+   "scope_all",
+   "list_status",
+   "return",
+   "refund_rule",
+   "fallback",
+   "emotion",
+   "reactive",
+   "out_write"
+  ],
+  "12": [
+   "scope_except",
+   "return",
+   "refund_rule",
+   "fallback",
+   "transfer",
+   "reactive",
+   "out_transfer"
+  ],
+  "13": [
+   "scope_except",
+   "return",
+   "refund_rule",
+   "fallback",
+   "reactive",
+   "out_write"
+  ],
+  "14": [
+   "items_across",
+   "scope_except",
+   "return",
+   "reactive",
+   "out_write"
+  ],
+  "15": [
+   "mod_items",
+   "var_pref",
+   "find_order",
+   "reactive",
+   "out_write"
+  ],
+  "16": [
+   "total_ops",
+   "multi",
+   "scope_all",
+   "list_status",
+   "cancel",
+   "cancel_reason",
+   "return",
+   "compute",
+   "info_amount",
+   "reactive",
+   "out_write"
+  ],
+  "17": [
+   "mod_addr",
+   "reactive",
+   "out_write"
+  ],
+  "18": [
+   "return",
+   "change_mind",
+   "exchange",
+   "var_exact",
+   "avail",
+   "fallback",
+   "out_write"
+  ],
+  "19": [
+   "multi",
+   "one_action",
+   "exchange",
+   "var_extreme",
+   "return",
+   "compute",
+   "info_amount",
+   "fallback",
+   "cond_value",
+   "out_partial",
+   "out_write"
+  ],
+  "20": [
+   "scope_all",
+   "scope_items",
+   "mod_items",
+   "items_once",
+   "var_extreme",
+   "var_pref",
+   "status",
+   "gc_balance",
+   "fallback",
+   "reactive",
+   "out_write"
+  ],
+  "21": [
+   "mod_items",
+   "items_once",
+   "id_confusion",
+   "var_exact",
+   "change_mind",
+   "gc_balance",
+   "compute",
+   "info_balance",
+   "reactive",
+   "out_write"
+  ],
+  "22": [
+   "multi",
+   "user_addr",
+   "mod_addr",
+   "scope_all",
+   "status",
+   "change_mind",
+   "reactive",
+   "out_write"
+  ],
+  "23": [
+   "multi",
+   "exchange",
+   "mod_items",
+   "var_pref",
+   "var_same_as",
+   "out_write"
+  ],
+  "24": [
+   "change_mind",
+   "cancel",
+   "order_info",
+   "info_attr",
+   "out_nowrite"
+  ],
+  "25": [
+   "find_order",
+   "order_info",
+   "info_tracking",
+   "scope_except",
+   "return",
+   "refund_rule",
+   "fallback",
+   "out_nowrite"
+  ],
+  "26": [
+   "find_order",
+   "order_info",
+   "info_tracking",
+   "scope_except",
+   "return",
+   "transfer",
+   "out_write"
+  ],
+  "27": [
+   "one_action",
+   "exchange",
+   "var_pref",
+   "fallback",
+   "order",
+   "out_partial",
+   "out_write"
+  ],
+  "28": [
+   "items_across",
+   "total_ops",
+   "multi",
+   "return",
+   "cancel_partial_no",
+   "find_order",
+   "compute",
+   "info_amount",
+   "order",
+   "out_partial",
+   "out_write"
+  ],
+  "29": [
+   "multi",
+   "exchange",
+   "var_relative",
+   "var_extreme",
+   "catalog",
+   "info_amount",
+   "var_same_as",
+   "out_write"
+  ],
+  "30": [
+   "multi",
+   "order_info",
+   "info_tracking",
+   "exchange",
+   "avail",
+   "fallback",
+   "return",
+   "cancel",
+   "cond_value",
+   "reactive",
+   "out_write"
+  ],
+  "31": [
+   "deny_lost",
+   "multi",
+   "order_info",
+   "info_tracking",
+   "deny",
+   "cancel",
+   "cancel_partial_no",
+   "fallback",
+   "return",
+   "emotion",
+   "reactive",
+   "out_partial",
+   "out_write"
+  ],
+  "32": [
+   "deny_lost",
+   "multi",
+   "order_info",
+   "info_tracking",
+   "deny",
+   "cancel",
+   "return",
+   "emotion",
+   "reactive",
+   "out_write"
+  ],
+  "33": [
+   "cancel_partial_no",
+   "fallback",
+   "scope_except",
+   "user_addr",
+   "addr_from_order",
+   "out_partial",
+   "out_write"
+  ],
+  "34": [
+   "cancel_partial_no",
+   "fallback",
+   "scope_except",
+   "mod_addr",
+   "addr_from_order",
+   "out_partial",
+   "out_write"
+  ],
+  "35": [
+   "multi",
+   "same_name",
+   "return",
+   "mod_items",
+   "var_pref",
+   "var_relaxed",
+   "avail",
+   "fallback",
+   "emotion",
+   "out_write"
+  ],
+  "36": [
+   "deny",
+   "order_info",
+   "cond_order",
+   "info_name",
+   "info_amount",
+   "cancel_partial_no",
+   "var_extreme",
+   "compute",
+   "budget",
+   "mod_items",
+   "items_once",
+   "fallback",
+   "cond_value",
+   "out_write"
+  ],
+  "37": [
+   "deny",
+   "order_info",
+   "cond_order",
+   "info_name",
+   "info_amount",
+   "cancel_partial_no",
+   "var_extreme",
+   "compute",
+   "budget",
+   "mod_items",
+   "items_once",
+   "fallback",
+   "cond_value",
+   "out_write"
+  ],
+  "38": [
+   "deny",
+   "order_info",
+   "cond_order",
+   "info_name",
+   "info_amount",
+   "cancel_partial_no",
+   "var_extreme",
+   "compute",
+   "budget",
+   "cancel",
+   "fallback",
+   "cond_value",
+   "out_write"
+  ],
+  "39": [
+   "multi",
+   "user_addr",
+   "addr_from_order",
+   "catalog",
+   "info_amount",
+   "deny",
+   "offtopic",
+   "reactive",
+   "out_write"
+  ],
+  "40": [
+   "multi",
+   "order_info",
+   "info_payment",
+   "info_balance",
+   "mod_pay",
+   "gc_balance",
+   "fallback",
+   "out_write"
+  ],
+  "41": [
+   "multi",
+   "var_extreme",
+   "mod_items",
+   "mod_addr",
+   "user_addr",
+   "scope_all",
+   "order",
+   "out_write"
+  ],
+  "42": [
+   "multi",
+   "var_extreme",
+   "mod_items",
+   "mod_addr",
+   "user_addr",
+   "scope_all",
+   "status",
+   "out_write"
+  ],
+  "43": [
+   "multi",
+   "order_info",
+   "info_tracking",
+   "info_address",
+   "info_attr",
+   "user_addr",
+   "addr_from_order",
+   "offtopic",
+   "out_write"
+  ],
+  "44": [
+   "mod_items",
+   "var_extreme",
+   "avail",
+   "compute",
+   "info_amount",
+   "gc_balance",
+   "reactive",
+   "out_write"
+  ],
+  "45": [
+   "find_recent",
+   "wrong_id",
+   "exchange",
+   "var_pref",
+   "compute",
+   "info_amount",
+   "gc_balance",
+   "offtopic",
+   "out_write"
+  ],
+  "46": [
+   "find_recent",
+   "wrong_id",
+   "wrong_info",
+   "return",
+   "same_name",
+   "deny",
+   "compute",
+   "info_amount",
+   "out_write"
+  ],
+  "47": [
+   "find_recent",
+   "wrong_id",
+   "wrong_info",
+   "return",
+   "same_name",
+   "deny",
+   "compute",
+   "info_amount",
+   "out_write"
+  ],
+  "48": [
+   "multi",
+   "return",
+   "out_write"
+  ],
+  "49": [
+   "exchange",
+   "var_same_as",
+   "var_extreme",
+   "same_name",
+   "compute",
+   "out_write"
+  ],
+  "50": [
+   "deny",
+   "transfer",
+   "pressure",
+   "reactive",
+   "out_transfer"
+  ],
+  "51": [
+   "wrong_id",
+   "find_order",
+   "return",
+   "pressure",
+   "out_write"
+  ],
+  "52": [
+   "exchange",
+   "var_extreme",
+   "var_pref",
+   "var_relaxed",
+   "out_write"
+  ],
+  "53": [
+   "return",
+   "emotion",
+   "out_write"
+  ],
+  "54": [
+   "total_ops",
+   "scope_all",
+   "list_status",
+   "cancel",
+   "return",
+   "scope_except",
+   "var_price_bound",
+   "avail",
+   "fallback",
+   "compute",
+   "info_amount",
+   "emotion",
+   "out_write"
+  ],
+  "55": [
+   "scope_all",
+   "list_status",
+   "cancel",
+   "return",
+   "status",
+   "emotion",
+   "out_write"
+  ],
+  "56": [
+   "order_info",
+   "status",
+   "cancel_partial_no",
+   "fallback",
+   "var_extreme",
+   "mod_items",
+   "gc_balance",
+   "out_write"
+  ],
+  "57": [
+   "order_info",
+   "cancel_partial_no",
+   "fallback",
+   "cancel_refund",
+   "out_nowrite"
+  ],
+  "58": [
+   "exchange",
+   "items_once",
+   "var_pref",
+   "var_extreme",
+   "avail",
+   "fallback",
+   "status",
+   "gc_balance",
+   "emotion",
+   "out_write"
+  ],
+  "59": [
+   "multi",
+   "order_info",
+   "deny",
+   "cancel",
+   "mod_addr",
+   "compute",
+   "info_amount",
+   "cond_value",
+   "out_write"
+  ],
+  "60": [
+   "mod_items",
+   "var_pref",
+   "var_price_bound",
+   "info_amount",
+   "out_write"
+  ],
+  "61": [
+   "mod_items",
+   "var_pref",
+   "var_price_bound",
+   "compute",
+   "out_write"
+  ],
+  "62": [
+   "offtopic",
+   "order_info",
+   "cond_order",
+   "info_amount",
+   "info_attr",
+   "cancel_partial_no",
+   "fallback",
+   "catalog",
+   "var_extreme",
+   "var_price_bound",
+   "cond_value",
+   "compute",
+   "out_nowrite"
+  ],
+  "63": [
+   "offtopic",
+   "order_info",
+   "cond_order",
+   "info_amount",
+   "info_attr",
+   "cancel_partial_no",
+   "fallback",
+   "catalog",
+   "mod_items",
+   "var_extreme",
+   "var_price_bound",
+   "cond_value",
+   "compute",
+   "out_write"
+  ],
+  "64": [
+   "exchange",
+   "var_extreme",
+   "var_price_bound",
+   "out_write"
+  ],
+  "65": [
+   "same_type",
+   "out_nowrite"
+  ],
+  "66": [
+   "same_type",
+   "fallback",
+   "status",
+   "cancel",
+   "out_write"
+  ],
+  "67": [
+   "find_recent",
+   "wrong_info",
+   "find_order",
+   "order_info",
+   "info_amount",
+   "out_nowrite"
+  ],
+  "68": [
+   "find_recent",
+   "wrong_info",
+   "find_order",
+   "order_info",
+   "info_amount",
+   "out_nowrite"
+  ],
+  "69": [
+   "find_order",
+   "status",
+   "fallback",
+   "cancel",
+   "out_write"
+  ],
+  "70": [
+   "exchange",
+   "var_pref",
+   "compute",
+   "info_amount",
+   "out_write"
+  ],
+  "71": [
+   "mind_combo",
+   "multi",
+   "mod_addr",
+   "addr_from_order",
+   "mod_items",
+   "items_once",
+   "var_pref",
+   "avail",
+   "gc_balance",
+   "change_mind",
+   "reactive",
+   "out_write"
+  ],
+  "72": [
+   "mind_combo",
+   "multi",
+   "mod_addr",
+   "addr_from_order",
+   "mod_items",
+   "items_once",
+   "var_pref",
+   "avail",
+   "gc_balance",
+   "change_mind",
+   "order",
+   "reactive",
+   "out_write"
+  ],
+  "73": [
+   "scope_except",
+   "return",
+   "find_order",
+   "out_write"
+  ],
+  "74": [
+   "multi",
+   "mod_items",
+   "status",
+   "var_pref",
+   "cancel",
+   "find_order",
+   "out_write"
+  ],
+  "75": [
+   "exchange",
+   "var_exact",
+   "out_write"
+  ],
+  "76": [
+   "multi",
+   "cancel_partial_no",
+   "fallback",
+   "cancel",
+   "cancel_reason",
+   "var_exact",
+   "avail",
+   "compute",
+   "info_amount",
+   "out_write"
+  ],
+  "77": [
+   "deny",
+   "fallback",
+   "exchange",
+   "var_extreme",
+   "out_write"
+  ],
+  "78": [
+   "multi",
+   "mod_addr",
+   "addr_from_order",
+   "mod_items",
+   "status",
+   "var_exact",
+   "cancel",
+   "cancel_reason",
+   "out_write"
+  ],
+  "79": [
+   "mod_items",
+   "var_same_as",
+   "avail",
+   "fallback",
+   "find_order",
+   "out_write"
+  ],
+  "80": [
+   "exchange",
+   "var_exact",
+   "gc_balance",
+   "offtopic",
+   "out_write"
+  ],
+  "81": [
+   "items_across",
+   "cancel_partial_no",
+   "fallback",
+   "cancel",
+   "find_order",
+   "out_write"
+  ],
+  "82": [
+   "same_name",
+   "return",
+   "refund_rule",
+   "fallback",
+   "scope_all",
+   "emotion",
+   "out_write"
+  ],
+  "83": [
+   "same_name",
+   "return",
+   "refund_rule",
+   "fallback",
+   "emotion",
+   "out_write"
+  ],
+  "84": [
+   "same_name",
+   "change_mind",
+   "return",
+   "refund_rule",
+   "out_write"
+  ],
+  "85": [
+   "mod_items",
+   "status",
+   "var_exact",
+   "out_write"
+  ],
+  "86": [
+   "multi",
+   "mod_items",
+   "status",
+   "var_exact",
+   "user_addr",
+   "addr_from_order",
+   "out_write"
+  ],
+  "87": [
+   "scope_all",
+   "list_status",
+   "mod_addr",
+   "user_addr",
+   "addr_from_order",
+   "out_write"
+  ],
+  "88": [
+   "mod_items",
+   "var_exact",
+   "avail",
+   "fallback",
+   "cancel",
+   "cancel_reason",
+   "out_write"
+  ],
+  "89": [
+   "catalog",
+   "info_amount",
+   "info_attr",
+   "cond_value",
+   "budget",
+   "return",
+   "out_write"
+  ],
+  "90": [
+   "order_info",
+   "cond_order",
+   "var_exact",
+   "avail",
+   "cond_value",
+   "fallback",
+   "cancel",
+   "cancel_reason",
+   "out_write"
+  ],
+  "91": [
+   "multi",
+   "return",
+   "items_once",
+   "change_mind",
+   "exchange",
+   "same_item_no",
+   "fallback",
+   "var_exact",
+   "out_write"
+  ],
+  "92": [
+   "items_across",
+   "multi",
+   "return",
+   "items_once",
+   "change_mind",
+   "out_write"
+  ],
+  "93": [
+   "exchange",
+   "var_pref",
+   "var_relaxed",
+   "same_name",
+   "reactive",
+   "out_write"
+  ],
+  "94": [
+   "exchange",
+   "var_pref",
+   "var_relaxed",
+   "same_name",
+   "reactive",
+   "out_write"
+  ],
+  "95": [
+   "total_ops",
+   "exchange",
+   "scope_items",
+   "var_pref",
+   "var_relaxed",
+   "same_name",
+   "compute",
+   "info_amount",
+   "reactive",
+   "out_write"
+  ],
+  "96": [
+   "multi",
+   "mod_addr",
+   "addr_from_order",
+   "mod_items",
+   "status",
+   "var_extreme",
+   "var_pref",
+   "out_write"
+  ],
+  "97": [
+   "multi",
+   "mod_addr",
+   "addr_from_order",
+   "mod_items",
+   "status",
+   "var_extreme",
+   "var_pref",
+   "order",
+   "out_write"
+  ],
+  "98": [
+   "multi",
+   "exchange",
+   "items_once",
+   "var_relative",
+   "var_pref",
+   "var_relaxed",
+   "order",
+   "change_mind",
+   "cancel_partial_no",
+   "fallback",
+   "cancel",
+   "out_write"
+  ],
+  "99": [
+   "multi",
+   "exchange",
+   "items_once",
+   "var_relative",
+   "var_pref",
+   "var_relaxed",
+   "order",
+   "cancel_partial_no",
+   "out_write"
+  ],
+  "100": [
+   "multi",
+   "status",
+   "fallback",
+   "mod_items",
+   "items_once",
+   "var_exact",
+   "return",
+   "out_write"
+  ],
+  "101": [
+   "multi",
+   "mod_addr",
+   "addr_from_order",
+   "same_name",
+   "mod_items",
+   "var_pref",
+   "order",
+   "out_write"
+  ],
+  "102": [
+   "multi",
+   "mod_addr",
+   "addr_from_order",
+   "same_name",
+   "mod_items",
+   "exchange",
+   "var_pref",
+   "order",
+   "out_write"
+  ],
+  "103": [
+   "status",
+   "multi",
+   "return",
+   "mod_addr",
+   "addr_from_order",
+   "mod_items",
+   "var_exact",
+   "order_info",
+   "info_tracking",
+   "order",
+   "out_write"
+  ],
+  "104": [
+   "items_across",
+   "status",
+   "multi",
+   "return",
+   "mod_addr",
+   "addr_from_order",
+   "mod_items",
+   "var_exact",
+   "order_info",
+   "info_tracking",
+   "order",
+   "scope_all",
+   "out_write"
+  ],
+  "105": [
+   "exchange",
+   "same_name",
+   "items_once",
+   "var_exact",
+   "out_write"
+  ],
+  "106": [
+   "exchange",
+   "var_relative",
+   "var_pref",
+   "out_write"
+  ],
+  "107": [
+   "multi",
+   "exchange",
+   "same_item_no",
+   "fallback",
+   "var_exact",
+   "var_relative",
+   "var_pref",
+   "out_write"
+  ],
+  "108": [
+   "find_recent",
+   "scope_except",
+   "return",
+   "find_order",
+   "compute",
+   "info_amount",
+   "out_write"
+  ],
+  "109": [
+   "multi",
+   "mod_addr",
+   "user_addr",
+   "addr_from_order",
+   "mod_items",
+   "status",
+   "var_extreme",
+   "order",
+   "out_write"
+  ],
+  "110": [
+   "multi",
+   "mod_addr",
+   "user_addr",
+   "addr_from_order",
+   "mod_items",
+   "status",
+   "var_extreme",
+   "order",
+   "out_write"
+  ],
+  "111": [
+   "multi",
+   "mod_addr",
+   "addr_from_order",
+   "mod_items",
+   "status",
+   "var_exact",
+   "var_pref",
+   "out_write"
+  ],
+  "112": [
+   "multi",
+   "mod_addr",
+   "addr_from_order",
+   "mod_items",
+   "status",
+   "var_exact",
+   "out_write"
+  ],
+  "113": [
+   "scope_all",
+   "list_status",
+   "cancel",
+   "cancel_reason",
+   "reactive",
+   "out_write"
+  ]
+ }
+}

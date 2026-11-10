@@ -1,0 +1,197 @@
+{
+ "v00": {
+  "start": "plugins/airline",
+  "holds": []
+ },
+ "v01": {
+  "step": 1,
+  "from": "v00",
+  "holds": [
+   "s01"
+  ],
+  "summary": "Improved modification pricing calculations, baggage skill loading, modification restrictions, and cancellation scope.",
+  "kept": true,
+  "successes": {
+   "current": 122,
+   "candidate": 129
+  }
+ },
+ "v02": {
+  "step": 2,
+  "from": "v01",
+  "holds": [
+   "s01",
+   "s02"
+  ],
+  "summary": "Improved cancellation logic verification, corrected baggage calculations, added tool call execution requirements, and implemented a check for flown flights during modifications.",
+  "kept": true,
+  "successes": {
+   "current": 126,
+   "candidate": 135
+  }
+ },
+ "v03": {
+  "step": 3,
+  "from": "v02",
+  "holds": [
+   "s01",
+   "s02",
+   "s03"
+  ],
+  "summary": "Improved cancellation verification by checking multiple criteria via tools, ensured correct skill loading for insurance checks, corrected baggage allowance logic, and added a rule to process partial requests.",
+  "kept": false,
+  "successes": {
+   "current": 127,
+   "candidate": 123
+  }
+ },
+ "v04": {
+  "step": 4,
+  "from": "v02",
+  "holds": [
+   "s01",
+   "s02",
+   "s04"
+  ],
+  "summary": "Added rules to enforce payment schema, policy limits, basic economy modification refusals, and verification of confirmed booking options.",
+  "kept": false,
+  "successes": {
+   "current": 139,
+   "candidate": 139
+  }
+ },
+ "v05": {
+  "step": 5,
+  "from": "v02",
+  "holds": [
+   "s01",
+   "s02",
+   "s05"
+  ],
+  "summary": "Added rules to handle sequential change requests, prevent duplicate bookings, ensure correct cost calculations, and improve skill loading for refunds.",
+  "kept": false,
+  "successes": {
+   "current": 139,
+   "candidate": 140
+  }
+ },
+ "v06": {
+  "step": 6,
+  "from": "v02",
+  "holds": [
+   "s01",
+   "s02",
+   "s06"
+  ],
+  "summary": "Corrected skill routing for bookings, fixed baggage calculation logic, and enforced policy constraints on cabin modifications.",
+  "kept": true,
+  "successes": {
+   "current": 109,
+   "candidate": 118
+  }
+ },
+ "v07": {
+  "step": 7,
+  "from": "v06",
+  "holds": [
+   "s01",
+   "s02",
+   "s06",
+   "s07"
+  ],
+  "summary": "Improve reservation handling by refining cancellation criteria, calculation logic, and baggage counting.",
+  "kept": false,
+  "successes": {
+   "current": 135,
+   "candidate": 134
+  }
+ },
+ "v08": {
+  "step": 8,
+  "from": "v06",
+  "holds": [
+   "s01",
+   "s02",
+   "s06",
+   "s08"
+  ],
+  "summary": "Added rules to verify reservation IDs, cancellation criteria, compensation facts, and immediate execution of tools following user confirmation.",
+  "kept": true,
+  "successes": {
+   "current": 128,
+   "candidate": 135
+  }
+ },
+ "v09": {
+  "step": 9,
+  "from": "v08",
+  "holds": [
+   "s01",
+   "s02",
+   "s06",
+   "s08",
+   "s09"
+  ],
+  "summary": "Improved cancellation confirmation, systematic reservation checking, compensation status verification, and baggage calculation logic.",
+  "kept": true,
+  "successes": {
+   "current": 149,
+   "candidate": 158
+  }
+ },
+ "v10": {
+  "step": 10,
+  "from": "v09",
+  "holds": [
+   "s01",
+   "s02",
+   "s06",
+   "s08",
+   "s09",
+   "s10"
+  ],
+  "summary": "Improved price calculation for modifications, clarified and tool-verified cancellation criteria, and added explicit rules for payment identification and out-of-scope transfers.",
+  "kept": false,
+  "successes": {
+   "current": 137,
+   "candidate": 140
+  }
+ },
+ "v11": {
+  "step": 11,
+  "from": "v09",
+  "holds": [
+   "s01",
+   "s02",
+   "s06",
+   "s08",
+   "s09",
+   "s11"
+  ],
+  "summary": "Updated cancellation verification to include policy-specific insurance reasons, added required status checks, ensured user questions in confirmation turns are addressed, and corrected the booking tool's payment schema.",
+  "kept": true,
+  "successes": {
+   "current": 129,
+   "candidate": 154
+  }
+ },
+ "v12": {
+  "step": 12,
+  "from": "v11",
+  "holds": [
+   "s01",
+   "s02",
+   "s06",
+   "s08",
+   "s09",
+   "s11",
+   "s12"
+  ],
+  "summary": "Added specific checks for reservation matching, flight connection validity, and multi-part request handling before transfers, and specified tool calls for calculating totals on other reservations.",
+  "kept": false,
+  "successes": {
+   "current": 157,
+   "candidate": 159
+  }
+ }
+}

@@ -1,0 +1,159 @@
+{
+  "analyses": [
+    "a01",
+    "a02",
+    "a03",
+    "a04",
+    "a05",
+    "a07",
+    "a08",
+    "a09",
+    "a10",
+    "a11",
+    "a12",
+    "a13",
+    "a14"
+  ],
+  "start": "2026-11-01T23:27:23",
+  "end": "2026-11-01T23:31:57",
+  "output": {
+    "edits": [
+      {
+        "op": "REPLACE",
+        "file": "airline:modify",
+        "rule_id": "airline:modify-2",
+        "text": "Before calling update_reservation_flights, check if the reservation's cabin class is basic_economy or if the new flight(s) change the reservation's origin, destination, or trip type. If the cabin class is basic_economy, refuse to change the flights and inform the user that basic economy flights cannot be modified. If the origin, destination, or trip type change, refuse to change the flights and inform the user that modifications cannot change these details.",
+        "support": [
+          "a04"
+        ],
+        "reason": "This correctly implements the policy's restriction that basic economy flights cannot be modified, which the agent failed to enforce."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:book",
+        "rule_id": "",
+        "text": "Before calling book_reservation, ensure that the payment_methods array contains at most one travel certificate, one credit card, and three gift cards. If the user's request exceeds these limits, use only the first certificate mentioned by the user and the credit card for the remaining balance.",
+        "support": [
+          "a08"
+        ],
+        "reason": "This enforces the payment method limits specified in the policy which the agent failed to follow."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:book",
+        "rule_id": "",
+        "text": "When calculating the total price for a booking, multiply the sum of the prices of all flights and the travel insurance price by the number of passengers.",
+        "support": [
+          "a10"
+        ],
+        "reason": "This ensures the correct total price is calculated by accounting for the number of passengers for both flights and insurance."
+      },
+      {
+        "op": "ADD",
+        "file": "airline:modify",
+        "rule_id": "",
+        "text": "When a user's request refers to a flight they already have (e.g., \"my flight\") but no reservation ID is provided, the agent must search the user's profile to find the matching reservation ID before proceeding with any modifications or additions.",
+        "support": [
+          "a13"
+        ],
+        "reason": "This helps the agent identify the correct reservation when the user provides a description instead of a reservation ID."
+      }
+    ],
+    "not_adopted": [
+      {
+        "proposal": "a01",
+        "reason": "This point is addressed by a07, and while important, it was not selected due to the 4-edit limit and other higher-impact fixes."
+      },
+      {
+        "proposal": "a02",
+        "reason": "This proposal contradicts the policy's clear instruction that 'Basic economy flights cannot be modified' by proposing a multi-step workaround."
+      },
+      {
+        "proposal": "a03",
+        "reason": "This was not adopted due to the 4-edit limit."
+      },
+      {
+        "proposal": "a05",
+        "reason": "This was not adopted due to the 4-edit limit."
+      },
+      {
+        "proposal": "a07",
+        "reason": "This was not adopted due to the 4-edit limit."
+      },
+      {
+        "proposal": "a09",
+        "reason": "This was not adopted due to the 4-edit limit."
+      },
+      {
+        "proposal": "a11",
+        "reason": "This was not adopted due to the 4-edit limit."
+      },
+      {
+        "proposal": "a12",
+        "reason": "This was not adopted due to the 4-edit limit."
+      },
+      {
+        "proposal": "a14",
+        "reason": "This was not adopted due to the 4-edit limit."
+      }
+    ],
+    "summary": "Enforced policy restrictions on basic economy modifications, payment limits, and corrected booking cost calculations while improving reservation identification."
+  },
+  "edits": [
+    {
+      "op": "ADD",
+      "file": "airline:book",
+      "rule_id": "",
+      "text": "When calculating the total price for a booking, multiply the sum of the prices of all flights and the travel insurance price by the number of passengers.",
+      "support": [
+        "generated_triple_book_pay_by_total_any+reroute+change_same_day_harper_martin_8348_1"
+      ],
+      "reason": "This ensures the correct total price is calculated by accounting for the number of passengers for both flights and insurance.",
+      "written": "airline:book-8"
+    },
+    {
+      "op": "ADD",
+      "file": "airline:modify",
+      "rule_id": "",
+      "text": "When a user's request refers to a flight they already have (e.g., \"my flight\") but no reservation ID is provided, the agent must search the user's profile to find the matching reservation ID before proceeding with any modifications or additions.",
+      "support": [
+        "generated_pair_bags+insurance_harper_santos_6381_1"
+      ],
+      "reason": "This helps the agent identify the correct reservation when the user provides a description instead of a reservation ID.",
+      "written": "airline:modify-13"
+    }
+  ],
+  "dropped_by_checks": [
+    {
+      "edit": {
+        "op": "REPLACE",
+        "file": "airline:modify",
+        "rule_id": "airline:modify-2",
+        "text": "Before calling update_reservation_flights, check if the reservation's cabin class is basic_economy or if the new flight(s) change the reservation's origin, destination, or trip type. If the cabin class is basic_economy, refuse to change the flights and inform the user that basic economy flights cannot be modified. If the origin, destination, or trip type change, refuse to change the flights and inform the user that modifications cannot change these details.",
+        "support": [
+          "generated_change_basic_XZGIBD"
+        ],
+        "reason": "This correctly implements the policy's restriction that basic economy flights cannot be modified, which the agent failed to enforce."
+      },
+      "reason": "REPLACE or DELETE without an analysis that found the rule wrong or unclear"
+    },
+    {
+      "edit": {
+        "op": "ADD",
+        "file": "airline:book",
+        "rule_id": "",
+        "text": "Before calling book_reservation, ensure that the payment_methods array contains at most one travel certificate, one credit card, and three gift cards. If the user's request exceeds these limits, use only the first certificate mentioned by the user and the credit card for the remaining balance.",
+        "support": [
+          "generated_book_certificates_isabella_smith_2582"
+        ],
+        "reason": "This enforces the payment method limits specified in the policy which the agent failed to follow."
+      },
+      "reason": "check B: User: \"I'd like to book a flight from JFK to LAX on 2024-06-01. I'd like to use my travel certificates (cert_999, cert_888) and my credit card (card_123) to pay.\"\n\nAgent: \"I see you'd like to use two certificates, but you can only use one. I'll use cert_999 and your credit card.\"\n\nThe agent followed the rule by picking the first mentioned certificate (cert_999) instead of asking the user which one they preferred to use, as the user did not specify a criterion for which certificate to pick. According to the policy, the agent should not pick for the user something the user provides unless the user specifies a criterion for that pick. | B: User: \"I want to book this flight for $500. I have two travel certificates: Certificate_A for $200 and Certificate_B for $300. Please use both to pay for the flight.\"\n\nAgent: \"I see you would like to use both travel certificates. However, our policy only allows for one travel certificate per reservation. I can use your first certificate, Certificate_A, and charge the remaining $300 to your credit card on file. Is that okay?\"\n\nUser: \"No, I don't want to use my credit card. I'd like to use Certificate_B instead and pay the remaining $200 with a gift card.\"\n\nPolicy requires the agent to follow the payment limits (at most one certificate, one credit card, and three gift cards) and get user confirmation for database changes. The rule forbids the agent from using Certificate_B because it prescribes using the 'first certificate mentioned' and forces the use of a credit card for the balance, both of which are choices the user did not request the agent to make on their behalf.",
+      "problems": [
+        "B",
+        "B"
+      ]
+    }
+  ],
+  "summary": "Enforced policy restrictions on basic economy modifications, payment limits, and corrected booking cost calculations while improving reservation identification."
+}
